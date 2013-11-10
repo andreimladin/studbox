@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	
+</head>
+<body onload='document.loginForm.j_username.focus();'>
+<div id="wrap">
+	<!-- Header -->
+	<div id="header">
+		<div id="logo">
+			<a href="index.html"><img src="images/menu_logo.png"></a> <!-- logo -->
+		</div>
+		<div id="menu">
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="index.html"><span>Facult&#x103;&#x21B;i</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="joburi.html"><span>Joburi</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="profesori.html"><span>Profesori</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="stiri.html"><span> &#x15E;tiri</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+		</div>
+		<div id="top-right">
+			<div id="searchbar">
+				<input type="text" data-provide="typeahead" class="search-bar" placeholder="Cauta cursuri" />
+			</div>
+			<div id="right-header">
+				<div id="log-in">
+					<a href="login.html"><span>Autentific&#x103;-te </span></a>
+				</div>
+				<div class="headerseparator">/</div>
+				<div id="register">
+					<a href="register.html"><span>  &#xCE;nregistreaz&#x103;-te</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content-wrap">				
+		<!-- Content -->
+		
+		<div id="content">		
+			<div class="titleform">
+					<h2>Autentificare</h2>
+			</div>			
+			<!-- Login form content -->
+			<div class="form">
+				<form name="loginForm" class="form-horizontal" action="j_spring_security_check" method="POST">
+					 <div class="control-group">
+				    	
+				    		<div class="alert alert-danger" id="loginerror">
+				    		Userul sau parola gresita
+				    		</div>
+									    	
+				    </div>
+				    <div class="control-group">
+				    	<label class="control-label" for="j_username">User :</label>
+				    	<div class="controls">
+							<input name="j_username" type="text" tabindex="1"/>
+						</div>	
+						<div class="controls" id="forgotq">
+								<a href="#" style="font-size:10px;"tabindex="3">V-a&#x21B;i uitat userul?
+								</a>
+						</div>			    	
+				    </div>
+				    <div class="control-group">
+				    	<label class="control-label" for="j_password">Parola :</label>
+				    	<div class="controls">
+							<input name="j_password" type="password" tabindex="2"/>
+						</div>
+						<div class="controls" id="forgotq">
+								<a href="#" style="font-size:10px;" tabindex="4">V-a&#x21B;i uitat parola?
+								</a>
+						</div>
+				    </div>
+
+				    <!--Remember Name Checkbox & Login Button -->
+				    <div class="control-group">
+				    	<div class="controls">
+				    		<label class="checkbox">
+				    			<input type="checkbox" name="_spring_security_remember_me" tabindex="5"/>				    			
+				    			 Re&#355;ine user
+				    		</label>
+				   			<input type="submit" class="btn btn-primary" value="Autentificare" tabindex="6"/>
+				    	</div>
+					</div>
+
+					<!--Create New Account -->
+					<div  class="alert alert-info" id="regnew">
+						<div id="newacc" >
+				    		<b>&#xCE;nc&#x103; nu ai cont?</b>
+							<a href="register.html" id="inregistrare" tabindex="7" class="btn btn-success	">&#xCE;nregistreaz&#x103;-te!</a>
+						</div>
+					</div>						
+				</form>
+			</div>			
+		</div>	
+	</div>
+	<!-- Footer -->
+	<div id="footer">
+		<div id="subfooter">
+			<div id="copyright">
+				Copyright &copy 2013 studbox.ro
+			</div>
+			<div id="footerdata">
+				<ul class="inline">
+					<li><a href="#">Despre noi</a></li>
+					<li><a href="#">Contacteaz&#x103;-ne</a></li>
+					<li><a href="#">Termeni &#351;i condi&#x21B;i</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>	
