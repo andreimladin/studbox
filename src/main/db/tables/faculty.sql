@@ -1,0 +1,21 @@
+USE studbox;
+
+DROP TABLE IF EXISTS Faculty;
+		
+CREATE TABLE Faculty (
+  ObjectId INTEGER NOT NULL,
+  UniversityId INTEGER NOT NULL,
+  Name VARCHAR(150) NOT NULL,
+  ShortName VARCHAR(30) NOT NULL,
+  Location VARCHAR(30) NOT NULL,
+  ViewNo INTEGER NOT NULL DEFAULT 0,
+  OwnerId INTEGER NOT NULL,
+  CreationDate DATETIME NOT NULL,
+  LastModifiedDate DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (ObjectId),
+  UNIQUE KEY (UniversityId, Name)
+);
+
+ALTER TABLE Faculty ADD FOREIGN KEY (ObjectId) REFERENCES Object(ObjectId);
+ALTER TABLE Faculty ADD FOREIGN KEY (UniversityId) REFERENCES University(ObjectId);
+ALTER TABLE Faculty ADD FOREIGN KEY (OwnerId) REFERENCES Users(UserId);

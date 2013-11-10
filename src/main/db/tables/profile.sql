@@ -1,0 +1,22 @@
+USE studbox;
+
+DROP TABLE IF EXISTS Profile;
+		
+CREATE TABLE Profile (
+  ObjectId INTEGER NOT NULL,
+  FacultyId INTEGER NOT NULL,
+  Name VARCHAR(150) NOT NULL,
+  ShortName VARCHAR(30) NOT NULL,
+  Section VARCHAR(15) NOT NULL,
+  Type VARCHAR(10) NOT NULL, 
+  ViewNo INTEGER NOT NULL DEFAULT 0,
+  OwnerId INTEGER NOT NULL,
+  CreationDate DATETIME NOT NULL,
+  LastModifiedDate DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (ObjectId),
+  UNIQUE KEY (FacultyId, Name, Section)
+);
+
+ALTER TABLE Profile ADD FOREIGN KEY (ObjectId) REFERENCES Object(ObjectId);
+ALTER TABLE Profile ADD FOREIGN KEY (FacultyId) REFERENCES Faculty(ObjectId);
+ALTER TABLE Profile ADD FOREIGN KEY (OwnerId) REFERENCES Users(UserId);

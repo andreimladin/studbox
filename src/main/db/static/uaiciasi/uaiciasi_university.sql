@@ -1,0 +1,1 @@
+call university_insert('Universitatea Alexandru I. Cuza', 'UAIC', 'Iași', '/images/logos/uaic_logo.png', 2, @university_id);

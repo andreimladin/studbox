@@ -1,0 +1,1 @@
+call faculty_insert(@university_id, 'Facultatea de Informatică', 'INFO', 'Iași', 2, @faculty_id);

@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS UserRoles;
+		
+CREATE TABLE UserRoles (
+  UserId INTEGER NOT NULL,
+  RoleName VARCHAR(25) NOT NULL,
+  PRIMARY KEY (UserId, RoleName)
+);
+
+ALTER TABLE UserRoles ADD FOREIGN KEY (UserId) REFERENCES Users (UserId);
+ALTER TABLE UserRoles ADD FOREIGN KEY (RoleName) REFERENCES Role (RoleName);

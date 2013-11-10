@@ -1,0 +1,1 @@
+call university_insert('Universitatea Tehnică Cluj-Napoca', 'UTCN', 'Cluj-Napoca', '/images/logos/utcn_logo.png', 2, @university_id);

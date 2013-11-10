@@ -1,0 +1,1 @@
+call university_insert('Universitatea de Vest din Timișoara', 'UVT', 'Timișoara', '/images/logos/uvt_logo.png', 2, @university_id);

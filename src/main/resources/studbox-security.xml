@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/security 
+			http://www.springframework.org/schema/security/spring-security.xsd">
+	
+	<security:http pattern="favicon.ico" security="none"/>
+	<security:http pattern="/js/**" security="none"/>
+	<security:http pattern="/css/**" security="none"/>
+	<security:http pattern="/view/redirect.jsp" security="none"/>
+	<security:http pattern="/images/**" security="none"/>
+	<security:http pattern="/main/files/*/download/google" security="none"/>
+
+	<security:http auto-config="false" use-expressions="true" access-denied-page="/auth/denied" 
+			entry-point-ref="authenticationEntryPoint">
+		<security:intercept-url pattern="/home" access="permitAll"/>
+		<security:intercept-url pattern="/auth/accountConfirmation" access="permitAll"/>	 	
+		<security:intercept-url pattern="/auth/**" access="isAnonymous()"/>
+		<security:intercept-url pattern="/main/**" access="permitAll"/>		
+		<!-- This should have admin role -->
+	 	<security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>	 		 		 	
+	 		 	
+	 	<security:logout 
+				invalidate-session="true" 
+				delete-cookies="JSESSIONID"
+				logout-success-url="/auth/login"/>
+	 	
+	 	<security:custom-filter ref="authenticationFilter" position="FORM_LOGIN_FILTER"/>
+		<security:custom-filter ref="concurrencyFilter" position="CONCURRENT_SESSION_FILTER"/>
+		<security:session-management session-authentication-strategy-ref="sas"/>
+	 							
+		<!-- <remember-me services-ref="rememberMeServices" key="studboxRM9*"/> -->
+		<security:remember-me key="studboxRM9*"/>
+			
+		<security:expression-handler ref="defaultWebSecurityExpressionHandler" />
+	</security:http>
+	
+	<bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"
+	    p:sessionAuthenticationStrategy-ref="sas"
+	    p:authenticationManager-ref="authenticationManager" 
+  		p:authenticationFailureHandler-ref="customAuthenticationFailureHandler"
+  		p:authenticationSuccessHandler-ref="customAuthenticationSuccessHandler"/>
+
+ 	<!-- We just actually need to set the default failure url here -->
+ 	<bean id="customAuthenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"
+ 		p:defaultFailureUrl="/auth/loginFailed" />
+ 		
+ 	 <!-- We just actually need to set the default target url here -->
+ 	<bean id="customAuthenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler"
+ 		p:defaultTargetUrl="/" />
+ 		
+	<!-- The AuthenticationEntryPoint is responsible for redirecting the user to a particular page, like a login page,
+ 			whenever the server sends back a response requiring authentication -->
+ 	<!-- See Spring-Security Reference 5.4.1 for more info -->
+ 	<bean id="authenticationEntryPoint"  class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint"
+	 	p:loginFormUrl="/auth/login"/>
+	 	
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="userService">
+			<security:password-encoder hash="md5"/>   		
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<!-- Filter required by concurrent session handling package 
+			The ConcurrentSessionFilter requires two properties, sessionRegistry, which generally points to an 
+			instance of SessionRegistryImpl, and expiredUrl, which points to the page to display when a session has expired.
+			See: http://static.springsource.org/spring-security/site/docs/3.1.x/reference/session-mgmt.html#list-authenticated-principals -->
+	<bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter"
+		  	p:sessionRegistry-ref="sessionRegistry" 
+		  	p:expiredUrl="/auth/session-expired" />
+	
+	<!--  Defines a concrete concurrent control strategy 
+			 Checks whether the user in question should be allowed to proceed, by comparing the number of 
+			 sessions they already have active with the configured maximumSessions value. The SessionRegistry 
+			 is used as the source of data on authenticated users and session data.
+			 See: http://static.springsource.org/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/web/authentication/session/ConcurrentSessionControlStrategy.html-->
+	<bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy"
+	 		p:maximumSessions="1" >
+	 		<constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+	</bean>
+
+	<!-- Maintains a registry of SessionInformation instances
+		   See: http://static.springsource.org/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/session/SessionRegistry.html -->
+	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+
+	<!-- 	
+	<beans:bean id="rememberMeServices"
+          class="org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices">
+        <beans:property name="tokenRepository" ref="customTokenRepository" />
+        <beans:property name="userDetailsService" ref="userService" />
+        <beans:property name="key" value="studboxRM9*" />
+    </beans:bean> 
+  	-->  	
+
+	<security:global-method-security pre-post-annotations="enabled"
+	    	access-decision-manager-ref="accessDecisionManager" />	
+	
+	<bean id="accessDecisionManager"
+   		class="org.springframework.security.access.vote.AffirmativeBased">
+  		<property name="decisionVoters">
+    		<list>
+      			<ref bean="roleVoter" />
+      			<ref bean="authenticatedVoter" />
+		    </list>
+  		</property>
+	</bean>
+ 	
+	<!-- Define voters -->
+	<bean id="authenticatedVoter"
+   		class="org.springframework.security.access.vote.AuthenticatedVoter" />   	
+ 	
+	<!-- Role Voter -->	 
+	<bean id="roleVoter" 
+		class="org.springframework.security.access.vote.RoleHierarchyVoter">
+	    <constructor-arg ref="roleHierarchy" />
+	    <property name="rolePrefix" value=""/>
+	</bean>
+		
+	<!-- Web Expression Handler -->
+	<bean id="defaultWebSecurityExpressionHandler"
+      class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+     	<property name="roleHierarchy" ref="roleHierarchy"/>
+	</bean>	
+	
+	<bean id="roleHierarchy"
+	        class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">
+	    <property name="hierarchy">
+	        <value>	            
+	            ADMIN > COORDINATOR
+	            COORDINATOR > CONTRIBUTOR
+	            CONTRIBUTOR > CONSUMER 
+	            CONSUMER > ANONYMOUS
+	            ADMIN > TODO
+	        </value>
+	    </property>
+	</bean>
+</beans>

@@ -1,0 +1,1 @@
+call university_insert('Universitatea Babeş-Bolyai', 'UBB', 'Cluj-Napoca', '/images/logos/ubb_logo.png', 2, @university_id);

@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS Role;
+		
+CREATE TABLE Role (
+  RoleName VARCHAR(25) NOT NULL,
+  Description VARCHAR(50) NOT NULL,
+  PRIMARY KEY (RoleName)
+);

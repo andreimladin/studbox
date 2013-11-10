@@ -1,0 +1,11 @@
+USE studbox;
+
+DROP TABLE IF EXISTS Object;
+		
+CREATE TABLE Object (
+  ObjectId INTEGER NOT NULL AUTO_INCREMENT,
+  ObjectTypeId INTEGER NOT NULL,
+  PRIMARY KEY (ObjectId)
+);
+
+ALTER TABLE Object ADD FOREIGN KEY (ObjectTypeId) REFERENCES ObjectType(ObjectTypeId);

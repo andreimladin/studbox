@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<body>
+	<div style="width:700px;height:220px; margin: auto;	border:1px solid gray;border-radius:4px;">		
+			<div style="text-align: left;	background: url('http://studbox.ro/images/blue.jpg');padding-top:5px;padding-bottom:5px;">
+				<a href="http://studbox.ro"><img src="http://studbox.ro/images/menu_logo.png"></a>
+			</div>
+			<div style="width:500px;margin:auto;">
+	  			<h1 style="font-size:25px;letter-spacing: -1;line-height: 1;font-weight: bold;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;text-rendering: optimizelegibility;text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);">
+	  			Salut $user.firstName,
+	  			</h1>
+	  			
+	  			<p style="padding-left:20px;font-family:arial;font-size:18px;font-weight: bold;">Userul tau de Studbox este : <b>$user.username</b></p>
+	  			
+	  			<h2 style="font-size:20px;letter-spacing: -1;line-height: 1;font-weight: bold;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;text-rendering: optimizelegibility;text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);">
+	  				O zi bun&#259; &#238;n continuare!<br>
+					Echipa de Support Studbox
+				</h2>
+	  		</div>
+	</div>
+</body>
+</html>
