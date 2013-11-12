@@ -56,7 +56,9 @@ public class FilesController {
 	@Autowired
     private MessageSource messageSource;
 	
-	private static final List<String> UNSUPPORTED_FORMATS_BY_GOOGLE = Arrays.asList(new String[]{"image/jpeg","image/png","image/gif","image/bmp"});
+	private static final List<String> IMAGES_CONTENT_TYPES = Arrays.asList(new String[]{"image/jpeg","image/png","image/gif","image/bmp"});
+	private static final List<String> TEXT_PLAIN_CONTENT_TYPES = Arrays.asList(new String[]{"application/octet-stream"});
+	private static final List<String> UNSUPPORTED_CONTENT_TYPES = Arrays.asList(new String[]{"application/zip","application/x-gzip","application/x-gtar","multipart/x-gzip","multipart/x-zip","application/x-rar-compressed"});
 	
 	private Logger logger = Logger.getLogger(FilesController.class);
 	
@@ -118,31 +120,37 @@ public class FilesController {
 	
 	@PreAuthorize("hasRole('CONSUMER')")
 	@RequestMapping(value="/{fileId}/view")
-	public ModelAndView view(@PathVariable long fileId){
-		ModelAndView model = new ModelAndView();
-		model.setViewName("/files/view");		
-		
+	public ModelAndView view(HttpServletResponse response, @PathVariable long fileId){
+		ModelAndView model = null;
 		File file = fileService.getFile(fileId);
-		model.addObject("file", file);
 		
-		String content = "https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true";
-//		Document doc;
-//		try {
-//			doc = Jsoup.connect("https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true").get();
-//			Elements headScripts = doc.select(".head > script");
-//			for (Element script : headScripts) {
-//				content +=  " " + script.html();
-//			}
-////			Elements 
-//			
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		//
-		model.addObject("content", content);
-		//
+		if (UNSUPPORTED_CONTENT_TYPES.contains(file.getContentType()) || (file.getName().indexOf(".zip") == file.getName().length()-4) 
+				|| (file.getName().indexOf(".rar") == file.getName().length()-4)) {
+			doDownload(response, fileId, false);
+		} else {
+			model = new ModelAndView();
+			model.setViewName("/files/view");		
+			model.addObject("file", file);
+			
+			String content = "https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true";
+	//		Document doc;
+	//		try {
+	//			doc = Jsoup.connect("https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true").get();
+	//			Elements headScripts = doc.select(".head > script");
+	//			for (Element script : headScripts) {
+	//				content +=  " " + script.html();
+	//			}
+	////			Elements 
+	//			
+	//		} catch (IOException e) {
+	//			// TODO Auto-generated catch block
+	//			e.printStackTrace();
+	//		}
+			
+			//
+			model.addObject("content", content);
+			//
+		}
 		
 		return model;
 	}
@@ -151,7 +159,12 @@ public class FilesController {
 		File file = fileService.getFile(fileId);
 		try {
 			FileInputStream fis = null;
-			if (isGoogle && UNSUPPORTED_FORMATS_BY_GOOGLE.contains(file.getContentType())){
+			if (isGoogle && TEXT_PLAIN_CONTENT_TYPES.contains(file.getContentType())) {
+				fis = new FileInputStream(file.getPath());
+				response.setContentType("text/plain");
+				response.setHeader("Content-Disposition", "attachment; filename=" + file.getName());
+				response.setContentLength((int) file.getContentLength());
+			} else if (isGoogle && IMAGES_CONTENT_TYPES.contains(file.getContentType())){
 				String pdfFilePath = file.getPath().substring(0, file.getPath().lastIndexOf(".")) + ".pdf";
 				fileService.convertImageToPdf(file.getPath(), pdfFilePath);
 				String pdfFileName = file.getName().substring(0, file.getName().lastIndexOf(".")) + ".pdf";

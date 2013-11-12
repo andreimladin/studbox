@@ -34,16 +34,17 @@
 	function showFileName(){						
 		var filename =$('#fileData').val().split('\\').pop();
 		var filesize =$('#fileData')[0].files[0].size;
-		if (filename.length > 20) {
-			$("#errorMessage").html("Numele fi&#x219;ierului trebuie s&#x103; aiv&#x103; maxim 20 de caractere!");
+		if (filename.length > 50) {
+			$("#errorMessage").html("Numele fi&#x219;ierului trebuie s&#x103; aiv&#x103; maxim 50 de caractere!");
 			$("#errorMessage").show();
 			resetUploadForm();
 		} else if (filesize > 10485760) { 
-			$("#errorMessage").html("Fi&#x219;ierul nu poate avea mai mult de 20 mb!");
+			$("#errorMessage").html("Fi&#x219;ierul nu poate avea mai mult de 10 mb!");
 			$("#errorMessage").show();
 			resetUploadForm();
 		} else {
 			$("#upbut").hide();
+			$("#updescription").hide();
 			$("#filename").html("Nume Fi&#x219;ier :<span style='font-style:italic;font-weight:normal;'>" + filename + "</span>");
 			$("#filename").show();
 			$("#uploadFileButtons").show();
@@ -55,8 +56,11 @@
 		hideItems();
 		
 		$("#uploadForm").show();
+		$("#updescription").show();
 		$("#upbut").show();
 		$("#fileData").hide();
+		$("#filename").html("");
+		$("#filename").hide();
 		$("#uploadFileButtons").hide();
 		$("#progressSection").hide();
 		$("#successUpload").hide();				
@@ -276,13 +280,13 @@
 			</c:choose>
 		</div>
 		
-		<div id="errorMessage" class="alert alert-error , confmes ">			
+		<div id="errorMessage" class="alert alert-error , confmes " style="display:none">			
 		</div>
 		
-		<div id='successMessage' class='alert alert-success , confmes' style="text-align:center;  margin-bottom:10px;">			
+		<div id='successMessage' class='alert alert-success , confmes' style="text-align:center;  margin-bottom:10px; display:none">			
 		</div>
 		
-		<div id="newFolderForm" class="box">
+		<div id="newFolderForm" class="box" style="display:none">
 			<div class="titleform" style="width:300px; padding-top:10px;">	
 				<label  style="font-size:19px; font-weight:bold; width:200px; margin:auto;margin-bottom:10px;">Creare Folder</label>
 			</div>
@@ -318,7 +322,7 @@
 			</div>			
 		</div>
 		
-		<div id="uploadForm" class="box">
+		<div id="uploadForm" class="box" style="display:none">
 			<div class="titleform" style="width:300px; padding-top:10px;">	
 				<label style="font-size:19px; font-weight:bold; width:200px; margin:auto;margin-bottom:10px;">&#206;nc&#x103;rcare fi&#x219;ier</label>
 			</div>
@@ -334,7 +338,7 @@
 						<div id='file2'>								
 							<input onclick='openFile();' type='submit' class='btn btn-primary' value="Caut&#x103;"/>
 							<a onclick='cancelUploadForm();'>Anuleaz&#x103;</a>
-							<input id='fileData' type='file' name='fileData' onchange='showFileName();' accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/tiff,application/x-iwork-pages-sffpages,application/illustrator,image/vnd.adobe.photoshop,application/dxf,image/svg+xml,application/postscript,font/opentype,application/opentype,application/x-font-ttf,application/vnd.ms-xpsdocument,application/x-rar-compressed,application/zip,text/rtf,text/plain,text/html,image/jpeg,image/png,image/gif,image/bmp"/>
+							<input id='fileData' type='file' name='fileData' onchange='showFileName();' accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/tiff,application/x-iwork-pages-sffpages,application/illustrator,image/vnd.adobe.photoshop,application/dxf,image/svg+xml,application/postscript,font/opentype,application/opentype,application/x-font-ttf,application/vnd.ms-xpsdocument,application/x-rar-compressed,application/zip,text/rtf,text/plain,text/html,image/jpeg,image/png,image/gif,image/bmp,application/octet-stream,application/zip,application/x-gzip,application/x-gtar,multipart/x-gzip,multipart/x-zip,application/x-rar-compressed"/>
 						</div>
 					</div>
 				</div>

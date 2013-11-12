@@ -18,7 +18,6 @@ call course_insert(@year_id, 'Fundamentele programării', 'FP', 1, 2, @course_id
 	call folder_insert(@default_folder_id, "Seminarii", 0, 2, @folder_id);
 call course_insert(@year_id, 'Logică computaţională', 'LC', 1, 2, @course_id, @default_folder_id);
 	call folder_insert(@default_folder_id, "Cursuri", 0, 2, @folder_id);
-	call folder_insert(@default_folder_id, "Documentaţie", 0, 2, @folder_id);
 	call folder_insert(@default_folder_id, "Examene", 0, 2, @folder_id);
 	call folder_insert(@default_folder_id, "Seminarii", 0, 2, @folder_id);
 call course_insert(@year_id, 'Comunicare şi dezvoltare profesională în informatică', 'CDPI', 1, 2, @course_id, @default_folder_id);
@@ -27,12 +26,10 @@ call course_insert(@year_id, 'Comunicare şi dezvoltare profesională în inform
 	call folder_insert(@default_folder_id, "Practic", 0, 2, @folder_id);
 call course_insert(@year_id, 'Algebră', 'Algebră', 1, 2, @course_id, @default_folder_id);
 	call folder_insert(@default_folder_id, "Cursuri", 0, 2, @folder_id);
-	call folder_insert(@default_folder_id, "Documentaţie", 0, 2, @folder_id);
 	call folder_insert(@default_folder_id, "Examene", 0, 2, @folder_id);
 	call folder_insert(@default_folder_id, "Seminarii", 0, 2, @folder_id);
 call course_insert(@year_id, 'Analiză matematică', 'Analiză', 1, 2, @course_id, @default_folder_id);
 	call folder_insert(@default_folder_id, "Cursuri", 0, 2, @folder_id);
-	call folder_insert(@default_folder_id, "Documentaţie", 0, 2, @folder_id);
 	call folder_insert(@default_folder_id, "Examene", 0, 2, @folder_id);
 	call folder_insert(@default_folder_id, "Seminarii", 0, 2, @folder_id);
 call course_insert(@year_id, 'Limba engleză', 'Engleză', 1, 2, @course_id, @default_folder_id);

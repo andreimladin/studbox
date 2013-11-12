@@ -54,11 +54,16 @@ public class FoldersController {
 		model.setViewName("/folders/home");		
 				
 		Folder folder = folderService.getFolder(folderId);
+		Course course = null;
 		
 		if (folder.isCourse()){
-			Course course = courseService.getCourseByFolderId(folderId);	
-			model.addObject("course", course);		
-		}
+			course = courseService.getCourseByFolderId(folderId);					
+		} else {
+			course = courseService.getCourseByFolderId(folder.getParentFolder().getObjectId());
+		}		
+		
+		model.addObject("course", course);
+		
 		List<String> existingFolderNames = folderService.getDistinctNames();
 		
 		model.addObject("objectId", folder.getObjectId());		
