@@ -17,9 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.studbox.data.dao.AccountConfirmationDao;
 import ro.studbox.data.dao.RoleDao;
 import ro.studbox.data.dao.UserDao;
+import ro.studbox.data.dao.UserDownloadsDao;
 import ro.studbox.entities.AccountConfirmation;
 import ro.studbox.entities.Role;
 import ro.studbox.entities.User;
+import ro.studbox.entities.UserDownloads;
+import ro.studbox.entities.UserLimit;
 import ro.studbox.service.EmailService;
 import ro.studbox.service.UserService;
 
@@ -40,6 +43,9 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	@Qualifier("HtmlEmailService")
 	private EmailService emailService;
+	
+	@Autowired
+	private UserDownloadsDao downloadsDao;
 	
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
@@ -65,7 +71,29 @@ public class UserServiceImpl implements UserService {
 		Role consumerRole = roleDao.find("CONSUMER");
 		roles.add(consumerRole);
 		
-		User newUser = new User(username, password, firstName, lastName, email, sex, birthdate, new Date(), null, 0, useNotifications, roles);		
+		// AIM - Set default user limits
+		Set<UserLimit> userLimits = new HashSet<UserLimit>();
+		UserLimit dailyDownloadsLimit = new UserLimit();
+		dailyDownloadsLimit.setLimitName("DAILY_DOWNLOADS");
+		dailyDownloadsLimit.setLimitValue("3");
+		UserLimit weeklyDownloadsLimit = new UserLimit();
+		weeklyDownloadsLimit.setLimitName("WEEKLY_DOWNLOADS");
+		weeklyDownloadsLimit.setLimitValue("12");
+		UserLimit monthlyDownloadsLimit = new UserLimit();
+		monthlyDownloadsLimit.setLimitName("MONTHLY_DOWNLOADS");
+		monthlyDownloadsLimit.setLimitValue("57");
+		userLimits.add(dailyDownloadsLimit);
+		userLimits.add(weeklyDownloadsLimit);
+		userLimits.add(monthlyDownloadsLimit);
+		
+		UserDownloads downloads = new UserDownloads();
+		
+		User newUser = new User(username, password, firstName, lastName, email, sex, birthdate, new Date(), null, 0, useNotifications, roles, userLimits, downloads);
+		// AIM - set the user on the limits to be persisted too
+		dailyDownloadsLimit.setUser(newUser);
+		weeklyDownloadsLimit.setUser(newUser);
+		monthlyDownloadsLimit.setUser(newUser);
+		downloads.setUser(newUser);
 		newUser = userDao.create(newUser);
 
 		// AIM - encode the ConfirmationKey		
@@ -130,9 +158,14 @@ public class UserServiceImpl implements UserService {
 		
 		emailService.sendEmailWithPasswordReset(user, newPassword);
 		
+	}	
+	
+	@Override
+	public void incrementDownloadsNo(UserDownloads userDownloads) {
+		userDownloads.incrementNumbers();
+		downloadsDao.update(userDownloads);
 	}
-	
-	
+
 	public static void main(String[] args){
 		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
 		System.out.println(encoder.encodePassword("Pascal9*", null));

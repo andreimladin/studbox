@@ -13,13 +13,6 @@
 				$("#controlbarOpenInViewerButton").remove();
 			});
 		});
-		function showAuthMessage(){
-			$("#authMessage").html(
-				"<div class='alert alert-error' id='confmes'>"+
-					"V&#x103; rug&#x103;m s&#x103; v&#x103; autentifica&#x21B;i"+
-				"</div>"
-			);
-		}
 	</script>
 </head>
 <body>
@@ -46,19 +39,20 @@
 						<div id="navbutitem">
 							<span>${file.name}</span>						
 						</div>
-					</div>	
-					<sec:authorize access="isAuthenticated()">
-						<a href="/main/files/${file.objectId}/download" class="btn btn-small" id="downbut">Descarca</a>
-					</sec:authorize>
-					<sec:authorize access="isAnonymous()">
-						<a onclick="showAuthMessage();" class="btn btn-small" id="downbut">Descarc&#x103;</a>
-					</sec:authorize>					
-				</div>
-				<div id="authMessage">
-				</div>		
-				<div id="iframe">
-					<iframe src="${content}" width="100%" height="780" style="border: none;"></iframe>
-				</div>
+					</div>								
+				</div>				
+				<c:choose>		
+					<c:when test="${errorMessage != null}">
+						<div id="errorMessage" class="alert alert-error , confmes ">
+							${errorMessage}			
+						</div>						
+					</c:when>
+					<c:otherwise>
+						<div id="iframe">
+							<iframe src="${content}" width="100%" height="780" style="border: none;"></iframe>
+						</div>
+					</c:otherwise>
+				</c:choose>			
 			</div>			
 		</div>
 	</div>

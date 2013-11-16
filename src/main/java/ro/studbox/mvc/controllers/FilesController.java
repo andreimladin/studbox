@@ -29,9 +29,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ro.studbox.entities.File;
 import ro.studbox.entities.User;
+import ro.studbox.entities.UserDownloads;
+import ro.studbox.entities.UserLimit;
 import ro.studbox.mvc.forms.UploadFileForm;
 import ro.studbox.mvc.validators.UploadFileValidation;
 import ro.studbox.service.FileService;
+import ro.studbox.service.UserService;
 
 import com.google.gson.Gson;
 import com.lowagie.text.BadElementException;
@@ -43,6 +46,9 @@ public class FilesController {
 	
 	@Autowired
 	private FileService fileService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@Autowired
 	private Gson gson;
@@ -121,38 +127,42 @@ public class FilesController {
 	@PreAuthorize("hasRole('CONSUMER')")
 	@RequestMapping(value="/{fileId}/view")
 	public ModelAndView view(HttpServletResponse response, @PathVariable long fileId){
-		ModelAndView model = null;
-		File file = fileService.getFile(fileId);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("/files/view");
 		
-		if (UNSUPPORTED_CONTENT_TYPES.contains(file.getContentType()) || (file.getName().indexOf(".zip") == file.getName().length()-4) 
-				|| (file.getName().indexOf(".rar") == file.getName().length()-4)) {
-			doDownload(response, fileId, false);
-		} else {
-			model = new ModelAndView();
-			model.setViewName("/files/view");		
+		File file = fileService.getFile(fileId);
+			
+        // AIM - Check the user on the session
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof User) {   
+        	User userLogged = (User) principal;	
+
+        	UserLimit exceededLimit = userLogged.exceededDownloadLimit();
+        	if (exceededLimit != null) {
+        		model.addObject("file", file);
+        		model.addObject("errorMessage", messageSource.getMessage("User.exceededDownloadLimit." + exceededLimit.getLimitName(), new String[]{exceededLimit.getLimitValue()}, Locale.ENGLISH));
+        	} else {	
+	        	// AIM - increment downloads number
+	        	incrementUserDownloads(userLogged.getDownloads());
+	
+	        	if (UNSUPPORTED_CONTENT_TYPES.contains(file.getContentType()) || (file.getName().indexOf(".zip") == file.getName().length()-4) 
+						|| (file.getName().indexOf(".rar") == file.getName().length()-4)) {
+					doDownload(response, fileId, false);
+					
+					return null;
+				} else {				
+					model.addObject("file", file);
+							
+					String content = "https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true";
+					model.addObject("content", content);
+				}
+        	}
+		} else {			
 			model.addObject("file", file);
-			
-			String content = "https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true";
-	//		Document doc;
-	//		try {
-	//			doc = Jsoup.connect("https://docs.google.com/viewer?url=http://www.studbox.ro/main/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true").get();
-	//			Elements headScripts = doc.select(".head > script");
-	//			for (Element script : headScripts) {
-	//				content +=  " " + script.html();
-	//			}
-	////			Elements 
-	//			
-	//		} catch (IOException e) {
-	//			// TODO Auto-generated catch block
-	//			e.printStackTrace();
-	//		}
-			
-			//
-			model.addObject("content", content);
-			//
+	       	model.addObject("errorMessage", messageSource.getMessage("error.authNeed", null, Locale.ENGLISH));
 		}
 		
-		return model;
+        return model;
 	}
 	
 	private void doDownload(HttpServletResponse response,@PathVariable long fileId, boolean isGoogle){
@@ -195,4 +205,10 @@ public class FilesController {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	private void incrementUserDownloads(UserDownloads userDownloads) {
+		userService.incrementDownloadsNo(userDownloads);
+	}
+	
 }

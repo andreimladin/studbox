@@ -22,8 +22,7 @@
 		$("#errorMessage").hide();
 	}
 	
-	function showAuthMessage() {
-		$("#errorMessage").html("V&#x103; rug&#x103;m s&#x103; v&#x103; loga&#x21B;i");
+	function showErrorMessage() {
 		$("#errorMessage").show();
 	}
 	
@@ -261,7 +260,7 @@
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
 						<div id="actionbut">
-							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
+							<a class="btn btn-small" onclick="showErrorMessage()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
 						</div>	
 					</sec:authorize>
 				</c:when>
@@ -273,14 +272,15 @@
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
 						<div id="actionbut">			
-							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
+							<a class="btn btn-small" onclick="showErrorMessage()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
 						</div>
 					</sec:authorize>	
 				</c:otherwise>
 			</c:choose>
 		</div>
 		
-		<div id="errorMessage" class="alert alert-error , confmes " style="display:none">			
+		<div id="errorMessage" class="alert alert-error , confmes " style="display:none">
+			${errorMessage}			
 		</div>
 		
 		<div id='successMessage' class='alert alert-success , confmes' style="text-align:center;  margin-bottom:10px; display:none">			
@@ -407,16 +407,9 @@
 				</div>
 				<div id="filename">
 					<p>
-						<sec:authorize access="isAuthenticated()">
-							<a href="/main/files/${file.objectId}/view">
-								${file.name}
-							</a>
-						</sec:authorize>
-						<sec:authorize access="isAnonymous()">
-							<a onclick="showAuthMessage()">
-								${file.name}
-							</a>								
-						</sec:authorize>					
+						<a href="/main/files/${file.objectId}/view">
+							${file.name}
+						</a>
 					</p>
 				</div>				
 				<div id="filedate">

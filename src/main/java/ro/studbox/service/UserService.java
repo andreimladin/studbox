@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import ro.studbox.entities.User;
+import ro.studbox.entities.UserDownloads;
 
 
 public interface UserService extends UserDetailsService {
@@ -22,5 +23,7 @@ public interface UserService extends UserDetailsService {
 	void rememberUsername(String email);
 	
 	void resetPassword(String email);
+	
+	void incrementDownloadsNo(UserDownloads userDownloads);
 	
 }

@@ -60,7 +60,7 @@ public class FoldersController {
 			course = courseService.getCourseByFolderId(folderId);					
 		} else {
 			course = courseService.getCourseByFolderId(folder.getParentFolder().getObjectId());
-		}		
+		}
 		
 		model.addObject("course", course);
 		
@@ -69,7 +69,7 @@ public class FoldersController {
 		model.addObject("objectId", folder.getObjectId());		
 		model.addObject("folder", folder);
 		model.addObject("comments", folder.getComments());		
-		model.addObject("existingFolderNames", existingFolderNames);
+		model.addObject("existingFolderNames", existingFolderNames);		
 		
 		return model;
 	}
