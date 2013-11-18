@@ -33,8 +33,8 @@
 	function showFileName(){						
 		var filename =$('#fileData').val().split('\\').pop();
 		var filesize =$('#fileData')[0].files[0].size;
-		if (filename.length > 50) {
-			$("#errorMessage").html("Numele fi&#x219;ierului trebuie s&#x103; aiv&#x103; maxim 50 de caractere!");
+		if (filename.length > 30) {
+			$("#errorMessage").html("Numele fi&#x219;ierului trebuie s&#x103; aiv&#x103; maxim 30 de caractere!");
 			$("#errorMessage").show();
 			resetUploadForm();
 		} else if (filesize > 10485760) { 
