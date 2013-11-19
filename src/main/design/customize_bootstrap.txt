@@ -1,0 +1,12 @@
+Navbar 
+
+	Default Navbar
+		Basics
+			@navbar-default-bg = #0000FF
+			@navbar-default-border = #345578
+			@navbar-inverse-bg = #eeeeee
+			@navbar-inverse-border = #dddddd
+			
+		Brand
+			@navbar-default-brand-color = #dddddd
+			@navbar-default-brand-hover-color = #ffffff
