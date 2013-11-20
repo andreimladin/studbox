@@ -6,7 +6,10 @@ Navbar
 			@navbar-default-border = #345578
 			@navbar-inverse-bg = #eeeeee
 			@navbar-inverse-border = #dddddd
+			@navbar-border-radius = 0px
 			
 		Brand
 			@navbar-default-brand-color = #dddddd
 			@navbar-default-brand-hover-color = #ffffff
+			
+		
