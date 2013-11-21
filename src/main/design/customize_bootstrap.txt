@@ -2,10 +2,10 @@ Navbar
 
 	Default Navbar
 		Basics
-			@navbar-default-bg = #0000FF
-			@navbar-default-border = #345578
-			@navbar-inverse-bg = #eeeeee
-			@navbar-inverse-border = #dddddd
+			@navbar-default-bg = #446e9b
+--			@navbar-default-border = #345578
+--			@navbar-inverse-bg = #eeeeee
+--			@navbar-inverse-border = #dddddd
 			@navbar-border-radius = 0px
 			
 		Brand
