@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html language="ro">
 <head>
-<!-- Mobile rendering and touch zooming -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<!-- Mobile rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.css" rel="stylesheet">
+	 <!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Studbox custom CSS -->
+	<link href="custom.css" rel="stylesheet">
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+	<!-- Studbox custom responsive CSS -->
+	<link href="custom-responsive.css" rel="stylesheet">
+	
+	
+	<link href="font-awesome.min.css" rel="stylesheet">   
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+	<!-- Studbox header navbar -->
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-top-navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/" style="padding:10px"><img src="images/navbar_logo.png" class="img-responsive" style="height:30px;width=100%"></a>
+				<a class="navbar-brand" href="/" style="padding:10px"><img src="images/navbar_logo.png" class="img-responsive" style="height:30px"></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<div class="navbar-right">
+			<div class="collapse navbar-collapse" id="bs-top-navbar-collapse">			
+				<div class="navbar-right">					
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Cauta examene, cursuri, etc">
+							<input type="text" class="form-control" style="width:300px" placeholder="Cauta examene, cursuri, etc">
 						</div>
-						<button type="submit" class="btn btn-default">Cauta</button>
 					</form>
 					<ul class="nav navbar-nav">
-						<li><a href="#">Link</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="padding-right:20px"></span>	Andrei Mladin<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Action</a></li>
 								<li><a href="#">Another action</a></li>
@@ -53,8 +62,166 @@
 			</div><!-- /.navbar-collapse -->
 		</div>		
 	</nav>
-	<div class="container">
-		
+	<div class="subnavbar">
+		<div class="subnavbar-inner">
+			<div class="container">				
+				<a href="javascript:;" class="subnav-toggle" data-toggle="collapse" data-target=".subnav-collapse">
+				  <span class="sr-only">Toggle navigation</span>
+				  <i class="icon-reorder"></i>				  
+				</a>
+
+				<div class="collapse subnav-collapse">
+					<ul class="mainnav">
+					
+						<li class="active">
+							<a href="./index.html">
+								<i class="icon-home"></i>
+								<span>Home</span>
+							</a>	    				
+						</li>
+						
+						<li class="dropdown">					
+							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-th"></i>
+								<span>Universitati</span>
+								<b class="caret"></b>
+							</a>	    
+						
+							<ul class="dropdown-menu">
+								<li><a href="./elements.html">Univ. Babes-Bolyai</a></li>
+								<li><a href="./forms.html">Univ. Tehnica - Cluj</a></li>
+								<li><a href="./jqueryui.html">Univ. Alex. I. Cuza - Iasi</a></li>
+								<li><a href="./elements.html">Univ. Babes-Bolyai</a></li>
+								<li><a href="./forms.html">Univ. Tehnica - Cluj</a></li>
+								<li><a href="./jqueryui.html">Univ. Alex. I. Cuza - Iasi</a></li>
+								<li><a href="./elements.html">Univ. Babes-Bolyai</a></li>
+								<li><a href="./forms.html">Univ. Tehnica - Cluj</a></li>
+								<li><a href="./jqueryui.html">Univ. Alex. I. Cuza - Iasi</a></li>
+								<li><a href="./elements.html">Univ. Babes-Bolyai</a></li>
+								<li class="divider"></li>
+								<li><a href="./forms.html">Vezi restul</a></li>
+							</ul> 				
+						</li>
+						
+						<li>					
+							<a href="">
+								<i class="icon-copy"></i>
+								<span>Joburi</span>
+							</a>	    		
+						</li>
+						
+						<li class="dropdown">					
+							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-external-link"></i>
+								<span>Pregatire Interviu</span>
+								<b class="caret"></b>
+							</a>	
+						
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu">
+									<a tabindex="-1" href="#">IT Software</a>
+									<ul class="dropdown-menu">
+									  <li><a tabindex="-1" href="#">Java Enginneer</a></li>
+									  <li><a href="#">QA Enginneer</a></li>
+									  <li><a href="#">Web Designer</a></li>
+									</ul>
+								</li>							
+							</ul>    				
+						</li>
+						
+						<li>					
+							<a href="">
+								<i class="icon-copy"></i>
+								<span>Stiri</span>
+							</a>	    		
+						</li>				
+					
+					</ul>
+				</div> <!-- /.subnav-collapse -->
+
+			</div>
+		</div>
+	</div>
+	
+	<div class="main">
+		<div class="container">
+			Andrei
+		</div>
+	</div>
+	
+	<div class="extra">
+		<div class="container">
+
+			<div class="row">
+				
+				<div class="col-md-3">
+					
+					<h4>About</h4>
+					
+					<ul>
+						<li><a href="javascript:;">About Us</a></li>
+						<li><a href="javascript:;">Twitter</a></li>
+						<li><a href="javascript:;">Facebook</a></li>
+						<li><a href="javascript:;">Google+</a></li>
+					</ul>
+					
+				</div> <!-- /span3 -->
+				
+				<div class="col-md-3">
+					
+					<h4>Support</h4>
+					
+					<ul>
+						<li><a href="javascript:;">Frequently Asked Questions</a></li>
+						<li><a href="javascript:;">Ask a Question</a></li>
+						<li><a href="javascript:;">Video Tutorial</a></li>
+						<li><a href="javascript:;">Feedback</a></li>
+					</ul>
+					
+				</div> <!-- /span3 -->
+				
+				<div class="col-md-3">
+					
+					<h4>Legal</h4>
+					
+					<ul>
+						<li><a href="javascript:;">License</a></li>
+						<li><a href="javascript:;">Terms of Use</a></li>
+						<li><a href="javascript:;">Privacy Policy</a></li>
+						<li><a href="javascript:;">Security</a></li>
+					</ul>
+					
+				</div> <!-- /span3 -->
+				
+				<div class="col-md-3">
+					
+					<h4>Settings</h4>
+					
+					<ul>
+						<li><a href="javascript:;">Consectetur adipisicing</a></li>
+						<li><a href="javascript:;">Eiusmod tempor </a></li>
+						<li><a href="javascript:;">Fugiat nulla pariatur</a></li>
+						<li><a href="javascript:;">Officia deserunt</a></li>
+					</ul>
+					
+				</div> <!-- /span3 -->
+				
+			</div> <!-- /row -->
+
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div id="footer-copyright" class="col-md-6">
+					© 2013-14 Studbox RO
+				</div>
+				<div id="footer-terms" class="col-md-6">
+					Design by <a href="http://jumpstartui.com" target="_blank">Andrei Mladin</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,9 +1,10 @@
 {
   "vars": {
+    "@navbar-margin-bottom": "0px",
     "@navbar-border-radius": "0px",
     "@navbar-default-bg": "#446e9b",
-    "@navbar-default-brand-color": "#dddddd",
-    "@navbar-default-brand-hover-color": "#ffffff"
+    "@navbar-default-link-color": "#FFFFFF",
+    "@navbar-default-link-hover-color": "#BBB"
   },
   "css": [
     "print.less",

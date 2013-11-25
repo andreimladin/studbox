@@ -7,9 +7,12 @@ Navbar
 --			@navbar-inverse-bg = #eeeeee
 --			@navbar-inverse-border = #dddddd
 			@navbar-border-radius = 0px
+			@navbar-margin-bottom = 0px
+			@navbar-default-link-color = #FFFFFF   ---#9e1218
+			@navbar-default-link-hover-color = #BBB
 			
 		Brand
-			@navbar-default-brand-color = #dddddd
-			@navbar-default-brand-hover-color = #ffffff
+--			@navbar-default-brand-color = #dddddd
+--			@navbar-default-brand-hover-color = #ffffff
 			
 		
