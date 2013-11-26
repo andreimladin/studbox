@@ -78,7 +78,7 @@ left: 10px;
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   color: #FFF;
-  background-color: #446e9b;
+  background-color: #99CC00;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .dropdown-menu > .active > a,
@@ -229,7 +229,7 @@ left: 10px;
 }
 .subnavbar .mainnav > li.active > a {
   background: #446e9b;
-  color: #9e1218; /* #FFFFFF; */
+  color: #00FF00; /* #FFFFFF; */
 }
 .subnavbar .mainnav > li.active > a .caret {
   border-top-color: #446e9b;
