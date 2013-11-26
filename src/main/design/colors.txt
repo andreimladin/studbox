@@ -1,0 +1,2 @@
+Navbar bg color: #446e9b
+Navbar li.active color: #9e1218

@@ -4,7 +4,7 @@
     "@navbar-border-radius": "0px",
     "@navbar-default-bg": "#446e9b",
     "@navbar-default-link-color": "#FFFFFF",
-    "@navbar-default-link-hover-color": "#BBB"
+    "@navbar-default-link-hover-color": "#9aa9c8"
   },
   "css": [
     "print.less",

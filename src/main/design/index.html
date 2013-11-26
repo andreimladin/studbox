@@ -40,25 +40,22 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-top-navbar-collapse">			
-				<div class="navbar-right">					
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" style="width:300px" placeholder="Cauta examene, cursuri, etc">
-						</div>
-					</form>
-					<ul class="nav navbar-nav">
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="padding-right:20px"></span>	Andrei Mladin<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="padding-right:20px"></span>	Andrei Mladin<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Setari cont</a></li>
+							<li><a href="#">Setari profil</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Iesire</a></li>
+						</ul>
+					</li>
+				</ul>				
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" style="width:300px" placeholder="Cauta examene, cursuri, etc">
+					</div>
+				</form>				
 			</div><!-- /.navbar-collapse -->
 		</div>		
 	</nav>
@@ -113,7 +110,7 @@
 						<li class="dropdown">					
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="icon-external-link"></i>
-								<span>Pregatire Interviu</span>
+								<span>Tutoriale</span>
 								<b class="caret"></b>
 							</a>	
 						
@@ -145,7 +142,55 @@
 	
 	<div class="main">
 		<div class="container">
-			Andrei
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="widget stacked">
+							
+						<div class="widget-header">
+							<i class="icon-star"></i>
+							<h3>Quick Stats</h3>
+						</div> <!-- /widget-header -->
+						
+						<div class="widget-content">
+							
+							<div class="stats">
+								
+								<div class="stat">
+									<span class="stat-value">12,386</span>									
+									Site Visits
+								</div> <!-- /stat -->
+								
+								<div class="stat">
+									<span class="stat-value">9,249</span>									
+									Unique Visits
+								</div> <!-- /stat -->
+								
+								<div class="stat">
+									<span class="stat-value">70%</span>									
+									New Visits
+								</div> <!-- /stat -->
+								
+							</div> <!-- /stats -->
+							
+							
+							<div id="chart-stats" class="stats">
+								
+								<div class="stat stat-chart">							
+									<div id="donut-chart" class="chart-holder" style="padding: 0px; position: relative;"><canvas class="base" width="260" height="100"></canvas><canvas class="overlay" width="260" height="100" style="position: absolute; left: 0px; top: 0px;"></canvas><div class="legend"><div style="position: absolute; width: 51px; height: 72px; top: 5px; right: 5px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:5px;right:5px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255,153,0);overflow:hidden"></div></div></td><td class="legendLabel">Series 1</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(34,34,34);overflow:hidden"></div></div></td><td class="legendLabel">Series 2</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(119,119,119);overflow:hidden"></div></div></td><td class="legendLabel">Series 3</td></tr></tbody></table></div></div> <!-- #donut -->							
+								</div> <!-- /substat -->
+								
+								<div class="stat stat-time">									
+									<span class="stat-value">00:28:13</span>
+									Average Time on Site
+								</div> <!-- /substat -->
+								
+							</div> <!-- /substats -->
+							
+						</div> <!-- /widget-content -->
+							
+					</div> <!-- /widget -->						
+				</div>						
+		  </div>
 		</div>
 	</div>
 	
@@ -194,8 +239,8 @@
 				</div> <!-- /span3 -->
 				
 				<div class="col-md-3">
-					
-					<h4>Settings</h4>
+				
+					<h4>Settings</h4>					
 					
 					<ul>
 						<li><a href="javascript:;">Consectetur adipisicing</a></li>

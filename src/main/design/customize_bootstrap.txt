@@ -9,7 +9,7 @@ Navbar
 			@navbar-border-radius = 0px
 			@navbar-margin-bottom = 0px
 			@navbar-default-link-color = #FFFFFF   ---#9e1218
-			@navbar-default-link-hover-color = #BBB
+			@navbar-default-link-hover-color = #9aa9c8
 			
 		Brand
 --			@navbar-default-brand-color = #dddddd
