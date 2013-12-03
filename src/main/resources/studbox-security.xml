@@ -13,7 +13,7 @@
 	<security:http pattern="/css/**" security="none"/>
 	<security:http pattern="/view/redirect.jsp" security="none"/>
 	<security:http pattern="/images/**" security="none"/>
-	<security:http pattern="/main/files/*/download/google" security="none"/>
+	<security:http pattern="/main/courses/*/folders/*/files/*/download/google" security="none"/>
 
 	<security:http auto-config="false" use-expressions="true" access-denied-page="/auth/denied" 
 			entry-point-ref="authenticationEntryPoint">

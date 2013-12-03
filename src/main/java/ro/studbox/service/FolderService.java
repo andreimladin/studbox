@@ -18,4 +18,6 @@ public interface FolderService {
 	
 	void deleteFolder(long folderId);
 	
+	void increaseViewNo(long folderId);
+	
 }

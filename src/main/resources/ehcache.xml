@@ -6,8 +6,9 @@
 	
 	<!-- timeToIdleSeconds - The maximum number of seconds an element can exist in the cache without being accessed. -->
 	<!-- timeToLiveSeconds - The maximum number of seconds an element can exist in the cache regardless of use -->
-	<cache name="universityList" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="21600" overflowToDisk="false" />
-	<cache name="university" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="21600" overflowToDisk="false" />
-	<cache name="profile" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="21600" overflowToDisk="false" />
+	<cache name="universityList" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="10800" overflowToDisk="false" />
+	<cache name="university" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="10800" overflowToDisk="false" />
+	<cache name="profile" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="10800" overflowToDisk="false" />
+	<cache name="folder" maxElementsInMemory="100000" eternal="false" timeToIdleSeconds="60" timeToLiveSeconds="60" overflowToDisk="false" />
 	
 </ehcache>

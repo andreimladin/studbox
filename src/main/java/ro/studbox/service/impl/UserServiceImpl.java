@@ -2,6 +2,7 @@ package ro.studbox.service.impl;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -18,6 +19,7 @@ import ro.studbox.data.dao.AccountConfirmationDao;
 import ro.studbox.data.dao.RoleDao;
 import ro.studbox.data.dao.UserDao;
 import ro.studbox.data.dao.UserDownloadsDao;
+import ro.studbox.data.dao.UserLimitDao;
 import ro.studbox.entities.AccountConfirmation;
 import ro.studbox.entities.Role;
 import ro.studbox.entities.User;
@@ -45,7 +47,10 @@ public class UserServiceImpl implements UserService {
 	private EmailService emailService;
 	
 	@Autowired
-	private UserDownloadsDao downloadsDao;
+	private UserDownloadsDao userDownloadsDao;
+	
+	@Autowired
+	private UserLimitDao userLimitDao;
 	
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
@@ -161,10 +166,40 @@ public class UserServiceImpl implements UserService {
 	}	
 	
 	@Override
-	public void incrementDownloadsNo(UserDownloads userDownloads) {
-		userDownloads.incrementNumbers();
-		downloadsDao.update(userDownloads);
+	public void incrementDownloadsNo(long userId) {
+		userDownloadsDao.incrementDownloadsNo(userId);
 	}
+	
+	public UserLimit exceededLimit(long userId) {
+		List<UserLimit> limits = userLimitDao.getUserLimit(userId);
+		UserDownloads downloads = userDownloadsDao.find(userId);
+		
+		for (UserLimit limit : limits) {
+			if ("DAILY_DOWNLOADS".equals(limit.getLimitName())) {
+				long limitValue = Long.valueOf(limit.getLimitValue());
+				if (downloads.getTodayNo() >= limitValue) {
+					return limit;
+				}
+			} 
+			
+			if ("WEEKLY_DOWNLOADS".equals(limit.getLimitName())) {
+				long limitValue = Long.valueOf(limit.getLimitValue());
+				if (downloads.getThisWeekNo() >= limitValue) {
+					return limit;
+				}				
+			}
+			
+			if ("MONTLY_DOWNLOADS".equals(limit.getLimitName())) {
+				long limitValue = Long.valueOf(limit.getLimitValue());
+				if (downloads.getThisMonthNo() >= limitValue) {
+					return limit;
+				}
+			}
+		}
+		
+		return null;
+	}
+
 
 	public static void main(String[] args){
 		Md5PasswordEncoder encoder = new Md5PasswordEncoder();

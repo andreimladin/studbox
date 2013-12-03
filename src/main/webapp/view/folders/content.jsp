@@ -22,6 +22,11 @@
 		$("#errorMessage").hide();
 	}
 	
+	function showAuthMessage() {
+		$("#errorMessage").html("V&#x103; rug&#x103;m s&#x103; v&#x103; loga&#x21B;i");
+		$("#errorMessage").show();
+	}
+	
 	function showErrorMessage() {
 		$("#errorMessage").show();
 	}
@@ -131,7 +136,7 @@
 							'</div>' +
 							'<div id="filename">' +
 								'<p>' + 
-									'<a href="/main/folders/' + resultMap.folder.objectId + '/home">' +
+									'<a href="/main/courses/${course.objectId}/folders/' + resultMap.folder.objectId + '/home">' +
 										resultMap.folder.name +
 									'</a>' +
 								'</p>' + 
@@ -197,7 +202,7 @@
 		      				'</div>' +
 							'<div id="filename">' +
 								'<p>' +
-									'<a href="/main/files/' + file.objectId + '/view">' + 
+									'<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/files/' + file.objectId + '/view">' + 
 										file.name +
 									'</a>' + 
 								'</p>' +
@@ -235,7 +240,7 @@
 							<a href="/main/profiles/${course.year.profile.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${course.year.profile.shortName}</span></a>
 						</c:when>
 						<c:otherwise>
-							<a href="/main/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
+							<a href="/main/courses/${course.objectId}/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -260,19 +265,25 @@
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
 						<div id="actionbut">
-							<a class="btn btn-small" onclick="showErrorMessage()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
+							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
 						</div>	
 					</sec:authorize>
 				</c:when>
 				<c:otherwise>
 					<sec:authorize access="isAuthenticated()">
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="showNewFolderForm()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
+						</div>					
 						<div id="actionbut">			
 							<a class="btn btn-small" onclick="showUploadForm()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
 						</div>
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
+						</div>
 						<div id="actionbut">			
-							<a class="btn btn-small" onclick="showErrorMessage()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
+							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
 						</div>
 					</sec:authorize>	
 				</c:otherwise>
@@ -381,7 +392,7 @@
 				</div>
 				<div id="filename">
 					<p>								
-						<a href="/main/folders/${folder.objectId}/home">
+						<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/home">
 							${folder.name}
 						</a>
 					</p>
@@ -407,9 +418,16 @@
 				</div>
 				<div id="filename">
 					<p>
-						<a href="/main/files/${file.objectId}/view">
-							${file.name}
-						</a>
+						<sec:authorize access="isAuthenticated()">
+							<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/files/${file.objectId}/view">
+								${file.name}
+							</a>
+						</sec:authorize>
+						<sec:authorize access="isAnonymous()">
+							<a onclick="showAuthMessage()">
+								${file.name}
+							</a>								
+						</sec:authorize>					
 					</p>
 				</div>				
 				<div id="filedate">

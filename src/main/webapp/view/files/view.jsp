@@ -28,7 +28,7 @@
 					<div id="backbut">
 						<div id="navseparator">&nbsp</div>
 						<div id="navbutitem" class="firstnavitem" >
-							<a href="/main/folders/${file.folder.objectId}/home">
+							<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/home">
 								<span>
 									<i class="icon-large icon-arrow-left icon-white "></i>
 									${file.folder.name}
