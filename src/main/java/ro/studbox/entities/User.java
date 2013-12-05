@@ -276,32 +276,5 @@ public class User implements UserDetails {
 		logger.debug("isAccountNonLocked : " + (this.status == STATUS_ACTIVE));
 		return this.status == STATUS_ACTIVE;
 	}	
-	
-	public UserLimit exceededDownloadLimit() {
-		for (UserLimit limit : limits) {
-			if ("DAILY_DOWNLOADS".equals(limit.getLimitName())) {
-				long limitValue = Long.valueOf(limit.getLimitValue());
-				if (downloads.getTodayNo() >= limitValue) {
-					return limit;
-				}
-			} 
-			
-			if ("WEEKLY_DOWNLOADS".equals(limit.getLimitName())) {
-				long limitValue = Long.valueOf(limit.getLimitValue());
-				if (downloads.getThisWeekNo() >= limitValue) {
-					return limit;
-				}				
-			}
-			
-			if ("MONTLY_DOWNLOADS".equals(limit.getLimitName())) {
-				long limitValue = Long.valueOf(limit.getLimitValue());
-				if (downloads.getThisMonthNo() >= limitValue) {
-					return limit;
-				}
-			}
-		}
-		
-		return null;
-	}
 
 }
