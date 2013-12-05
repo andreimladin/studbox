@@ -90,7 +90,6 @@ public class FilesController {
         
         if(!errorOccurred) {
             resultMap.put("status", "success");
-//            file = HibernateProxyHelper.initializeAndUnproxy(file);
             resultMap.put("file", file);
         } else {
             resultMap.put("status", "error");
