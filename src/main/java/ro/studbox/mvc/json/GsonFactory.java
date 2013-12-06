@@ -1,4 +1,4 @@
-package ro.studbox.util.factory;
+package ro.studbox.mvc.json;
 
 import org.apache.log4j.Logger;
 
@@ -18,7 +18,7 @@ public class GsonFactory {
 	private GsonBuilder gsonBuilder = new GsonBuilder();
 	
 	public GsonFactory() {
-		logger.debug("Registering the File type adapter to GsonBuilder");
+		logger.debug("Registering the customized type adapters to GsonBuilder");
 		gsonBuilder.registerTypeAdapter(File.class, new FileTypeAdapter());		
 		gsonBuilder.registerTypeAdapter(User.class, new UserTypeAdapter());
 	}
