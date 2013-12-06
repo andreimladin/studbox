@@ -230,7 +230,7 @@ CREATE TABLE File (
   ObjectId INTEGER NOT NULL,
   FolderId INTEGER NOT NULL,
   Name VARCHAR(50) NOT NULL,
-  ContentType VARCHAR(20) NOT NULL,
+  ContentType VARCHAR(100) NOT NULL,
   ContentLength INTEGER NOT NULL,
   OwnerId INTEGER NOT NULL,
   Path VARCHAR(200) NOT NULL,
@@ -276,3 +276,27 @@ CREATE TABLE AccountConfirmation (
 );
 
 ALTER TABLE AccountConfirmation ADD FOREIGN KEY (UserId) REFERENCES Users(UserId);
+
+DROP TABLE UserDownloads;
+
+CREATE TABLE UserDownloads (
+  UserId INTEGER NOT NULL,
+  TodayNo INTEGER NOT NULL DEFAULT 0,
+  ThisWeekNo INTEGER NOT NULL DEFAULT 0,
+  ThisMonthNo INTEGER NOT NULL DEFAULT 0,
+  ThisYearNo INTEGER NOT NULL DEFAULT 0,
+  TotalNo INTEGER NOT NULL DEFAULT 0,  
+  LastDownloadDate DATETIME,
+  PRIMARY KEY (UserId)
+);
+
+ALTER TABLE UserDownloads ADD FOREIGN KEY (UserId) REFERENCES Users (UserId);
+
+create table UserLimit (
+	UserId INTEGER NOT NULL,
+	LimitName VARCHAR(25) NOT NULL,
+	LimitValue VARCHAR(25) NOT NULL,
+	PRIMARY KEY  (UserId, LimitName)
+);
+
+ALTER TABLE UserLimit ADD FOREIGN KEY (UserId) REFERENCES Users (UserId);

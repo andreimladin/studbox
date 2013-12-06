@@ -26,6 +26,7 @@ public class UserDownloadsDaoImpl extends GenericDaoImpl<Long, UserDownloads> im
 						"Update UserDownloads Set TodayNo=TodayNo+1,"
 												+ "ThisWeekNo=ThisWeekNo+1, "
 												+ "ThisMonthNo=ThisMonthNo+1,"
+												+ "ThisYearNo=ThisYearNo+1,"
 												+ "TotalNo=TotalNo+1,"
 												+ "LastDownloadDate=:lastDownloadDate where UserId=:userId");
 		incrQuery.setParameter("userId", userId);
