@@ -2,6 +2,9 @@ package ro.studbox.mvc.controllers;
 
 import java.util.List;
 
+//import org.springframework.batch.core.Job;
+//import org.springframework.batch.core.JobParameters;
+//import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.session.SessionRegistry;
@@ -18,6 +21,13 @@ public class AdminController{
 	@Qualifier("sessionRegistry")
 	private SessionRegistry sessionRegistry;	
 	
+//	@Autowired
+//    private JobLauncher jobLauncher;
+
+//    @Autowired
+//    @Qualifier("resetUserDownloadsJob")
+//    private Job resetDownloadsJob;
+	
 	@RequestMapping(value="/users/online", method = RequestMethod.GET)
 	public ModelAndView showOnlineUsers() {
 		ModelAndView model = new ModelAndView();
@@ -26,6 +36,12 @@ public class AdminController{
 		model.setViewName("users/online");
 		
 		return model;
-	}
+	}	
+	 
+
+//	@RequestMapping("/jobs/ResetDownloadsNo")
+//	public void handle() throws Exception{
+//		jobLauncher.run(resetDownloadsJob, new JobParameters());
+//	}
 
 }

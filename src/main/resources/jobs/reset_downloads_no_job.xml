@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" 
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+	http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+	<batch:job id="resetDownloadsNoJob" restartable="false">
+		<!-- Step where it resets the downloads no -->
+		<batch:step id="resetDonwloadsNoStep">
+			<batch:tasklet ref="resetDownloadsNoTasklet"/>		
+		</batch:step>			
+	</batch:job>	
+ 	
+	<bean id="resetDownloadsNoTasklet" class="ro.studbox.job.tasklet.ResetDownloadsNoTasklet"/>
+	
+	<bean id="resetDownloadsNoScheduler" class="ro.studbox.job.scheduler.ResetDownloadsNoScheduler" />
+
+	<!-- Run every 5 seconds -->
+
+	<task:scheduled-tasks>
+		<task:scheduled ref="resetDownloadsNoScheduler" method="run" cron="0 0 0 * * *" />
+	</task:scheduled-tasks>
+</beans>

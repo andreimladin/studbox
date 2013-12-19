@@ -1,5 +1,6 @@
 package ro.studbox.service.impl;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -14,6 +15,7 @@ import javax.mail.internet.MimeMessage;
 
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
@@ -27,9 +29,10 @@ import ro.studbox.service.EmailService;
 
 @Service("HtmlEmailService")
 public class HtmlEmailServiceImpl implements EmailService {
-	
+			
 	@Autowired
-	private JavaMailSender mailSender;
+	@Qualifier("supportMailSender")
+	private JavaMailSender supportMailSender;
 	
 	@Autowired
 	private VelocityEngine velocityEngine;	
@@ -59,7 +62,7 @@ public class HtmlEmailServiceImpl implements EmailService {
 		};
 								
 		// AIM - send the message
-		mailSender.send(preparator);		
+		supportMailSender.send(preparator);		
 	}
 	
 	@Async
@@ -83,7 +86,7 @@ public class HtmlEmailServiceImpl implements EmailService {
 		};
 										
 		// AIM - send the message
-		mailSender.send(preparator);	
+		supportMailSender.send(preparator);	
 	}
 
 	@Async
@@ -107,7 +110,7 @@ public class HtmlEmailServiceImpl implements EmailService {
 		};
 										
 		// AIM - send the message
-		mailSender.send(preparator);		
+		supportMailSender.send(preparator);		
 	}
 
 	@Async
@@ -132,7 +135,7 @@ public class HtmlEmailServiceImpl implements EmailService {
 		};
 										
 		// AIM - send the message
-		mailSender.send(preparator);
+		supportMailSender.send(preparator);
 	}
 	
 	@Async
@@ -150,10 +153,16 @@ public class HtmlEmailServiceImpl implements EmailService {
                 message.setText(body, true);
             }
         };
-        mailSender.send(preparator);
+        supportMailSender.send(preparator);
     }
     
-    public static void main(String[] args) throws AddressException, MessagingException{
+    @Override
+	public void sendEmailJobReport(String jobName, String status,
+			String details, Date startDate, Date endDate) {
+		// TODO Auto-generated method stub		
+	}
+
+	public static void main(String[] args) throws AddressException, MessagingException{
     	String host = "smtp.live.com";
     	String from = "support@studbox.ro";
     	Properties props = System.getProperties();

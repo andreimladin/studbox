@@ -15,5 +15,6 @@
 	<import resource="studbox-cache.xml"/>
 	<import resource="studbox-servlet.xml"/>
 	<import resource="studbox-security.xml"/>
+	<import resource="studbox-jobs.xml"/>
 	
 </beans>
