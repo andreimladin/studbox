@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-tooltip.js"></script>  
+	<script src="js/bootstrap-popover.js"></script>
+	
+	
+</head>
+<body>
+<div id="wrap">
+	<!-- Header -->
+	<div id="header">
+		<div id="logo">
+			<a href="index.html"><img src="images/menu_logo.png"></a> <!-- logo -->
+		</div>
+		<div id="menu">
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="index.html"><span>Facult&#x103;&#x21B;i</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="joburi.html"><span>Joburi</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="profesori.html"><span>Profesori</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="stiri.html"><span> &#x15E;tiri</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+		</div>
+		<div id="top-right">
+			<div id="searchbar">
+				<input type="text" class="search-bar" placeholder="Cauta cursuri" />
+			</div>
+			<div id="right-header">
+				<div id="log-in">
+					<a href="login.html"><span>Autentific&#x103;-te </span></a>
+				</div>
+				<div class="headerseparator">/</div>
+				<div id="register">
+					<a href="register.html"><span>  &#xCE;nregistreaz&#x103;-te</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="content-wrap"> 	
+		<div id="content" >
+			<div class="leftside">
+				<div id="univ-selector">
+				<!-- SELECTORUL DE UNIVERSITATI CU DROPDOWN -->
+					<div class="accordion" > 
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<div class="facultytitle">Facultatea de matematica-informatica</div>
+								<label class="checkbox" id="actbut">
+     							 <input type="checkbox"><span>  Urm&#x103;re&#x219;te</span> 	
+    							</label>
+							</div>
+							<div class="accordion-inner">
+							    <ul >
+									<a href="#"><li>Mate-info</li></a>
+									<a href="#"><li>Informatica</li></a>
+									<a href="#"><li>Telecomunicatii</li></a>
+								</ul>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<div class="facultytitle">Facultatea de matematica-informatica</div>
+								<label class="checkbox" id="actbut">
+     							 <input type="checkbox"><span>  Urm&#x103;re&#x219;te</span> 	
+    							</label>
+							</div>
+							<div class="accordion-inner">
+							    <ul >
+									<li>Mate-info</li>
+									<li>Informatica</li>
+									<li>Telecomunicatii</li>
+								</ul>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<div class="facultytitle">Facultatea de matematica-informatica</div>
+								<label class="checkbox" id="actbut">
+     							 <input type="checkbox"><span>  Urm&#x103;re&#x219;te</span> 	
+    							</label>
+							</div>
+							<div class="accordion-inner">
+							    <ul >
+							    	<li class="semdivider">
+							    		Semestrul 1
+							    	</li>
+									<a href="#"><li>Mate-info</li></a>
+									<a href="#"><li>Informatica</li></a>
+									<a href="#"><li>Telecomunicatii</li></a>
+									<li class="semdivider">
+										Semestrul 2
+									</li>
+									<a href="#"><li>Mate-info</li></a>
+									<a href="#"><li>Informatica</li></a>
+									<a href="#"><li>Telecomunicatii</li></a>
+								</ul>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<div class="facultytitle">Facultatea de matematica-informatica</div>
+								<label class="checkbox" id="actbut">
+     							 <input type="checkbox"><span>  Urm&#x103;re&#x219;te</span> 	
+    							</label>
+							</div>
+							<div class="accordion-inner">
+							    <ul >
+									<li>Mate-info</li>
+									<li>Informatica</li>
+									<li>Telecomunicatii</li>
+								</ul>
+							</div>
+						</div>			
+					</div>
+				</div>	
+			</div>
+			<!-- PARTEA DIN DREAPTA -->
+			<div class="rightside">
+				<!-- RECLAMA -->
+				<div id="ads">
+					<img src="images/ad.jpg">
+				</div>
+				<!-- ADAUGA COMENTARIU -->
+				<div id="postcomment">
+						<script>
+						var i=0;
+						function confMsg(){
+							var conf="<div class='alert alert-success'> Comentariul a fost adaugat cu succes! </div>";
+							$('#addcom').html(conf);
+						}
+						function addcom() {
+							 
+							if (i==0){
+							var dummy = "<textarea style='width:286px; height:50px;'/>"	
+							+"<input onclick='confMsg()' type='submit' class='btn btn-primary' value='Adaug&#x103;'>"
+							+"<a onclick='cancelcom()'>Anuleaza</a>"
+							;
+							$('#addcom').html(dummy);
+							i++;
+		 					}
+						}
+						function cancelcom(){
+							 $('#addcom').html("");
+							i=0;
+							
+						}
+
+						</script>
+						 <a  onclick="addcom()">
+						 		Adauga un comentariu
+						 </a> 
+				</div>
+
+				<div id="addcom" >
+				</div>
+				<!-- COMENTARII -->
+				<div id="comments">
+					<div id="readcomments">
+						<div id="comname">
+							<a href="#">Petrescu Ion</a>
+						</div>
+						<div id="comdata">
+							18 iulie 2013
+						</div>
+						</br>
+						<div id="commsg">
+							Acest curs m.a ajutat foarte mult, cu toate ca e destul de vechi, pe mine m.a ajutat!Bravo!
+						</div>
+					</div>
+					<div id="readcomments">
+						<div id="comname">
+							<a href="#">Petrescu Ion</a>
+						</div>
+						<div id="comdata">
+							18 iulie 2013
+						</div>
+						</br>
+						<div id="commsg">
+							Acest curs m.a ajutat foarte mult, cu toate ca e destul de vechi, pe mine m.a ajutat!Bravo!
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- Footer -->
+	<div id="footer">
+		<div id="subfooter">
+			<div id="copyright">
+				Copyright &copy 2013 studbox.ro
+			</div>
+			<div id="footerdata">
+				<ul class="inline">
+					<li><a href="#">Despre noi</a></li>
+					<li><a href="#">Contacteaz&#x103;-ne</a></li>
+					<li><a href="#">Termeni &#351;i condi&#x21B;i</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

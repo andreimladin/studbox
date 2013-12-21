@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			hideUploadForm();
+		});
+		
+		function cancelUploadForm(){
+			hideUploadForm();
+			resetFile();
+		}
+		
+		function resetFile(){
+			$("#file").replaceWith($("#file").clone(true));
+		}
+		
+		function hideUploadForm(){
+			$("#file").hide();
+			$("#uploadform").hide();
+			$("#confmes").hide();	
+			$("#progressSection").hide();	
+			$("#filename").hide();	
+			$("#progressSection").hide();
+		}		
+		
+		function showUploadForm(){
+		//	<sec:authorize access="isAuthenticated()">
+				$("#uploadform").show();
+				$("#upbut").show();
+				$("#upcontrols").hide();
+//			</sec:authorize>
+	//		<sec:authorize access="isAnonymous()">
+				$("#confmes").show();
+		//	</sec:authorize>
+		}
+		
+		function openFile() {
+			$("#file").click();
+		}
+		
+		function showFile(){						
+			var filename =$('#file').val().split('\\').pop();
+			var filesize =$('#file')[0].files[0].size;
+			alert(filesize);
+			if (filename.length > 20) {
+				$("#errorMessage").html("<div class='alert alert-danger'>Numele fisierului trebuie sa aiva maxim 20 de caractere!</div>");
+
+				resetFile();
+			} else if (filesize > 10485760) { 
+				$("#errorMessage").html("<div class='alert alert-danger'>Fisierul nu poate avea mai mult de 20 mb!</div>");
+				resetFile();
+			} else {
+				$("#upbut").hide();
+				$("#errorMessage").html('');
+				$("#filename").html("Fisier : " + filename);
+				$("#filename").show();
+				$("#upcontrols").show();
+			}			
+		}
+		
+		function uploadFile() {
+			$("#filename").hide();
+			$("#upcontrols").hide();
+			$("#progressSection").show();
+		}
+		
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<!-- Header -->
+	<div id="header">
+		<div id="logo">
+			<a href="index.html"><img src="images/menu_logo.png"></a> <!-- logo -->
+		</div>
+		<div id="menu">
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="index.html"><span>Facult&#x103;&#x21B;i</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="joburi.html"><span>Joburi</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="profesori.html"><span>Profesori</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+			<div id="menuitem">
+				<a href="stiri.html"><span> &#x15E;tiri</span></a>
+			</div>
+			<div class="menuseparator">&nbsp</div>
+		</div>
+		<div id="top-right">
+			<div id="searchbar">
+				<input type="text" class="search-bar" placeholder="Cauta cursuri" />
+			</div>
+			<div id="right-header">
+				<div id="log-in">
+					<a href="login.html"><span>Autentific&#x103;-te </span></a>
+				</div>
+				<div class="headerseparator">/</div>
+				<div id="register">
+					<a href="register.html"><span>  &#xCE;nregistreaz&#x103;-te</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="content-wrap"> 	
+		<div id="content" >
+			<div class="leftside">
+				<div id="leftcontent">
+					<div id="top-bar">
+						<div id="backbut">
+							<div id="navseparator">&nbsp</div>
+							<div id="navbutitem" class="firstnavitem" >
+								<a href="index.html"><span>U.B.B</span></a>
+							</div>
+							<div id="navseparator">&nbsp</div>
+							<div id="navbutitem" >
+								<span>INFO-RO</span>
+							</div>
+						</div>
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="showUploadForm()"><i class="icon icon-upload"> </i> Incarca fisier</a>
+						</div>	
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="uploadForm()"><i class="icon icon-plus"> </i> Creeaza folder</a>
+						</div>	
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="uploadForm()"><i class="icon icon-minus"> </i> Sterge folder</a>
+						</div>			
+					</div>
+				
+					<div  id="confmes" class="alert alert-error">
+						Va rugam sa va logati
+					</div>
+						
+					<div id="uploadform">
+						<div id='uploadform2'>
+							<div id='upbut'>
+								<div style='position:relative;'>
+									<div id='file2'>
+										<div id="errorMessage"></div>	
+										<input onclick='openFile();' type='submit' class='btn btn-primary' value="Cauta"/>
+										<a onclick='cancelUploadForm();'>Anuleaza</a>
+										<input id='file' type='file' name='file' onchange='showFile();'/>
+									</div>
+								</div>
+							</div>
+												
+							<div id="progressSection" style="margin-top:0px">
+								<p align="center" style="color:rgb(237,28,36);	"><b>Procesare fisier...</b></p>
+								<div id='progbar' class='progress  progress-striped active'   >
+									<div class='bar' style='width: 100%;'></div>
+								</div>
+							</div>												
+							<div id='upcontrols'>
+								
+								<input onclick='uploadFile();' type='submit' class='btn btn-primary' value='Incarca'>
+								<a onclick='cancelUploadForm();'>Anuleaza</a>							
+							</div>	
+							<div id="filename" style="float:left; margin-left:10px; margin-top:2px; color:rgb(237,28,36);"></div>							
+						</div>
+					</div>
+					<div id="files">
+						<div id="filestitles">
+							<div id="filetype">
+								<p> Tip </p>
+							</div>
+							<div id="filename">
+								<p> Nume</p>
+							</div>
+							<div id="filemeasure" style="font-size:15px">
+								<p> Marime </p>
+							</div>
+							<div id="filedate" style="font-size:15px">
+								<p> Data</p>	
+							</div>	
+							<div id="fileauthor" style="font-size:15px">
+								<p> Autor </p>
+							</div>
+						
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <img src="images/file.png" id="fileicon"> </p>
+							</div>
+							<div id="filename">
+								<p><a href="files.html"> Tehnologia informatiei.ppx</a></p>
+							</div>
+							<div id="filemeasure">
+								<p> 23kb </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <img src="images/file.png" id="fileicon"> </p>
+							</div>
+							<div id="filename">
+								<p><a href="files.html"> Tehnologia informatiei.ppx</a></p>
+							</div>
+							<div id="filemeasure">
+								<p> 23 kb </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <img src="images/file.png" id="fileicon">  </p>
+							</div>
+							<div id="filename">
+								<p><a href="files.html"> Tehnologia informatiei.ppx</a></p>
+							</div>
+							<div id="filemeasure">
+								<p>23 kn  </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <IMG SRC="images/folder.png" id="foldericon"> </p>
+							</div>
+							<div id="filename">
+								<p><a href="#"> Geometrie in spatiu</a></p>
+							</div>
+							<div id="filemeasure">
+								<p>  </p>
+							</div>
+							<div id="filedate">
+								<p> </p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>	
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <img src="images/file.png" id="fileicon">  </p>
+							</div>
+							<div id="filename">
+								<p><a href="files.html"> Tehnologia informatiei.ppx</a></p>
+							</div>
+							<div id="filemeasure">
+								<p>23 kb  </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <img src="images/file.png" id="fileicon">  </p>
+							</div>
+							<div id="filename">
+								<p><a href="files.html"> Tehnologia informatiei.ppx</a></p>
+							</div>
+							<div id="filemeasure">
+								<p>23 kb  </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <IMG SRC="images/folder.png" id="foldericon"> </p>
+							</div>
+							<div id="filename">
+								<p><a href="#"> Geometrie in spatiu</a></p>
+							</div>
+							<div id="filemeasure">
+								<p>  </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+						<div id="filescontainer">
+							<div id="filetype">
+								<p> <img src="images/file.png" id="fileicon">  </p>
+							</div>
+							<div id="filename">
+								<p><a href="files.html"> Tehnologia informatiei.ppx</a></p>
+							</div>
+							<div id="filemeasure">
+								<p>23 kb  </p>
+							</div>
+							<div id="filedate">
+								<p> 23 septembrie</p>	
+							</div>	
+	
+							<div id="fileauthor">
+								<p><a href="#">Andrei Mladin  </a></p>
+							</div>
+						</div>
+ 					</div>
+				</div>			
+			</div>
+			<!-- PARTEA DIN DREAPTA -->
+			<div class="rightside">
+				<!-- RECLAMA -->
+				<div id="ads">
+					<img src="images/ad.jpg">
+				</div>
+				<!-- ADAUGA COMENTARIU -->
+				<div id="postcomment">
+						<script>
+						var i=0;
+						function confMsg(){
+							var conf="<div class='alert alert-success'> Comentariul a fost adaugat cu succes! </div>";
+							document.getElementById('addcom').innerHTML = conf;
+						}
+						function addcom() {
+							 
+							if (i==0){
+							var dummy = "<textarea style='width:286px; height:50px;'>";	
+							var dummy3="<a onclick='cancelcom()'>Anuleaza</a>"
+							var dummy2="<input onclick='confMsg()' type='submit' class='btn btn-primary' value='Adaug&#x103;'>";
+							document.getElementById('addcom').innerHTML +=dummy;
+							document.getElementById('addcom').innerHTML += dummy2;
+							document.getElementById('addcom').innerHTML += dummy3;
+							i++;
+		 					}
+						}
+						function cancelcom(){
+							var summy=" ";
+							document.getElementById('addcom').innerHTML = summy;
+							i=0;
+							
+						}
+
+						</script>
+						 <a  onclick="addcom()">
+						 		Adauga un comentariu
+						 </a> 
+				</div>
+
+				<div id="addcom"	 >
+				</div>
+				<!-- COMENTARII -->
+				<div id="comments">
+					<div id="readcomments">
+						<div id="comname">
+							<a href="#">Petrescu Ion</a>
+						</div>
+						<div id="comdata">
+							18 iulie 2013
+						</div>
+						</br>
+						<div id="commsg">
+							Acest curs m.a ajutat foarte mult, cu toate ca e destul de vechi, pe mine m.a ajutat!Bravo!
+						</div>
+					</div>
+					<div id="readcomments">
+						<div id="comname">
+							<a href="#">Petrescu Ion</a>
+						</div>
+						<div id="comdata">
+							18 iulie 2013
+						</div>
+						</br>
+						<div id="commsg">
+							Acest curs m.a ajutat foarte mult, cu toate ca e destul de vechi, pe mine m.a ajutat!Bravo!
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- Footer -->
+	<div id="footer">
+		<div id="subfooter">
+			<div id="copyright">
+				Copyright &copy 2013 studbox.ro
+			</div>
+			<div id="footerdata">
+				<ul class="inline">
+					<li><a href="#">Despre noi</a></li>
+					<li><a href="#">Contacteaz&#x103;-ne</a></li>
+					<li><a href="#">Termeni &#351;i condi&#x21B;i</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
