@@ -1,7 +1,0 @@
-Navbar 
-
-	Default Navbar
-		Basics
-			@navbar-default-bg = #446e9b
-			@navbar-border-radius = 0px
-			@navbar-margin-bottom = 0px
