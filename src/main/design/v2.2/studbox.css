@@ -1,0 +1,9 @@
+/*------------------------------------------------------------------
+[ Search form ]
+*/
+.input-append input.span4fix {
+	border-radius: 1px;
+	display: inline-block !important;
+	width: 290px;
+}
+
