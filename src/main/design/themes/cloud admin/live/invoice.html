@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+
+    <!-- date range -->
+    <link rel="stylesheet" type="text/css" href="css/daterange.css">
+
+    <!-- Main CSS -->
+    <link href="css/main.css" rel="stylesheet" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link href="fonts/font-awesome.css" rel="stylesheet">
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="fonts/font-awesome.css">
+    <![endif]-->
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Top bar start -->
+      <div class="top-bar">
+        
+        <div class="logo">
+          Cloud<sup><i class="icon-cloud"></i></sup>
+        </div>
+
+        <!-- Icon nav start -->
+        <ul id="icon-nav">
+          <li>
+            <a href="#">
+              <i class="icon-bell"></i>
+              <span class="count-label"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon-comment-alt"></i>
+              <span class="count-label count-lb-yellow"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon-envelope-alt"></i>
+              <span class="count-label count-lb-green"></span>
+            </a>
+          </li>
+        </ul>
+        <!-- Icon nav end -->
+
+        <!-- Search bar start -->
+        <div class="custom-search hidden-xs">
+          <input type="text" class="search-query" placeholder="Search here">
+          <i class="icon-search"></i>
+        </div>
+        <!-- Search bar end -->
+
+      </div>
+      <!-- Top bar end -->
+
+      <!-- Header start -->
+      <header class="navbar">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">&nbsp;</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="graphs.html">Graphs</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI elements <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="panels.html">Panels &amp; List Groups</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li class="divider"></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li class="divider"></li>
+                <li><a href="ui-elements.html">More UI Elements...</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="forms.html">Form Elements</a></li>
+                <li><a href="wizards.html">Form Wizards</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="tables.html">Tables</a>
+            </li>
+            <li>
+              <a href="gallery.html">Gallery</a>
+            </li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus Pages <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+                <li><a href="invoice.html">Invoice</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="divider"></li>
+                <li><a href="error.html">404</a></li>
+                <li><a href="blankpage.html">Blank Page</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <!-- Mini navigation start -->
+          <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Sandy <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Account</a></li>
+                <li><a href="calendar.html">My Calendar</a></li>
+                <li><a href="#">My Inbox</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Mini navigation end -->
+
+        </nav>
+      </header>
+      <!-- Header end -->
+
+      <!-- Page title Start -->
+      <div class="page-title">
+
+        <div class="row ">
+
+          <!-- Breadcrumb nav start -->
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <h2>Bonus Pages</h2>
+            <ul class="breadcrumb">
+              <li>Home</li>
+              <li>Invoice</li>
+            </ul>
+          </div>
+          <!-- Breadcrumb nav end -->
+
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            
+            <!-- Mini Nav Right Start -->
+            <ul id="page-settings" class="hidden-sm">
+              <li id="reportrange">
+                <i class="icon-calendar"></i>
+                <span></span> <b class="caret"></b>
+              </li>
+              <li>
+                <i class="icon-cog"></i>
+              </li>
+            </ul>
+            <!-- Mini Nav Right End -->
+
+            <!-- Stats Start -->
+            <ul class="stats hidden-sm hidden-xs">
+              <li>
+                <span id="orders" class="graph"></span>
+                <div class="details">
+                  <span class="big">2,591</span>
+                  <span class="small">Orders</span>
+                </div>
+              </li>
+              <li>
+                <span id="currentBalance" class="graph"></span>
+                <div class="details">
+                  <span class="big">$7,345</span>
+                  <span class="small">Balance</span>
+                </div>
+              </li>
+            </ul>
+            <!-- Stats End -->
+            
+          </div>
+        </div>
+      </div>
+      <!-- Page title end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-file-text"></i>
+              <h3 class="panel-title">Invoice</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Invoice No - 55789 / Date - 15:10:2013</a>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-sx-6">
+                  <div class="img-responsive">
+                    <img src="img/brand-logo.png" alt="Cloud Admin" />
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-sx-6">
+                  <div class="pull-right">
+                    <button type="button" class="btn btn-info">Print</button>
+                    <button type="button" class="btn btn-danger">Download</button>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td style="width:30%">
+                        <p class="lead">To, </p>
+                        <address class="no-margin">
+                          <strong>Cloud 9 Technologies,</strong><br>
+                          Walnut Creek, CA 46589<br>
+                          <abbr title="Work email">e-mail:</abbr> <a href="mailto:#">name@company.com</a><br> 
+                          <abbr title="Work Phone">phone:</abbr> (000) 123-456-789<br>
+                          <abbr title="Work Fax">fax:</abbr> (000) 123-456-789
+                        </address>
+                      </td>
+                      <td class="right-align-text">
+                        <p class="lead">From, </p>
+                        <address class="no-margin">
+                          <strong>Business manager</strong> at 
+                          <strong><a href="#">Harrison Group</a></strong><br> 
+                          <abbr title="Work email">e-mail:</abbr> <a href="mailto:#">srinu@mail.com</a><br> 
+                          <abbr title="Work Phone">phone:</abbr> (000) 123-456-789<br>
+                          <abbr title="Work Fax">fax:</abbr> (000) 123-456-789
+                        </address>
+
+                        <hr>
+
+                        <p class="alert alert-block alert-info fade in no-margin">
+                          <strong>Note: </strong>With 3D transforms, we can make simple elements more interesting by setting them into three dimensional space. Together with CSS transitions, these elements can be moved in 3D space and create a realistic effect.
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-condensed table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th style="width:10%">Sl. No.</th>
+                      <th style="width:20%">Product Name</th>
+                      <th style="width:40%">Description</th>
+                      <th style="width:10%">Quantity</th>
+                      <th style="width:10%">VAT</th>
+                      <th style="width:10%">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>001</td>
+                      <td>Product 1</td>
+                      <td>
+                        Incentivize platforms Incentivize user-contributed...
+                      </td>
+                      <td>4</td>
+                      <td>2.24%</td>
+                      <td>50.00$</td>
+                    </tr>
+                    <tr>
+                      <td>002</td>
+                      <td>Product 2</td>
+                      <td>
+                        Enable innovate leverage tagclouds Incentivize platforms...
+                      </td>
+                      <td>21</td>
+                      <td>6.59%</td>
+                      <td>130.00$</td>
+                    </tr>
+                    <tr>
+                      <td>003</td>
+                      <td>Product 3</td>
+                      <td>
+                        E-business web services Enable innovate leverage tagclouds...
+                      </td>
+                      <td>9</td>
+                      <td>2.50%</td>
+                      <td>220.00$</td>
+                    </tr>
+                    <tr>
+                      <td class="total" colspan="5">Subtotal</td>
+                      <td>400.00$</td>
+                    </tr>
+                    <tr>
+                      <td class="total" colspan="5">Tax (9.25%)</td>
+                      <td>3000.00$</td>
+                    </tr>
+                    <tr>
+                      <td class="total" colspan="5">Discount</td>
+                      <td>400%</td>
+                    </tr>
+                    <tr class="success">
+                      <td class="total text-success" colspan="5">Total</td>
+                      <td class="hidden-phone text-success">3000.00$</td>
+                    </tr>
+                    <tr>
+                      <td colspan="6">
+                        <a href="#" class="btn btn-success btn-lg pull-right" data-original-title="">Pay Now</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-bell"></i>
+              <h3 class="panel-title">Invoice Activity</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 30 days</a>
+            </div>
+            <div class="panel-body">
+              <div id="dt_example" class="table-responsive example_alt_pagination clearfix">
+                <table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">    
+                  <thead>
+                    <tr>
+                      <th style="width:3%">
+                        <input type="checkbox">
+                      </th>
+                      <th style="width:12%">Date</th>
+                      <th style="width:10%">Number</th>
+                      <th style="width:30%">Client &amp; Summary</th>
+                      <th style="width:15%">Status</th>
+                      <th style="width:15%">Total</th>
+                      <th style="width:15%">Outstanding</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 1167</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Honey - <small>Consultancy fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $198
+                      </td>
+                      <td>
+                        <span class="text-success">$89</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 12</td>
+                      <td>IN - 3981</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           James - <small>Testing</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Success</span>
+                      </td>
+                      <td>
+                        $2187
+                      </td>
+                      <td>
+                        <span class="text-info">$2187</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 4482</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           Selva - <small>Web Design</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-warning">Warning</span>
+                      </td>
+                      <td>
+                        $650
+                      </td>
+                      <td>
+                        <span class="text-warning">$490</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 29</td>
+                      <td>IN - 3289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sweet Dreams - <small>Web Developement</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $1289
+                      </td>
+                      <td>
+                        <span class="text-error">$1184</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 23</td>
+                      <td>IN - 1093</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Kohli - <small>Photography fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $663
+                      </td>
+                      <td>
+                        <span class="text-success">$280</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 28</td>
+                      <td>IN - 2289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Nyra - <small>Fireworks</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $110
+                      </td>
+                      <td>
+                        <span class="text-error">$110</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeX">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Apr 09</td>
+                      <td>IN - 1145</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Henrik - <small>Design works</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Sent</span>
+                      </td>
+                      <td>
+                        $95
+                      </td>
+                      <td>
+                        <span class="text-info">$27</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 01</td>
+                      <td>IN - 5120</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sandy - <small>Salary</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $600
+                      </td>
+                      <td>
+                        <span class="text-error">$600</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 1167</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Honey - <small>Consultancy fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $198
+                      </td>
+                      <td>
+                        <span class="text-success">$89</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 12</td>
+                      <td>IN - 3981</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           James - <small>Testing</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Success</span>
+                      </td>
+                      <td>
+                        $2187
+                      </td>
+                      <td>
+                        <span class="text-info">$2187</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 4482</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           Selva - <small>Web Design</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-warning">Warning</span>
+                      </td>
+                      <td>
+                        $650
+                      </td>
+                      <td>
+                        <span class="text-warning">$490</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 29</td>
+                      <td>IN - 3289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sweet Dreams - <small>Web Developement</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $1289
+                      </td>
+                      <td>
+                        <span class="text-error">$1184</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 23</td>
+                      <td>IN - 1093</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Kohli - <small>Photography fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $663
+                      </td>
+                      <td>
+                        <span class="text-success">$280</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 28</td>
+                      <td>IN - 2289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Nyra - <small>Fireworks</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $110
+                      </td>
+                      <td>
+                        <span class="text-error">$110</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeX">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Apr 09</td>
+                      <td>IN - 1145</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Henrik - <small>Design works</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Sent</span>
+                      </td>
+                      <td>
+                        $95
+                      </td>
+                      <td>
+                        <span class="text-info">$27</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 01</td>
+                      <td>IN - 5120</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sandy - <small>Salary</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $600
+                      </td>
+                      <td>
+                        <span class="text-error">$600</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 1167</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Honey - <small>Consultancy fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $198
+                      </td>
+                      <td>
+                        <span class="text-success">$89</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 12</td>
+                      <td>IN - 3981</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           James - <small>Testing</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Success</span>
+                      </td>
+                      <td>
+                        $2187
+                      </td>
+                      <td>
+                        <span class="text-info">$2187</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 4482</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           Selva - <small>Web Design</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-warning">Warning</span>
+                      </td>
+                      <td>
+                        $650
+                      </td>
+                      <td>
+                        <span class="text-warning">$490</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 29</td>
+                      <td>IN - 3289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sweet Dreams - <small>Web Developement</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $1289
+                      </td>
+                      <td>
+                        <span class="text-error">$1184</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 23</td>
+                      <td>IN - 1093</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Kohli - <small>Photography fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $663
+                      </td>
+                      <td>
+                        <span class="text-success">$280</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 28</td>
+                      <td>IN - 2289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Nyra - <small>Fireworks</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $110
+                      </td>
+                      <td>
+                        <span class="text-error">$110</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeX">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Apr 09</td>
+                      <td>IN - 1145</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Henrik - <small>Design works</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Sent</span>
+                      </td>
+                      <td>
+                        $95
+                      </td>
+                      <td>
+                        <span class="text-info">$27</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 01</td>
+                      <td>IN - 5120</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sandy - <small>Salary</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $600
+                      </td>
+                      <td>
+                        <span class="text-error">$600</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 1167</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Honey - <small>Consultancy fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $198
+                      </td>
+                      <td>
+                        <span class="text-success">$89</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 12</td>
+                      <td>IN - 3981</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           James - <small>Testing</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Success</span>
+                      </td>
+                      <td>
+                        $2187
+                      </td>
+                      <td>
+                        <span class="text-info">$2187</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 4482</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           Selva - <small>Web Design</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-warning">Warning</span>
+                      </td>
+                      <td>
+                        $650
+                      </td>
+                      <td>
+                        <span class="text-warning">$490</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 29</td>
+                      <td>IN - 3289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sweet Dreams - <small>Web Developement</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $1289
+                      </td>
+                      <td>
+                        <span class="text-error">$1184</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 23</td>
+                      <td>IN - 1093</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Kohli - <small>Photography fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $663
+                      </td>
+                      <td>
+                        <span class="text-success">$280</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 28</td>
+                      <td>IN - 2289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Nyra - <small>Fireworks</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $110
+                      </td>
+                      <td>
+                        <span class="text-error">$110</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeX">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Apr 09</td>
+                      <td>IN - 1145</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Henrik - <small>Design works</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Sent</span>
+                      </td>
+                      <td>
+                        $95
+                      </td>
+                      <td>
+                        <span class="text-info">$27</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 01</td>
+                      <td>IN - 5120</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sandy - <small>Salary</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $600
+                      </td>
+                      <td>
+                        <span class="text-error">$600</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 1167</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Honey - <small>Consultancy fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $198
+                      </td>
+                      <td>
+                        <span class="text-success">$89</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 12</td>
+                      <td>IN - 3981</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           James - <small>Testing</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Success</span>
+                      </td>
+                      <td>
+                        $2187
+                      </td>
+                      <td>
+                        <span class="text-info">$2187</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 4482</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                           Selva - <small>Web Design</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-warning">Warning</span>
+                      </td>
+                      <td>
+                        $650
+                      </td>
+                      <td>
+                        <span class="text-warning">$490</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 29</td>
+                      <td>IN - 3289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sweet Dreams - <small>Web Developement</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $1289
+                      </td>
+                      <td>
+                        <span class="text-error">$1184</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 23</td>
+                      <td>IN - 1093</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Kohli - <small>Photography fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $663
+                      </td>
+                      <td>
+                        <span class="text-success">$280</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 28</td>
+                      <td>IN - 2289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Nyra - <small>Fireworks</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $110
+                      </td>
+                      <td>
+                        <span class="text-error">$110</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeX">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Apr 09</td>
+                      <td>IN - 1145</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Henrik - <small>Design works</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Sent</span>
+                      </td>
+                      <td>
+                        $95
+                      </td>
+                      <td>
+                        <span class="text-info">$27</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 01</td>
+                      <td>IN - 5120</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sandy - <small>Salary</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $600
+                      </td>
+                      <td>
+                        <span class="text-error">$600</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 1167</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Honey - <small>Consultancy fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $198
+                      </td>
+                      <td>
+                        <span class="text-success">$89</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 12</td>
+                      <td>IN - 3981</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          James - <small>Testing</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Success</span>
+                      </td>
+                      <td>
+                        $2187
+                      </td>
+                      <td>
+                        <span class="text-info">$2187</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Aug 10</td>
+                      <td>IN - 4482</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Selva - <small>Web Design</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-warning">Warning</span>
+                      </td>
+                      <td>
+                        $650
+                      </td>
+                      <td>
+                        <span class="text-warning">$490</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 29</td>
+                      <td>IN - 3289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sweet Dreams - <small>Web Developement</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $1289
+                      </td>
+                      <td>
+                        <span class="text-error">$1184</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 23</td>
+                      <td>IN - 1093</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Kohli - <small>Photography fee</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-success">Sent</span>
+                      </td>
+                      <td>
+                        $663
+                      </td>
+                      <td>
+                        <span class="text-success">$280</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeU">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 July 28</td>
+                      <td>IN - 2289</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Nyra - <small>Fireworks</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $110
+                      </td>
+                      <td>
+                        <span class="text-error">$110</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeX">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 Apr 09</td>
+                      <td>IN - 1145</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Henrik - <small>Design works</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-info">Sent</span>
+                      </td>
+                      <td>
+                        $95
+                      </td>
+                      <td>
+                        <span class="text-info">$27</span>
+                      </td>
+                    </tr>
+                    <tr class="gradeC">
+                      <td>
+                        <input type="checkbox">
+                      </td>
+                      <td>2013 May 01</td>
+                      <td>IN - 5120</td>
+                      <td>
+                        <a href="invoice.html" class="text-info">
+                          Sandy - <small>Salary</small>
+                        </a>
+                      </td>
+                      <td>
+                        <span class="label label-danger">Pending</span>
+                      </td>
+                      <td>
+                        $600
+                      </td>
+                      <td>
+                        <span class="text-error">$600</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Sparkline graphs -->
+    <script src="js/sparkline.js"></script>
+
+    <!-- Data tables -->
+    <script src="js/jquery.datatables.js"></script>
+
+    <!-- Date Range -->
+    <script src="js/daterange/moment.js"></script>
+    <script src="js/daterange/daterangepicker.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+
+    <script type="text/javascript">
+      //Data Tables
+      $(document).ready(function () {
+        $('#data-table').dataTable({
+          "sPaginationType": "full_numbers"
+        });
+        $("#data-table_length").css("display","none")
+      });
+    </script>
+
+  </body>
+</html>

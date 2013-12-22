@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+
+    <!-- date range -->
+    <link rel="stylesheet" type="text/css" href="css/daterange.css">
+
+    <!-- Main CSS -->
+    <link href="css/main.css" rel="stylesheet" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link href="fonts/font-awesome.css" rel="stylesheet">
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="fonts/font-awesome.css">
+    <![endif]-->
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Top bar start -->
+      <div class="top-bar">
+        
+        <div class="logo">
+          Cloud<sup><i class="icon-cloud"></i></sup>
+        </div>
+
+        <!-- Icon nav start -->
+        <ul id="icon-nav">
+          <li>
+            <a href="#">
+              <i class="icon-bell"></i>
+              <span class="count-label"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon-comment-alt"></i>
+              <span class="count-label count-lb-yellow"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon-envelope-alt"></i>
+              <span class="count-label count-lb-green"></span>
+            </a>
+          </li>
+        </ul>
+        <!-- Icon nav end -->
+
+        <!-- Search bar start -->
+        <div class="custom-search hidden-xs">
+          <input type="text" class="search-query" placeholder="Search here">
+          <i class="icon-search"></i>
+        </div>
+        <!-- Search bar end -->
+
+      </div>
+      <!-- Top bar end -->
+
+      <!-- Header start -->
+      <header class="navbar">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">&nbsp;</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="graphs.html">Graphs</a>
+            </li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI elements <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="panels.html">Panels &amp; List Groups</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li class="divider"></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li class="divider"></li>
+                <li><a href="ui-elements.html">More UI Elements...</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="forms.html">Form Elements</a></li>
+                <li><a href="wizards.html">Form Wizards</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="tables.html">Tables</a>
+            </li>
+            <li>
+              <a href="gallery.html">Gallery</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus Pages <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+                <li><a href="invoice.html">Invoice</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="divider"></li>
+                <li><a href="error.html">404</a></li>
+                <li><a href="blankpage.html">Blank Page</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <!-- Mini navigation start -->
+          <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Sandy <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Account</a></li>
+                <li><a href="calendar.html">My Calendar</a></li>
+                <li><a href="#">My Inbox</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Mini navigation end -->
+
+        </nav>
+      </header>
+      <!-- Header end -->
+
+      <!-- Page title Start -->
+      <div class="page-title">
+
+        <div class="row ">
+
+          <!-- Breadcrumb nav start -->
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <h2>UI Elements</h2>
+            <ul class="breadcrumb">
+              <li>Home</li>
+              <li>More UI Features</li>
+            </ul>
+          </div>
+          <!-- Breadcrumb nav end -->
+
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            
+            <!-- Mini Nav Right Start -->
+            <ul id="page-settings" class="hidden-sm">
+              <li id="reportrange">
+                <i class="icon-calendar"></i>
+                <span></span> <b class="caret"></b>
+              </li>
+              <li>
+                <i class="icon-cog"></i>
+              </li>
+            </ul>
+            <!-- Mini Nav Right End -->
+
+            <!-- Stats Start -->
+            <ul class="stats hidden-sm hidden-xs">
+              <li>
+                <span id="orders" class="graph"></span>
+                <div class="details">
+                  <span class="big">2,591</span>
+                  <span class="small">Orders</span>
+                </div>
+              </li>
+              <li>
+                <span id="currentBalance" class="graph"></span>
+                <div class="details">
+                  <span class="big">$7,345</span>
+                  <span class="small">Balance</span>
+                </div>
+              </li>
+            </ul>
+            <!-- Stats End -->
+            
+          </div>
+        </div>
+      </div>
+      <!-- Page title end -->
+
+      <!-- Row start -->
+      <div class="row">
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Tabs</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                  <a href="#fat" data-toggle="tab" data-original-title="">@Fat</a>
+                </li>
+                <li class="">
+                  <a href="#bat" data-toggle="tab" data-original-title="">@Bat</a>
+                </li>
+                <li class="">
+                  <a href="#mat" data-toggle="tab" data-original-title="">@Mat</a>
+                </li>
+              </ul>
+              <br>
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="fat">
+                  <p class="no-margin">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.</p>
+                </div>
+                <div class="tab-pane fade" id="bat">
+                  <p class="no-margin">Food truck fixie locavore Exercitation +1 labore velit, blog sartorial PBR leggings next Vegan fanny sapiente accusamus tattooed echo park.</p>
+                </div>
+                <div class="tab-pane fade" id="mat">
+                  <p class="no-margin">Etsy mixtape wayfarers gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Tabs Justified</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul id="myTab2" class="nav nav-tabs nav-justified">
+                <li class="active">
+                  <a href="#home1" data-toggle="tab" data-original-title="">Home</a>
+                </li>
+                <li class="">
+                  <a href="#profile1" data-toggle="tab" data-original-title="">Profile</a>
+                </li>
+                <li class="">
+                  <a href="#messages" data-toggle="tab" data-original-title="">Messages</a>
+                </li>
+              </ul>
+              <br>
+              <div id="myTabContent1" class="tab-content">
+                <div class="tab-pane fade active in" id="home1">
+                  <p class="no-margin">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.</p>
+                </div>
+                <div class="tab-pane fade" id="profile1">
+                  <p class="no-margin">Food truck fixie locavore Exercitation +1 labore velit, blog sartorial PBR leggings next Vegan fanny sapiente accusamus tattooed echo park.</p>
+                </div>
+                <div class="tab-pane fade" id="messages">
+                  <p class="no-margin">Etsy mixtape wayfarers gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Tabs Dropdown</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul id="myTab1" class="nav nav-tabs">
+                <li class="active">
+                  <a href="#home" data-toggle="tab" data-original-title="">Home</a>
+                </li>
+                <li class="">
+                  <a href="#profile" data-toggle="tab" data-original-title="">Profile</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" data-original-title="">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                    <li>
+                      <a href="#dropdown1" tabindex="-1" data-toggle="tab" data-original-title="">@fat</a>
+                    </li>
+                    <li>
+                      <a href="#dropdown2" tabindex="-1" data-toggle="tab" data-original-title="">@mdo</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <br>
+              <div id="myTabContent2" class="tab-content">
+                <div class="tab-pane fade active in" id="home">
+                  <p class="no-margin">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.</p>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                  <p class="no-margin">Food truck fixie locavore Exercitation +1 labore velit, blog sartorial PBR leggings next Vegan fanny sapiente accusamus tattooed echo park.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown1">
+                  <p class="no-margin">Etsy mixtape wayfarers gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown2">
+                  <p class="no-margin">Trust fund seitan letterpress master cleanse gluten-free squid scenester freegan cosby sweater keffiyeh echo park vegan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Breadcrumbs</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ol class="breadcrumb no-margin">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Pagination</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul class="pagination no-margin">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Pager</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul class="pager no-margin">
+                <li class="previous disabled"><a href="#">&larr; Older</a></li>
+                <li class="next"><a href="#">Newer &rarr;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Pills</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="#" data-original-title="">Home <span class="badge">12</span></a></li>
+                <li><a href="#" data-original-title="">About</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" data-original-title="">
+                    Dropdown <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" data-original-title="">Action</a></li>
+                    <li><a href="#" data-original-title="">Another action</a></li>
+                    <li><a href="#" data-original-title="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-original-title="">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Pills Justifies</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="#" data-original-title="">Sales</a></li>
+                <li class="active"><a href="#" data-original-title="">Users <span class="badge">215</span></a></li>
+                <li><a href="#" data-original-title="">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Disabled Links</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <ul class="nav nav-pills">
+                <li><a href="#" data-original-title="">Clickable</a></li>
+                <li class="active disabled"><a href="#" data-original-title="">Disabled</a></li>
+                <li class="disabled"><a href="#" data-original-title="">Disabled</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Modal</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body center-align-text">
+              
+              <!-- Modal Small Start -->
+              <a data-toggle="modal" href="#showModal" class="btn btn-danger" data-original-title="" title="">Modal small</a>
+
+              <!-- Modal -->
+              <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-original-title="" title="">×</button>
+                      <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" data-original-title="" title="">Close</button>
+                      <button type="button" class="btn btn-primary" data-original-title="" title="">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal Small End -->
+
+              <!-- Modal Big Start -->
+              <!-- Button trigger modal -->
+              <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                Modal large
+              </button>
+
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                    </div>
+                    <div class="modal-body">
+                      <h4>Text in a modal</h4>
+                      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+
+                      <h4>Popover in a modal</h4>
+                      <p>This <a href="#" role="button" class="btn btn-default popover-test" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on click.</p>
+
+                      <h4>Tooltips in a modal</h4>
+                      <p><a href="#" class="tooltip-test" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+                      <hr>
+
+                      <h4>Overflowing text to show scroll behavior</h4>
+                      <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                      <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div>
+              <!-- Modal End -->
+              <!-- Modal Big End -->
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-4 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Popovers</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body center-align-text">
+              <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on left">
+                Left
+              </button>
+              <button type="button" class="btn btn-warning" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on top">
+                Top
+              </button>
+              <button type="button" class="btn btn-info" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on bottom">
+                Bottom
+              </button>
+              <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on right">
+                Right
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Tooltips</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body center-align-text">
+              <a class="btn btn-info" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left">Left</a>
+              <a class="btn btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Top</a>
+              <a class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Bottom</a>
+              <a class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">Right</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Labels &amp; Badge</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body center-align-text">
+              <span class="label label-default">Default</span>
+              <span class="label label-primary">Primary</span>
+              <span class="label label-success">Success</span>
+              <span class="label label-info">Info</span>
+              <span class="label label-warning">Warning</span>
+              <span class="label label-danger">Danger</span>
+              <span class="badge badge-default">Default</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Labels Sizes</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body center-align-text">
+              <h1>Example heading <span class="label label-default">New</span></h1>
+              <h2>Example heading <span class="label label-info">New</span></h2>
+              <h3>Example heading <span class="label label-success">New</span></h3>
+              <h4>Example heading <span class="label label-warning">New</span></h4>
+              <h5>Example heading <span class="label label-danger">New</span></h5>
+              <h6>Example heading <span class="label label-primary">New</span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row end -->
+
+      <!-- Row start -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-sx-12">
+          <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+              <i class="icon-calendar"></i>
+              <h3 class="panel-title">Progress Bars</h3>
+            </div>
+            <div class="panel-sub-heading">
+              <a href="#">Last 10 days</a>
+            </div>
+            <div class="panel-body">
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: 35%">
+                  <span class="sr-only">35% Complete (info)</span>
+                </div>
+                <div class="progress-bar progress-bar-success" style="width: 20%">
+                  <span class="sr-only">20% Complete (success)</span>
+                </div>
+                <div class="progress-bar progress-bar-warning" style="width: 10%">
+                  <span class="sr-only">10% Complete (warning)</span>
+                </div>
+              </div>
+
+              <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                  <span class="sr-only">60% Complete</span>
+                </div>
+              </div>
+
+              <div class="progress progress-striped progress-small" style="margin-bottom: 20px;">
+                <div class="progress-bar progress-bar-info" style="width: 45%">
+                  <span class="sr-only">35% Complete (info)</span>
+                </div>
+                <div class="progress-bar progress-bar-success" style="width: 25%">
+                  <span class="sr-only">20% Complete (success)</span>
+                </div>
+                <div class="progress-bar progress-bar-warning" style="width: 10%">
+                  <span class="sr-only">10% Complete (warning)</span>
+                </div>
+              </div>
+
+              <div class="progress progress-mini progress-striped active">
+                <div class="progress-bar progress-bar-info" style="width: 55%">
+                  <span class="sr-only">35% Complete (info)</span>
+                </div>
+                <div class="progress-bar progress-bar-success" style="width: 15%">
+                  <span class="sr-only">20% Complete (success)</span>
+                </div>
+                <div class="progress-bar progress-bar-warning" style="width: 5%">
+                  <span class="sr-only">10% Complete (warning)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row end -->
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Sparkline graphs -->
+    <script src="js/sparkline.js"></script>
+
+    <!-- Date Range -->
+    <script src="js/daterange/moment.js"></script>
+    <script src="js/daterange/daterangepicker.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>
