@@ -7,14 +7,14 @@ var $orange = "#F38733";
 
 // SparkLine Bar
 $(function () {
-  $('#orders').sparkline([23213, 63216, 82234, 29341, 61789, 88732, 11234, 54328, 33245], {
+  $('#members').sparkline([5, 10, 4, 7, 8, 10, 2, 1, 7], {
     type: 'bar',
     barColor: [$orange, $secondary],
     barWidth: 6,
     height: 18,
   });
 
-  $('#currentBalance').sparkline([33251, 98123, 54312, 88763, 12341, 55672, 87904, 23412, 17632], {
+  $('#visitors').sparkline([103, 70, 60, 120, 10, 119, 39, 74, 194], {
     type: 'bar',
     barColor: [$secondary, $primary],
     barWidth: 6,
@@ -23,6 +23,7 @@ $(function () {
   
 });
 
+/*
 //Date Range Picker
 $(document).ready(function() {
   $('#reportrange').daterangepicker({
@@ -74,4 +75,4 @@ $('a').tooltip('hide');
 
 //Popover
 $('button').popover('hide');
-
+*/
