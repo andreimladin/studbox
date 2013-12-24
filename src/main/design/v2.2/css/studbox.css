@@ -1,1 +1,9 @@
+#main-panel {
+	max-height:500px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
 
+#univ-logo {
+	min-height: 120px;	
+}
