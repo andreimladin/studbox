@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <!-- Mobile rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  
+  <!-- Cloud Admin CSS -->
+  <link href="css/main.css" rel="stylesheet" media="screen">
+
+  <!-- Font Awesome CSS -->
+  <link href="fonts/font-awesome.css" rel="stylesheet">
+  <!-- Login CSS -->
+  <link href="css/login.css" rel="stylesheet" media="screen">
+  <!--[if IE 7]>
+      <link rel="stylesheet" href="fonts/font-awesome.css">
+    <![endif]-->
+  <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->  
+
+  <body>
+    <div id="login-container">
+      <div id="logo">
+        <sup><img src="img/icons/studbox_cap.ico"></img></sup>
+      </div>
+      <div id="login">
+        <h3>Bun benit !</h3>
+        <h5>Introduce-ti datele pentru a va loga</h5>
+        <form id="login-form" action="./index.html" class="form">
+          <div class="form-group has-error">
+            <label for="login-username">User</label>
+            <input type="text" class="form-control" id="login-username" placeholder="User ">
+               <span class="help-block" style="margin-bottom:0px;">
+                        *Userul trebuie completat
+                </span>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Parola</label>
+            <input type="password" class="form-control" id="login-password" placeholder="Parola">
+          </div>
+          <div class="form-group">
+              <div class="checkbox">
+                  <input type="checkbox"><h5 style="padding-top:3px;">Retine user</h5>
+              
+              </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" id="login-btn" class="btn btn-success btn-block">Log in</button>
+          </div>
+        </form>
+        
+            <a href="index.html" class="btn btn-default" style="margin-right:10px;">Amintire user </a>
+            <a href="index.html" class="btn btn-default">Amintire parola</a>
+   
+      </div>
+    </div>
+  </body>
+</html>
