@@ -12,8 +12,30 @@
 
 	<context:component-scan base-package="ro.studbox.service" />
 	
+	<bean id="dtZone" class="org.joda.time.DateTimeZone" factory-method="forID">
+		<constructor-arg value="Europe/Bucharest" />		
+	</bean>
+	
 	<!-- For Asynchronous executions -->
 	<task:annotation-driven/>
+	
+	<bean id="adminMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.live.com"/>
+		<property name="port" value="587"/>
+		<property name="username" value="admin@studbox.ro"/>
+		<property name="password" value="Studbox9*"/>
+		<property name="javaMailProperties">
+			<props>
+				<!-- Use TLS to encrypt communication with SMTP server -->
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<!-- Use SMTP-AUTH to authenticate to SMTP server -->
+				<prop key="mail.smtp.auth">true</prop>
+	        	<!-- Use SMTP transport protocol -->
+				<prop key="mail.transport.protocol">smtp</prop>	
+				<prop key="mail.debug">false</prop>
+			</props>
+		</property>
+	</bean>
 	
 	<bean id="supportMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.live.com"/>
@@ -28,7 +50,7 @@
 				<prop key="mail.smtp.auth">true</prop>
 	        	<!-- Use SMTP transport protocol -->
 				<prop key="mail.transport.protocol">smtp</prop>	
-				<prop key="mail.debug">true</prop>
+				<prop key="mail.debug">false</prop>
 			</props>
 		</property>
 	</bean>

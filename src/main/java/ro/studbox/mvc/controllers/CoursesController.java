@@ -3,6 +3,7 @@ package ro.studbox.mvc.controllers;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -41,6 +42,7 @@ public class CoursesController {
 	private static final List<String> IMAGES_CONTENT_TYPES = Arrays.asList(new String[]{"image/jpeg","image/png","image/gif","image/bmp"});
 	private static final List<String> TEXT_PLAIN_CONTENT_TYPES = Arrays.asList(new String[]{"application/octet-stream"});
 	private static final List<String> UNSUPPORTED_CONTENT_TYPES = Arrays.asList(new String[]{"application/zip","application/x-gzip","application/x-gtar","multipart/x-gzip","multipart/x-zip","application/x-rar-compressed"});
+	private static final String URL_GOOGLE_DOCS_VIEWER = "https://docs.google.com/viewer?url=";
 	
 	private Logger logger = Logger.getLogger(FilesController.class);
 	
@@ -98,6 +100,7 @@ public class CoursesController {
 	
 	@RequestMapping(value="/{courseId}/folders/{folderId}/files/{fileId}/download/google", method = RequestMethod.GET)
 	public void downloadGoogle(HttpServletResponse response, @PathVariable long courseId, @PathVariable long folderId, @PathVariable long fileId){
+		logger.debug(".downloadGoogle CourseId[" + courseId + "] FolderId[" + folderId + "] FileId[" + fileId + "]");
 		doDownload(response, fileId, true);
 	}
 	
@@ -110,6 +113,7 @@ public class CoursesController {
 	@PreAuthorize("hasRole('CONSUMER')")
 	@RequestMapping(value="/{courseId}/folders/{folderId}/files/{fileId}/view")
 	public ModelAndView view(HttpServletResponse response, @PathVariable long courseId, @PathVariable long folderId, @PathVariable long fileId){
+		logger.debug(".view CourseId[" + courseId + "] FolderId[" + folderId + "] FileId[" + fileId + "]");
 		ModelAndView model = new ModelAndView();
 		model.setViewName("/files/view");
 		
@@ -119,6 +123,8 @@ public class CoursesController {
 		
 		model.addObject("course", course);
 		model.addObject("folder", folder);
+		
+		logger.debug(".view CourseObj[" + course + "] FolderObj[" + folder + "] FileObj[" + file + "]");
 			
         // AIM - Check the user on the session
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -140,8 +146,10 @@ public class CoursesController {
 					return null;
 				} else {				
 					model.addObject("file", file);
-							
-					String content = "https://docs.google.com/viewer?url=http://www.studbox.ro/main/courses/" + courseId + "/folders/" + folderId + "/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true";
+					String studboxDocUrl = "http://www.studbox.ro/main/courses/" + courseId + "/folders/" + folderId + "/files/" + fileId + "/download/google";
+					
+					String content = URL_GOOGLE_DOCS_VIEWER + URLEncoder.encode(studboxDocUrl) + "&embedded=true";  
+//					String content = "https://docs.google.com/viewer?url=http://www.studbox.ro/main/courses/" + courseId + "/folders/" + folderId + "/files/" + fileId + "/download/google?embedded%3Dtrue&embedded=true";
 					model.addObject("content", content);
 				}
         	}
@@ -192,6 +200,14 @@ public class CoursesController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static void main(String[] args){
+		String studboxDocUrl = "http://www.studbox.ro/main/courses/321321/folders/312321/files/21312/download/google";
+		
+		String content = URL_GOOGLE_DOCS_VIEWER + URLEncoder.encode(studboxDocUrl) + "&embedded=true";
+		System.out.println(content);
+
 	}
 	
 }

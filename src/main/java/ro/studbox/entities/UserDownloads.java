@@ -39,6 +39,9 @@ public class UserDownloads implements Serializable {
 	
 	@Column(name="ThisMonthNo")
 	private long thisMonthNo;
+	
+	@Column(name="ThisYearNo")
+	private long thisYearNo;
 		
 	@Column(name="TotalNo")
 	private long totalNo;
@@ -77,6 +80,14 @@ public class UserDownloads implements Serializable {
 	public void setThisMonthNo(long thisMonthNo) {
 		this.thisMonthNo = thisMonthNo;
 	}
+	
+	public long getThisYearNo() {
+		return thisYearNo;
+	}
+
+	public void setThisYearNo(long thisYearNo) {
+		this.thisYearNo = thisYearNo;
+	}
 
 	public long getTotalNo() {
 		return totalNo;
@@ -92,13 +103,5 @@ public class UserDownloads implements Serializable {
 
 	public void setLastDownloadDate(Date lastDownloadDate) {
 		this.lastDownloadDate = lastDownloadDate;
-	}
-	
-	public void incrementNumbers(){
-		this.todayNo++;
-		this.thisWeekNo++;
-		this.thisMonthNo++;
-		this.totalNo++;
-		this.lastDownloadDate = new Date();
-	}
+	}	
 }

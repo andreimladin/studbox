@@ -12,18 +12,18 @@
            	http://www.springframework.org/schema/mvc
         	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
+	<!-- 
 	<bean id="gson" class="com.google.gson.Gson">
 	</bean>
+	-->
 	
-	<!-- 
-	<bean id="gsonFactory" class="ro.studbox.util.factory.GsonFactory">
+	<bean id="gsonFactory" class="ro.studbox.mvc.json.GsonFactory" factory-method="createInstance">
 	</bean>
 
 	<bean id="gson" 
 		factory-bean="gsonFactory" 
-		factory-method="createInstance">
+		factory-method="createGson">
 	</bean>
-	 -->
 	
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
 	</bean>
