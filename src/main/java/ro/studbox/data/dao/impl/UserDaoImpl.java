@@ -30,7 +30,9 @@ public class UserDaoImpl extends GenericDaoImpl<Long, User> implements UserDao {
 	public User getUserByUsername(String username) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class)
         		.add(Restrictions.eq("username", username))
-        		.setFetchMode("roles", FetchMode.JOIN);
+        		.setFetchMode("roles", FetchMode.JOIN)
+				.setFetchMode("limits", FetchMode.JOIN)
+				.setFetchMode("downloads", FetchMode.JOIN);
         return (User) criteria.uniqueResult();
 	}
 

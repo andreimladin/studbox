@@ -16,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
@@ -83,11 +85,17 @@ public class User implements UserDetails {
 	// AIM - EAGER means that roles are loaded at the same time 
 	// with the user
 	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
-	@JoinTable(name="UserRoles", /*catalog="studbox",*/ 
+	@JoinTable(name="UserRoles", 
 		joinColumns = {@JoinColumn(name="UserId", nullable = false, updatable = false)},
 		inverseJoinColumns = {@JoinColumn(name="RoleName", nullable = false, updatable = false)}	
 	)	
 	private Set<Role> roles;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade={CascadeType.ALL}, mappedBy="user")	
+	private Set<UserLimit> limits;
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade={CascadeType.ALL}, mappedBy="user")
+	private UserDownloads downloads;
 	
 	@Transient
 	private List<GrantedAuthority> authorityList;
@@ -97,7 +105,7 @@ public class User implements UserDetails {
 
 	public User(String username, String password, String firstName,
 			String lastName, String email, String sex, Date birthdate,
-			Date creationDate, Date lockDate, int status, boolean useNotifications, Set<Role> roles) {
+			Date creationDate, Date lockDate, int status, boolean useNotifications, Set<Role> roles, Set<UserLimit> limits, UserDownloads downloads) {
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -110,6 +118,8 @@ public class User implements UserDetails {
 		this.status = status;
 		this.useNotifications = useNotifications;
 		this.roles = roles;
+		this.limits = limits;
+		this.downloads = downloads;
 	}	
 	
 	public long getUserId() {
@@ -230,6 +240,22 @@ public class User implements UserDetails {
 		}
 		
 		return authorityList;
+	}	
+
+	public Set<UserLimit> getLimits() {
+		return limits;
+	}
+
+	public void setLimits(Set<UserLimit> limits) {
+		this.limits = limits;
+	}
+
+	public UserDownloads getDownloads() {
+		return downloads;
+	}
+
+	public void setDownloads(UserDownloads downloads) {
+		this.downloads = downloads;
 	}
 
 	// AIM - Out of scope
@@ -250,4 +276,32 @@ public class User implements UserDetails {
 		logger.debug("isAccountNonLocked : " + (this.status == STATUS_ACTIVE));
 		return this.status == STATUS_ACTIVE;
 	}	
+	
+	public UserLimit exceededDownloadLimit() {
+		for (UserLimit limit : limits) {
+			if ("DAILY_DOWNLOADS".equals(limit.getLimitName())) {
+				long limitValue = Long.valueOf(limit.getLimitValue());
+				if (downloads.getTodayNo() >= limitValue) {
+					return limit;
+				}
+			} 
+			
+			if ("WEEKLY_DOWNLOADS".equals(limit.getLimitName())) {
+				long limitValue = Long.valueOf(limit.getLimitValue());
+				if (downloads.getThisWeekNo() >= limitValue) {
+					return limit;
+				}				
+			}
+			
+			if ("MONTLY_DOWNLOADS".equals(limit.getLimitName())) {
+				long limitValue = Long.valueOf(limit.getLimitValue());
+				if (downloads.getThisMonthNo() >= limitValue) {
+					return limit;
+				}
+			}
+		}
+		
+		return null;
+	}
+
 }

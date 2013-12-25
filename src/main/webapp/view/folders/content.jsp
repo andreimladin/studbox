@@ -27,6 +27,10 @@
 		$("#errorMessage").show();
 	}
 	
+	function showErrorMessage() {
+		$("#errorMessage").show();
+	}
+	
 	function openFile() {
 		$("#fileData").click();
 	}
@@ -34,8 +38,8 @@
 	function showFileName(){						
 		var filename =$('#fileData').val().split('\\').pop();
 		var filesize =$('#fileData')[0].files[0].size;
-		if (filename.length > 50) {
-			$("#errorMessage").html("Numele fi&#x219;ierului trebuie s&#x103; aiv&#x103; maxim 50 de caractere!");
+		if (filename.length > 30) {
+			$("#errorMessage").html("Numele fi&#x219;ierului trebuie s&#x103; aiv&#x103; maxim 30 de caractere!");
 			$("#errorMessage").show();
 			resetUploadForm();
 		} else if (filesize > 10485760) { 
@@ -132,7 +136,7 @@
 							'</div>' +
 							'<div id="filename">' +
 								'<p>' + 
-									'<a href="/main/folders/' + resultMap.folder.objectId + '/home">' +
+									'<a href="/main/courses/${course.objectId}/folders/' + resultMap.folder.objectId + '/home">' +
 										resultMap.folder.name +
 									'</a>' +
 								'</p>' + 
@@ -198,7 +202,7 @@
 		      				'</div>' +
 							'<div id="filename">' +
 								'<p>' +
-									'<a href="/main/files/' + file.objectId + '/view">' + 
+									'<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/files/' + file.objectId + '/view">' + 
 										file.name +
 									'</a>' + 
 								'</p>' +
@@ -236,7 +240,7 @@
 							<a href="/main/profiles/${course.year.profile.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${course.year.profile.shortName}</span></a>
 						</c:when>
 						<c:otherwise>
-							<a href="/main/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
+							<a href="/main/courses/${course.objectId}/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -267,11 +271,17 @@
 				</c:when>
 				<c:otherwise>
 					<sec:authorize access="isAuthenticated()">
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="showNewFolderForm()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
+						</div>					
 						<div id="actionbut">			
 							<a class="btn btn-small" onclick="showUploadForm()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
 						</div>
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
+						<div id="actionbut">
+							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-plus"> </i> Creeaz&#x103; folder</a>
+						</div>
 						<div id="actionbut">			
 							<a class="btn btn-small" onclick="showAuthMessage()"><i class="icon icon-upload"> </i> &#206;ncarc&#x103; fi&#x219;ier</a>				
 						</div>
@@ -280,7 +290,8 @@
 			</c:choose>
 		</div>
 		
-		<div id="errorMessage" class="alert alert-error , confmes " style="display:none">			
+		<div id="errorMessage" class="alert alert-error , confmes " style="display:none">
+			${errorMessage}			
 		</div>
 		
 		<div id='successMessage' class='alert alert-success , confmes' style="text-align:center;  margin-bottom:10px; display:none">			
@@ -381,7 +392,7 @@
 				</div>
 				<div id="filename">
 					<p>								
-						<a href="/main/folders/${folder.objectId}/home">
+						<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/home">
 							${folder.name}
 						</a>
 					</p>
@@ -408,7 +419,7 @@
 				<div id="filename">
 					<p>
 						<sec:authorize access="isAuthenticated()">
-							<a href="/main/files/${file.objectId}/view">
+							<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/files/${file.objectId}/view">
 								${file.name}
 							</a>
 						</sec:authorize>

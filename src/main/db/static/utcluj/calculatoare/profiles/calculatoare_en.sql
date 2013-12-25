@@ -1,5 +1,5 @@
 -- UTCLUJ - Calculatoare - Calculatoare-EN
-call profile_insert(@faculty_id, 'Calculatoare', 'Calculatoare - En', 'Enleză', 'Licență', 2, @profile_id);
+call profile_insert(@faculty_id, 'Calculatoare', 'Calculatoare - En', 'Engleză', 'Licență', 2, @profile_id);
 -- UTCLUJ - Calculatoare - Calculatoare-EN - An1
 call year_insert(@profile_id, 'Anul 1', 2, @year_id);
 call course_insert(@year_id, 'Analiză matematică 1 (Calcul diferențial)', 'Analiză 1', 1, 2, @course_id, @default_folder_id);

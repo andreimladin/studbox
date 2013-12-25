@@ -14,7 +14,7 @@ import com.lowagie.text.DocumentException;
 public interface FileService {
 	
 	static final String ROOT_FILE_SYSTEM = "/root/studbox/files";
-//	static final String ROOT_FILE_SYSTEM = "/home/andrei/studbox/files";
+//	static final String ROOT_FILE_SYSTEM = "c:\\Users\\andrei\\studbox\\files";
 	
 	List<File> getFilesByFolderId(long folderId);
 	
