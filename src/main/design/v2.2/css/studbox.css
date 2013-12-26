@@ -4,9 +4,34 @@
 	overflow-x:hidden;
 }
 
-#univ-logo {
-	min-height: 242px;	
+#main-panel .visual h4 {
+	font-size:100%;
+	font-weight: bold;
 }
+
+#main-panel .thumbnail {
+	min-height:170px;	
+}
+
+#main-panel .caption {
+	vertical-align: middle;	
+}
+
+#main-panel .thumbnail h3 {
+	font-size:120%;
+	font-weight: bold;
+	text-align:center;
+}
+
+#main-panel img {
+	height:80px;
+}
+
+#univ-logo {
+	min-height: 148px;	
+	margin:auto;		
+}
+
 #titleicon{
 	float:left;
 	margin-right:10px;
