@@ -54,7 +54,7 @@ public class TextPlainEmailServiceImpl implements EmailService {
 		// AIM - message preparing
 		SimpleMailMessage message = new SimpleMailMessage();	    
 		message.setFrom("admin@studbox.ro");
-		message.setTo(new String[]{"admin@studbox.ro", "andrei.mladin@gmail.com"});
+		message.setTo(new String[]{"andrei.mladin@gmail.com"});
 		message.setSubject("JOBS - " + jobName + " - " + status);
 		
 		StringBuilder text = new StringBuilder();
