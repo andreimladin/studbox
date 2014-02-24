@@ -16,6 +16,48 @@
 		<spring.security.version>3.1.3.RELEASE</spring.security.version>
 		<spring.batch.version>2.2.0.RELEASE</spring.batch.version>
 	</properties>  
+	
+	<profiles>
+		<profile>
+			<id>development</id>
+			<activation>
+            	<activeByDefault>true</activeByDefault>
+        	</activation>
+			<properties>
+				<db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
+				<db.jdbcUrl>jdbc:mysql://localhost:3306/studbox</db.jdbcUrl>
+				<db.user>root</db.user>
+				<db.password>root</db.password>
+				<db.showSql>true</db.showSql>								
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
+				<db.jdbcUrl>jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/studbox_16e1</db.jdbcUrl>
+				<db.user>studbox_16e1</db.user>
+				<db.password>3b1899fb44cd49448a5bcd629a2e25c8</db.password>				
+				<db.showSql>true</db.showSql>								
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
+				<db.jdbcUrl>jdbc:mysql://localhost:3306/studbox</db.jdbcUrl>
+				<db.user>root</db.user>
+				<db.password>Pascal9*</db.password>
+				<db.showSql>false</db.showSql>				
+			</properties>
+			<distributionManagement>
+				<repository>
+					<id>studbox-digitalocean</id>
+					<url>ftp://studbox.ro/home/ftp/releases/</url>  		
+				</repository>
+			</distributionManagement>
+		</profile>	
+	</profiles>
   
 	<dependencies>
 		<!-- Servlet API -->
@@ -255,12 +297,7 @@
 		 -->
 	</dependencies>
   
-	<distributionManagement>
-		<repository>
-			<id>studbox-digitalocean</id>
-			<url>ftp://studbox.ro/home/ftp/releases/</url>  		
-		</repository>
-	</distributionManagement>
+	
 	
 	<repositories>
 		<repository>
@@ -273,6 +310,12 @@
   
   
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
