@@ -277,7 +277,7 @@ CREATE TABLE AccountConfirmation (
 
 ALTER TABLE AccountConfirmation ADD FOREIGN KEY (UserId) REFERENCES Users(UserId);
 
-DROP TABLE UserDownloads;
+DROP TABLE IF EXISTS UserDownloads;
 
 CREATE TABLE UserDownloads (
   UserId INTEGER NOT NULL,
