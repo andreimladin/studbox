@@ -77,51 +77,37 @@ public class CoursesController {
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public @ResponseBody String addAction(@Valid CourseForm courseForm, BindingResult result) {
-		System.out.println("Step1");
 		boolean errorOccurred = false;
 		Course course = null;
 		
 		 // AIM - Check the user on the session
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        System.out.println("Step2");
         if (principal instanceof User){
-        	System.out.println("Step2.1");
         	validation.validate(courseForm, result);
-        	System.out.println("Step2.2");
-        	System.out.println(courseForm.getProfileId() + " - " +
-					courseForm.getName() + " - " + courseForm.getShortName());
 			
         	if(result.hasErrors()) {
-        		System.out.println("Step2.3");
                 errorOccurred = true;
             } else {
-            	System.out.println("Step2.4");
             	course = courseService.createCourse(courseForm.getProfileId(),
 						courseForm.getName(), courseForm.getShortName(),
 						((User) principal).getUserId());
-				System.out.println("Step2.5");
             }
         } else {
-        	System.out.println("Step 3");
         	errorOccurred = true;
         	result.rejectValue("profileId", "error.authNeed");
         }
         
-        System.out.println("Step4");
         
         Map<String, Object> resultMap = new HashMap<String, Object>();
         if(!errorOccurred) {
-        	System.out.println("Step5");
             resultMap.put("status", "success");
             resultMap.put("course", course);
         } else {
-        	System.out.println("Step6");
             resultMap.put("status", "error");
             resultMap.put("errorMessage", messageSource.getMessage(result.getFieldError().getCode(), null, Locale.ENGLISH));
         }
-        String toReturn = gson.toJson(resultMap);
-        System.out.println(toReturn);
-        return toReturn;
+        
+        return gson.toJson(resultMap);
 	}
 	
 	@RequestMapping(value="/{courseId}/home", method = RequestMethod.GET)
