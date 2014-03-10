@@ -19,7 +19,7 @@ import org.hibernate.annotations.OrderBy;
 @SuppressWarnings("serial")
 @Entity
 @Table(name="Course", uniqueConstraints = {
-		@UniqueConstraint(columnNames = {"YearId", "Name"})}
+		@UniqueConstraint(columnNames = {"ProfileId", "Name"})}
 )
 public class Course implements Serializable {
 
@@ -28,8 +28,8 @@ public class Course implements Serializable {
 	private long objectId;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "YearId", nullable = false)	
-	private Year year;
+	@JoinColumn(name = "ProfileId", nullable = false)
+	private Profile profile;
 	
 	@Column(name="Name", nullable = false)
 	private String name;
@@ -46,9 +46,6 @@ public class Course implements Serializable {
 	@OrderBy(clause="CreationDate asc")
 	private Set<Comment> comments;
 	
-	@Column(name="Semester")
-	private int semester;
-	
 	@Column(name="ViewNo")
 	private int viewNo;
 	
@@ -62,6 +59,18 @@ public class Course implements Serializable {
 	@JoinColumn(name = "OwnerId", nullable = false)	
     private User owner;
 	
+	public Course(){		
+	}
+	
+	public Course(long profileId, String name, String shortName, long ownerId, Date creationDate, Date lastModifiedDate){
+		this.profile = new Profile(profileId);
+		this.name = name;
+		this.shortName = shortName;
+		this.owner = new User(ownerId);
+		this.creationDate = creationDate;
+		this.lastModifiedDate = lastModifiedDate;
+	}
+	
 	public long getObjectId() {
 		return objectId;
 	}
@@ -69,17 +78,17 @@ public class Course implements Serializable {
 	public void setObjectId(long objectId) {
 		this.objectId = objectId;
 	}
-	
-	public Year getYear() {
-		return year;
-	}
-
-	public void setYear(Year year) {
-		this.year = year;
-	}
 
 	public String getName() {
 		return name;
+	}
+
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
 	}
 
 	public void setName(String name) {
@@ -100,14 +109,6 @@ public class Course implements Serializable {
 
 	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
-	}
-
-	public int getSemester() {
-		return semester;
-	}
-
-	public void setSemester(int semester) {
-		this.semester = semester;
 	}
 
 	public int getViewNo() {

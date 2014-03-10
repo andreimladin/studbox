@@ -1,27 +1,28 @@
 <div class="leftside">
-	<div id="univ-selector">
-		<div class="accordion">
-			<div class="accordion-group">
-				<div class="accordion-heading">
-					<div class="facultytitle">${faculty.shortName}</div>						
-					<sec:authorize access="hasRole('TODO')">	
-						<label class="checkbox" id="actbut">
-							<input type="checkbox"><span>Urm&#x103;re&#x219;te</span> 	
-						</label>	
-					</sec:authorize>						
+	<div id="leftcontent">
+		<div id="top-bar">
+			<div id="backbut">
+				<div id="navseparator">&nbsp</div>
+				<div id="navbutitem" class="firstnavitem">
+					<a href="/main/universities/${faculty.university.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${faculty.university.shortName}</span></a>					
 				</div>
-				<div class="accordion-inner">
-					<ul>						
-						<c:forEach var="profile" items="${faculty.profiles}">
-						<a href="/main/profiles/${profile.objectId}/home">							
-							<li>								
-								${profile.name} - ${profile.section}								
-							</li>
+				<div id="navseparator">&nbsp</div>
+				<div id="navbutitem" >
+					<span>${faculty.shortName}</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="accordion" >
+			<c:forEach var="profile" items="${faculty.profiles}" varStatus = "status">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" href="/main/profiles/${profile.objectId}/home">
+							${profile.name} - ${profile.section}
 						</a>
-						</c:forEach>
-					</ul>
+					</div>
 				</div>
-			</div>			 
+			</c:forEach>
 		</div>
 	</div>
 </div>

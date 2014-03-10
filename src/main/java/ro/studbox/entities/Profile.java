@@ -50,8 +50,8 @@ public class Profile implements Serializable {
 	
 	@OneToMany(fetch=FetchType.LAZY)
 	@JoinColumn(name="ProfileId")
-	@OrderBy(clause="Name asc")
-	private Set<Year> years;
+	@OrderBy(clause="ViewNo desc, Name")
+	private Set<Course> courses;	
 	
 	@Column(name="ShortName", nullable = false)
 	private String shortName;
@@ -65,6 +65,13 @@ public class Profile implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "OwnerId", nullable = false)	
     private User owner;
+	
+	public Profile(){		
+	}
+	
+	public Profile(long profileId){
+		this.objectId = profileId;
+	}
 
 	public Faculty getFaculty() {
 		return faculty;
@@ -122,17 +129,18 @@ public class Profile implements Serializable {
 		this.viewNo = viewNo;
 	}
 
-	public Set<Year> getYears() {
-		return years;
+	public Set<Course> getCourses() {
+		return courses;
 	}
 
-	public void setYears(Set<Year> years) {
-		this.years = years;
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
 	}
 
 	public String getShortName() {
 		return shortName;
 	}
+
 
 	public void setShortName(String shortName) {
 		this.shortName = shortName;

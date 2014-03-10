@@ -17,23 +17,9 @@
 			<c:forEach var="faculty" items="${university.faculties}" varStatus = "status">
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse${status.index}">
+						<a class="accordion-toggle" href="/main/faculties/${faculty.objectId}/home">
 							${faculty.name}
 						</a>
-					</div>
-					
-					<div id="collapse${status.index}" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<ul>
-								<c:forEach var="profile" items="${faculty.profiles}">
-									<a href="/main/profiles/${profile.objectId}/home">							
-										<li>								
-											<span>${profile.name}</span><br/>${profile.section}								
-										</li>
-									</a>
-								</c:forEach>
-							</ul>
-						</div>
 					</div>
 				</div>
 			</c:forEach>

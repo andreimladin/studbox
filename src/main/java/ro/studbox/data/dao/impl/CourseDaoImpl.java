@@ -5,14 +5,17 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ro.studbox.data.dao.CourseDao;
+import ro.studbox.data.dao.FolderDao;
 import ro.studbox.data.dao.ObjectDao;
 import ro.studbox.entities.Course;
+import ro.studbox.entities.Folder;
 import ro.studbox.entities.Object;
 import ro.studbox.entities.ObjectType;
 
@@ -21,6 +24,9 @@ public class CourseDaoImpl extends GenericDaoImpl<Long, Course> implements Cours
 	
 	@Autowired
 	private ObjectDao objectDao;
+	
+	@Autowired
+	private FolderDao folderDao;
 
 	public CourseDaoImpl() {
 		super(Course.class);
@@ -34,11 +40,34 @@ public class CourseDaoImpl extends GenericDaoImpl<Long, Course> implements Cours
 		superTypeObj.setObjectTypeId(ObjectType.COURSE_TYPE_ID);
 		objectDao.create(superTypeObj);
 		
+		// Create the default folder
+		Folder courseFolder = new Folder();
+		courseFolder.setName(course.getName());
+		courseFolder.setCourse(true);
+		courseFolder.setOwner(course.getOwner());
+		courseFolder.setCreationDate(course.getCreationDate());
+		courseFolder.setLastModifiedDate(course.getLastModifiedDate());
+		folderDao.create(courseFolder);
+		
 		// Create the course
 		course.setObjectId(superTypeObj.getObjectId());
+		course.setDefaultFolder(courseFolder);
 		return super.create(course);
 	}
 	
+	
+	
+	@Override	
+	@Transactional
+	public boolean existsCourse(long profileId, String name) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("select 1 from Course where ProfileId=:profileId and Name=:name");
+		query.setParameter("profileId", Long.valueOf(profileId));
+		query.setParameter("name", name);
+		
+		return query.uniqueResult() != null;		
+	}
+
 	@Override
 	@Transactional
 	public Course find(Long key) {
@@ -71,15 +100,6 @@ public class CourseDaoImpl extends GenericDaoImpl<Long, Course> implements Cours
 		
 		// Delete the object
 		objectDao.deleteByKey(key);
-	}
-
-	@SuppressWarnings("unchecked")
-	@Transactional
-	public List<Course> getAllByYearId(long yearId) {
-		Query getCoursesQuery = sessionFactory.getCurrentSession().createQuery("from Course where YearId =:yearId order by ViewNo desc");
-		getCoursesQuery.setParameter("yearId", yearId);	
-		
-		return (List<Course>) getCoursesQuery.list();
 	}
 
 	public void increaseViewNo(long courseId) {

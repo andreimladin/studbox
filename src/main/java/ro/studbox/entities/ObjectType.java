@@ -16,11 +16,10 @@ public class ObjectType implements Serializable {
 	public final static int UNIVERSITY_TYPE_ID = 1;
 	public final static int FACULTY_TYPE_ID = 2;
 	public final static int PROFILE_TYPE_ID = 3;
-	public final static int YEAR_TYPE_ID = 4;
-	public final static int COURSE_TYPE_ID = 5;
-	public final static int FOLDER_TYPE_ID = 6;
-	public final static int FILE_TYPE_ID = 7;
-	public final static int COMMENT_TYPE_ID = 8;
+	public final static int COURSE_TYPE_ID = 4;
+	public final static int FOLDER_TYPE_ID = 5;
+	public final static int FILE_TYPE_ID = 6;
+	public final static int COMMENT_TYPE_ID = 7;
 	
 	@Id
 	@Column(name="ObjectTypeId", unique = true, nullable = false)
@@ -52,8 +51,6 @@ public class ObjectType implements Serializable {
 			return FOLDER_TYPE_ID;
 		} else if (object instanceof Course) {
 			return COURSE_TYPE_ID;
-		} else if (object instanceof Year) {
-			return YEAR_TYPE_ID;
 		} else if (object instanceof Profile) {
 			return PROFILE_TYPE_ID;
 		} else if (object instanceof Faculty) {

@@ -5,10 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +20,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import ro.studbox.entities.Course;
@@ -27,11 +32,14 @@ import ro.studbox.entities.File;
 import ro.studbox.entities.Folder;
 import ro.studbox.entities.User;
 import ro.studbox.entities.UserLimit;
+import ro.studbox.mvc.forms.CourseForm;
+import ro.studbox.mvc.validators.CourseValidation;
 import ro.studbox.service.CourseService;
 import ro.studbox.service.FileService;
 import ro.studbox.service.FolderService;
 import ro.studbox.service.UserService;
 
+import com.google.gson.Gson;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.DocumentException;
 
@@ -60,6 +68,61 @@ public class CoursesController {
 	
 	@Autowired
     private MessageSource messageSource;
+	
+	@Autowired
+	private CourseValidation validation;
+	
+	@Autowired
+	private Gson gson;	
+	
+	@RequestMapping(value="/add", method = RequestMethod.POST)
+	public @ResponseBody String addAction(@Valid CourseForm courseForm, BindingResult result) {
+		System.out.println("Step1");
+		boolean errorOccurred = false;
+		Course course = null;
+		
+		 // AIM - Check the user on the session
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        System.out.println("Step2");
+        if (principal instanceof User){
+        	System.out.println("Step2.1");
+        	validation.validate(courseForm, result);
+        	System.out.println("Step2.2");
+        	System.out.println(courseForm.getProfileId() + " - " +
+					courseForm.getName() + " - " + courseForm.getShortName());
+			
+        	if(result.hasErrors()) {
+        		System.out.println("Step2.3");
+                errorOccurred = true;
+            } else {
+            	System.out.println("Step2.4");
+            	course = courseService.createCourse(courseForm.getProfileId(),
+						courseForm.getName(), courseForm.getShortName(),
+						((User) principal).getUserId());
+				System.out.println("Step2.5");
+            }
+        } else {
+        	System.out.println("Step 3");
+        	errorOccurred = true;
+        	result.rejectValue("profileId", "error.authNeed");
+        }
+        
+        System.out.println("Step4");
+        
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        if(!errorOccurred) {
+        	System.out.println("Step5");
+            resultMap.put("status", "success");
+            resultMap.put("course", course);
+        } else {
+        	System.out.println("Step6");
+            resultMap.put("status", "error");
+            resultMap.put("errorMessage", messageSource.getMessage(result.getFieldError().getCode(), null, Locale.ENGLISH));
+        }
+        String toReturn = gson.toJson(resultMap);
+        System.out.println(toReturn);
+        return toReturn;
+	}
 	
 	@RequestMapping(value="/{courseId}/home", method = RequestMethod.GET)
 	public ModelAndView showHome(@PathVariable long courseId){

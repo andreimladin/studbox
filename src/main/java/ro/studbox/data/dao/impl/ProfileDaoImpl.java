@@ -46,11 +46,21 @@ public class ProfileDaoImpl extends GenericDaoImpl<Long, Profile> implements Pro
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Profile.class)
         		.add(Restrictions.idEq(key))
         		.setFetchMode("faculty", FetchMode.JOIN)
-        		.setFetchMode("years", FetchMode.JOIN)
-        		.setFetchMode("years.courses", FetchMode.JOIN)
+        		.setFetchMode("courses", FetchMode.JOIN)
         		.setFetchMode("comments", FetchMode.JOIN);
         return (Profile)criteria.uniqueResult();
     }
+	
+	@Override
+	@Transactional
+	public boolean existsProfile(long profileId) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session
+				.createQuery("select 1 from Profile where ObjectId=:profileId");
+		query.setParameter("profileId", Long.valueOf(profileId));
+
+		return query.uniqueResult() != null;
+	}
 
 	@Override
 	@Transactional

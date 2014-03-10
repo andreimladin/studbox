@@ -102,6 +102,10 @@ public class User implements UserDetails {
 		
 	public User() {
 	}
+	
+	public User(long userId){
+		this.userId = userId;
+	}
 
 	public User(String username, String password, String firstName,
 			String lastName, String email, String sex, Date birthdate,

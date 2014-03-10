@@ -1,8 +1,7 @@
 delimiter //
-create procedure course_insert(IN year_id_i integer,
+create procedure course_insert(IN profile_id_i integer,
 							   IN name_i varchar(150),
 							   IN short_name_i varchar(30),
-                               IN semester_i TINYINT,
 							   IN owner_id_i integer,
 							   OUT object_id_o integer,
 							   OUT default_folder_id_o integer)
@@ -16,11 +15,10 @@ begin
 
 	insert into Course
 	values(object_id_o,
-           year_id_i,
+           profile_id_i,
 		   default_folder_id_o,
 		   name_i,
-		   short_name_i,
-           semester_i,
+		   short_name_i,         
            0,
            owner_id_i,
            NOW(),

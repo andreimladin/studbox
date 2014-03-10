@@ -23,6 +23,13 @@ public class FacultyServiceImpl implements FacultyService {
 		facultyDao.increaseViewNo(facultyId);
 		return facultyDao.find(facultyId);
 	}
+
+	@Override
+	public void increaseViewNo(long facultyId) {
+		facultyDao.increaseViewNo(facultyId);		
+	}
+	
+	
 	
 	
 }

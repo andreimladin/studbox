@@ -2,8 +2,11 @@ package ro.studbox.data.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +16,7 @@ import ro.studbox.data.dao.ObjectDao;
 import ro.studbox.entities.Faculty;
 import ro.studbox.entities.Object;
 import ro.studbox.entities.ObjectType;
+import ro.studbox.entities.University;
 
 /**
  * @author andreim
@@ -39,6 +43,18 @@ public class FacultyDaoImpl extends GenericDaoImpl<Long, Faculty> implements Fac
 		// Create the faculty
 		faculty.setObjectId(superTypeObj.getObjectId());
 		return super.create(faculty);
+	}
+	
+	
+
+	@Override
+	@Transactional
+	public Faculty find(Long key) {
+		 Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Faculty.class)
+	        		.add(Restrictions.idEq(key))
+	        		.setFetchMode("profiles", FetchMode.JOIN)
+	        		.setFetchMode("comments", FetchMode.JOIN);
+	     return (Faculty)criteria.uniqueResult();
 	}
 
 	@Override
@@ -70,6 +86,7 @@ public class FacultyDaoImpl extends GenericDaoImpl<Long, Faculty> implements Fac
 		return (List<Faculty>) session.createQuery("from Faculty where UniversityId = " + universityId + " order by ViewNo desc").list();		
 	}
 	
+	@Transactional
 	public void increaseViewNo(long facultyId) {
 		Query updateQuery = sessionFactory.getCurrentSession().createQuery("Update Faculty Set ViewNo = ViewNo + 1 where ObjectId=:facultyId");
 		updateQuery.setParameter("facultyId", facultyId);

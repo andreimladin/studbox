@@ -22,9 +22,15 @@ public class ProfileServiceImpl implements ProfileService {
 	public Profile getProfile(long profileId) {		
 		return profileDao.find(profileId);
 	}
+	
+	@Override
+	public boolean existsProfile(long profileId) {		
+		return profileDao.existsProfile(profileId);
+	}
+
+
 
 	public void increaseViewNo(long profileId) {
-		facultyDao.increaseViewNoByProfileId(profileId);
 		profileDao.increaseViewNo(profileId);
 	}
 	

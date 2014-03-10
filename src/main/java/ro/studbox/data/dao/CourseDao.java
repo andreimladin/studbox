@@ -4,8 +4,8 @@ import ro.studbox.entities.Course;
 
 public interface CourseDao extends GenericDao<Long, Course> {
 	
-	void increaseViewNo(long courseId);
-	
+	boolean existsCourse(long profileId, String name);
+	void increaseViewNo(long courseId);	
 	Course getCourseByFolderId(long folderId);
 
 }

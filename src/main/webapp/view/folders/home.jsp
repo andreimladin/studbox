@@ -4,13 +4,13 @@
 <html>
 <head>
 	<%@ include file="/view/head.jsp" %>
-	<meta property="og:image" content="http://www.studbox.ro${course.year.profile.faculty.university.logo}"/>
+	<meta property="og:image" content="http://www.studbox.ro${course.profile.faculty.university.logo}"/>
 	<c:choose>
 		<c:when test="${folder.course}">
-			<title>${folder.name} - ${course.year.profile.name} - ${course.year.profile.faculty.name} - ${course.year.profile.faculty.university.name}</title>
+			<title>${folder.name} - ${course.profile.name} - ${course.profile.faculty.name} - ${course.profile.faculty.university.name}</title>
 		</c:when>
 		<c:otherwise>
-			<title>${folder.name} - ${course.name} - ${course.year.profile.name} - ${course.year.profile.faculty.name} - ${course.year.profile.faculty.university.name}</title>
+			<title>${folder.name} - ${course.name} - ${course.profile.name} - ${course.profile.faculty.name} - ${course.profile.faculty.university.name}</title>
 		</c:otherwise>
 	</c:choose>	
 	<meta name="description" content="Aici g&#x103;si&#x21B;i foarte multe resurse specifice acestui curs. Subiect examene scrise &#x219;i practice, cursuri, seminarii s.a.m.d.">

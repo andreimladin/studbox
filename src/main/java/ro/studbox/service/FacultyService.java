@@ -9,6 +9,7 @@ import ro.studbox.entities.Faculty;
 public interface FacultyService {
 	
 	Faculty getFaculty(long facultyId);
+	void increaseViewNo(long facultyId);
 
 }
 

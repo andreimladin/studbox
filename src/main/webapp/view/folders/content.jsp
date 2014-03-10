@@ -237,7 +237,7 @@
 				<div id="navbutitem" class="firstnavitem" >
 					<c:choose>
 						<c:when test="${folder.course}">
-							<a href="/main/profiles/${course.year.profile.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${course.year.profile.shortName}</span></a>
+							<a href="/main/profiles/${course.profile.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${course.profile.shortName}</span></a>
 						</c:when>
 						<c:otherwise>
 							<a href="/main/courses/${course.objectId}/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
