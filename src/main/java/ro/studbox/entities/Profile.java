@@ -66,7 +66,18 @@ public class Profile implements Serializable {
 	@JoinColumn(name = "OwnerId", nullable = false)	
     private User owner;
 	
-	public Profile(){		
+	public Profile(){
+	}
+	
+	public Profile(long facultyId, String name, String shortName, String section, String type, long ownerId, Date creationDate, Date lastModifiedDate){		
+		this.faculty=new Faculty(facultyId);
+		this.name=name;
+		this.shortName=shortName;
+		this.section=section;
+		this.type=type;
+		this.owner=new User(ownerId);
+		this.creationDate=creationDate;
+		this.lastModifiedDate=lastModifiedDate;
 	}
 	
 	public Profile(long profileId){

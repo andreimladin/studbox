@@ -35,6 +35,8 @@ public class ProfileDaoImpl extends GenericDaoImpl<Long, Profile> implements Pro
 		superTypeObj.setObjectTypeId(ObjectType.PROFILE_TYPE_ID);
 		objectDao.create(superTypeObj);
 		
+		//
+		
 		// Create the profile
 		profile.setObjectId(superTypeObj.getObjectId());
 		return super.create(profile);
@@ -53,15 +55,25 @@ public class ProfileDaoImpl extends GenericDaoImpl<Long, Profile> implements Pro
 	
 	@Override
 	@Transactional
-	public boolean existsProfile(long profileId) {
+	public boolean existsProfile(long facultyId, String name) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session
-				.createQuery("select 1 from Profile where ObjectId=:profileId");
-		query.setParameter("profileId", Long.valueOf(profileId));
-
+		Query query = session.createQuery("select 1 from Profile where FacultyId=:facultyId and Name=:name");
+		query.setParameter("facultyId", Long.valueOf(facultyId));
+		query.setParameter("name", name);
+		
 		return query.uniqueResult() != null;
 	}
 
+	@Override
+	@Transactional
+	public boolean existsProfile(long profileId){
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("select 1 from Profile where ObjectId=:profileId");
+		query.setParameter("profileId", Long.valueOf(profileId));
+		
+		return query.uniqueResult() != null;
+	}
+	
 	@Override
 	@Transactional
 	public void delete(Profile profile) {

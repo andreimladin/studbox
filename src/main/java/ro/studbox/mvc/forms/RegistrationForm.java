@@ -145,7 +145,4 @@ public class RegistrationForm {
 	public void setAgreedTerms(boolean agreedTerms) {
 		this.agreedTerms = agreedTerms;
 	}
-	
-	
-
 }

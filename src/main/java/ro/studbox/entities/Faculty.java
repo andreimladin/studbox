@@ -62,6 +62,13 @@ public class Faculty implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "OwnerId", nullable = false)	
     private User owner;
+
+	public Faculty() {
+	}
+	
+	public Faculty(long facultyId){
+		this.objectId = facultyId;
+	}
 	
 	public University getUniversity() {
 		return university;
