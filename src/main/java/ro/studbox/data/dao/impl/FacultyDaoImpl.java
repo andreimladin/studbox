@@ -45,7 +45,15 @@ public class FacultyDaoImpl extends GenericDaoImpl<Long, Faculty> implements Fac
 		return super.create(faculty);
 	}
 	
-	
+	@Override	
+	@Transactional
+	public boolean existsFaculty(long facultyId) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session
+				.createQuery("select 1 from Faculty where ObjectId=:facultyId");
+		query.setParameter("facultyId", Long.valueOf(facultyId));
+		return query.uniqueResult() != null;
+	}
 
 	@Override
 	@Transactional

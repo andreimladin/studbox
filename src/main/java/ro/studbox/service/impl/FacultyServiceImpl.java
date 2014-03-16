@@ -29,7 +29,11 @@ public class FacultyServiceImpl implements FacultyService {
 		facultyDao.increaseViewNo(facultyId);		
 	}
 	
-	
+	@Override
+	public boolean existsFaculty(long facultyId) {		
+		return facultyDao.existsFaculty(facultyId);
+	}
+
 	
 	
 }

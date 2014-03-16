@@ -11,7 +11,7 @@ import ro.studbox.entities.Faculty;
 public interface FacultyDao extends GenericDao<Long, Faculty> {
 	
 	List<Faculty> getAllByUniversityId(long universityId);
-
+	boolean existsFaculty(long facultyId);
 	void increaseViewNo(long facultyId);
 	
 	void increaseViewNoByProfileId(long profileId);
