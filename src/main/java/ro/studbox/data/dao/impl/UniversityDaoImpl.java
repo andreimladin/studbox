@@ -5,7 +5,6 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.Query;
-import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,16 +37,6 @@ public class UniversityDaoImpl extends GenericDaoImpl<Long, University> implemen
 		// Create the university
 		university.setObjectId(superTypeObj.getObjectId());
 		return super.create(university);
-	}
-
-	@Override
-	@Transactional
-	public boolean existsUniversity(long universityId) {
-		Session session = sessionFactory.getCurrentSession();
-		Query query = session
-				.createQuery("select 1 from University where ObjectId=:universityId");
-		query.setParameter("universityId", Long.valueOf(universityId));
-		return query.uniqueResult() != null;
 	}
 	
 	@Override

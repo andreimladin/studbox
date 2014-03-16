@@ -51,14 +51,13 @@
     			<div class="modal-content">
       				<div class="modal-header">
         				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        				<h4 class="modal-title" id="myModalLabel">Adauga curs</h4>
+        				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
       				</div>
       				<div class="modal-body">
-      					Numele cursului:<br/>
-      					<input id="courseName" type="text" style="width:210px;float:left;" placeholder="Numele cursului"><br/>
-      					<br/>
-      					Prescurtare curs:<br/>
-      					<input id="shortCourseName" type="text" style="width:210px;float:left;" placeholder="Prescurtare nume curs"><br/>      					
+      					Numele cursului<br/>
+      					<input id="courseName" type="text" style="width:150px;float:left;" placeholder="Numele cursului"><br/>
+      					Prescurtare curs<br/>
+      					<input id="shortCourseName" type="text" style="width:150px;float:left;" placeholder="Prescurtarea cursului"><br/>      					
       				</div>
       				<div class="modal-footer">
         				<button type="button" class="btn btn-default" data-dismiss="modal">Iesire</button>
