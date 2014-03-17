@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
 	<style>
 	.errorblock {
 		color: #ff0000;

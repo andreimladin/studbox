@@ -33,7 +33,7 @@
 			<div id="backbut">
 				<div id="navseparator">&nbsp</div>
 				<div id="navbutitem" class="firstnavitem">
-					<a href="/main/universities/${faculty.university.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${faculty.university.shortName}</span></a>					
+					<a href="${pageContext.request.contextPath}/main/universities/${faculty.university.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${faculty.university.shortName}</span></a>					
 				</div>
 				<div id="navseparator">&nbsp</div>
 				<div id="navbutitem" >
@@ -93,7 +93,7 @@
 			<c:forEach var="profile" items="${faculty.profiles}" varStatus = "status">
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						<a class="accordion-toggle" href="/main/profiles/${profile.objectId}/home">
+						<a class="accordion-toggle" href="${pageContext.request.contextPath}/main/profiles/${profile.objectId}/home">
 							${profile.name} - ${profile.section}
 						</a>
 					</div>

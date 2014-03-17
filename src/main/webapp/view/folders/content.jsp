@@ -115,7 +115,7 @@
 		}
 		
 		$.post(
-			'/main/folders/add',
+			'${pageContext.request.contextPath}/main/folders/add',
 			{
 				'parentFolderId' : '${objectId}',
 				'name' : folderName
@@ -136,7 +136,7 @@
 							'</div>' +
 							'<div id="filename">' +
 								'<p>' + 
-									'<a href="/main/courses/${course.objectId}/folders/' + resultMap.folder.objectId + '/home">' +
+									'<a href="${pageContext.request.contextPath}/main/courses/${course.objectId}/folders/' + resultMap.folder.objectId + '/home">' +
 										resultMap.folder.name +
 									'</a>' +
 								'</p>' + 
@@ -169,7 +169,7 @@
 		$("#progressSection").show();
 	 
 	  	$.ajax({
-	    	url: '/main/files/upload',
+	    	url: '${pageContext.request.contextPath}/main/files/upload',
 	    	data: fileUploadForm,
 	    	dataType: 'text',
 	    	processData: false,
@@ -198,11 +198,11 @@
 	      			$('#files').append(
 		      			'<div id="filescontainer">' +
 		      				'<div id="filetype">'+
-		      					'<p><img src="/images/file.png" id="fileicon"></p>'+
+		      					'<p><img src="${pageContext.request.contextPath}/images/file.png" id="fileicon"></p>'+
 		      				'</div>' +
 							'<div id="filename">' +
 								'<p>' +
-									'<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/files/' + file.objectId + '/view">' + 
+									'<a href="${pageContext.request.contextPath}/main/courses/${course.objectId}/folders/${folder.objectId}/files/' + file.objectId + '/view">' + 
 										file.name +
 									'</a>' + 
 								'</p>' +
@@ -237,10 +237,10 @@
 				<div id="navbutitem" class="firstnavitem" >
 					<c:choose>
 						<c:when test="${folder.course}">
-							<a href="/main/profiles/${course.profile.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${course.profile.shortName}</span></a>
+							<a href="${pageContext.request.contextPath}/main/profiles/${course.profile.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${course.profile.shortName}</span></a>
 						</c:when>
 						<c:otherwise>
-							<a href="/main/courses/${course.objectId}/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
+							<a href="${pageContext.request.contextPath}/main/courses/${course.objectId}/folders/${folder.parentFolder.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Pagin&#x103; Curs</span></a>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -388,11 +388,11 @@
 			<c:forEach var="folder" items="${folder.folders}">
 			<div id="filescontainer">
 				<div id="filetype">
-					<p><img src="/images/folder.png" id="foldericon"></p>
+					<p><img src="${pageContext.request.contextPath}/images/folder.png" id="foldericon"></p>
 				</div>
 				<div id="filename">
 					<p>								
-						<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/home">
+						<a href="${pageContext.request.contextPath}/main/courses/${course.objectId}/folders/${folder.objectId}/home">
 							${folder.name}
 						</a>
 					</p>
@@ -414,12 +414,12 @@
 			<c:forEach var="file" items="${folder.files}">
 			<div id="filescontainer">
 				<div id="filetype">
-					<p><img src="/images/file.png" id="fileicon"></p>
+					<p><img src="${pageContext.request.contextPath}/images/file.png" id="fileicon"></p>
 				</div>
 				<div id="filename">
 					<p>
 						<sec:authorize access="isAuthenticated()">
-							<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/files/${file.objectId}/view">
+							<a href="${pageContext.request.contextPath}/main/courses/${course.objectId}/folders/${folder.objectId}/files/${file.objectId}/view">
 								${file.name}
 							</a>
 						</sec:authorize>

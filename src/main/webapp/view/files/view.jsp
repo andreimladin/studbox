@@ -4,9 +4,9 @@
 <head>
 	<%@ include file="/view/head.jsp" %>
 	<title>${file.name}</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#iframe").load(function(){
@@ -28,7 +28,7 @@
 					<div id="backbut">
 						<div id="navseparator">&nbsp</div>
 						<div id="navbutitem" class="firstnavitem" >
-							<a href="/main/courses/${course.objectId}/folders/${folder.objectId}/home">
+							<a href="${pageContext.request.contextPath}/main/courses/${course.objectId}/folders/${folder.objectId}/home">
 								<span>
 									<i class="icon-large icon-arrow-left icon-white "></i>
 									${file.folder.name}

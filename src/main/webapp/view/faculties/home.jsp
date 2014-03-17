@@ -12,12 +12,12 @@
 	<meta property="og:description" content="Aici g&#x103;si&#x21B;i foarte multe resurse pentru examene scrise sau practice, cursuri, seminarii, laboratoare sau chiar &#x219;i lucr&#x103;ri de licen&#x21B;&#x103; sau dizerta&#x21B;ie, toate acestea pentru fiecare facultate &#238;n parte a acestei universit&#x103;&#x21B;i."/>
 	<title>${faculty.university.name} - ${faculty.name}</title>
 	<meta name="description" content="Aici g&#x103;si&#x21B;i foarte multe resurse pentru examene scrise sau practice, cursuri, seminarii, laboratoare sau chiar &#x219;i lucr&#x103;ri de licen&#x21B;&#x103; sau dizerta&#x21B;ie, toate acestea pentru fiecare facultate &#238;n parte a acestei universit&#x103;&#x21B;i.">
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/js/bootstrap-tooltip.js"></script>  
-	<script type="text/javascript" src="/js/bootstrap-popover.js"></script>	
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-tooltip.js"></script>  
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-popover.js"></script>	
 </head>
 <body>
 <div id="wrap">

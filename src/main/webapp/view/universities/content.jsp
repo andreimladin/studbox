@@ -4,7 +4,7 @@
 			<div id="backbut">
 				<div id="navseparator">&nbsp</div>
 				<div id="navbutitem" class="firstnavitem">
-					<a href="/"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Home</span></a>
+					<a href="${pageContext.request.contextPath}/"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>Home</span></a>
 				</div>
 				<div id="navseparator">&nbsp</div>
 				<div id="navbutitem" >
@@ -17,7 +17,7 @@
 			<c:forEach var="faculty" items="${university.faculties}" varStatus = "status">
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						<a class="accordion-toggle" href="/main/faculties/${faculty.objectId}/home">
+						<a class="accordion-toggle" href="${pageContext.request.contextPath}/main/faculties/${faculty.objectId}/home">
 							${faculty.name}
 						</a>
 					</div>

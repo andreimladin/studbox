@@ -5,8 +5,8 @@
 <head>
 	<%@ include file="/view/head.jsp" %>
 	<title>Feedback - Studbox.ro</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
 </head>
 <body>
 <div id="wrap">
@@ -17,7 +17,7 @@
 		<!-- Content -->
 		<div id="content">
 			<div class="leftside">
-				<form:form name="feedbackForm" commandName="feedbackForm" action="/feedback/send" method="POST">					
+				<form:form name="feedbackForm" commandName="feedbackForm" action="${pageContext.request.contextPath}/feedback/send" method="POST">					
 					<div id="story">
 						<h3>Feedback</h3>
 						<h4>Dore&#x219;ti s&#x103; oferi un feedback acestui site? Te invit&#x103;m s&#x103; o faci!</h5>

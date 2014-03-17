@@ -3,8 +3,8 @@
 <html>
 <head>
 	<title>Cont confirmat</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
 </head>
 <body>
 <div id="wrap">

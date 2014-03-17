@@ -7,12 +7,12 @@
 	<meta property="og:image" content="http://www.studbox.ro${profile.faculty.university.logo}"/>
 	<title>${profile.name} - ${profile.section} - ${profile.faculty.name} - ${profile.faculty.university.name}</title>
 	<meta name="description" content="Aici g&#x103;si&#x21B;i foarte multe resurse ce v&#x103; pot fi de folos &#238;n ceea ce prive&#x219;te preg&#x103;tirea unor examene scrise, practice, orale sau chiar predarea unor lucr&#x103;ri de licen&#x21B;&#x103; sau dizerta&#x21B;ie">
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>	
-	<script type="text/javascript" src="/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/js/bootstrap-tooltip.js"></script>  
-	<script type="text/javascript" src="/js/bootstrap-popover.js"></script>	
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-tooltip.js"></script>  
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-popover.js"></script>	
 </head>
 <body>
 <div id="wrap">

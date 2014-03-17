@@ -15,8 +15,8 @@
 			</c:when>
 		</c:choose>	
 	</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">	
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">	
 </head>
 <body onload='document.rememberForm.email.focus();'>
 <div id="wrap">
@@ -38,7 +38,7 @@
 			</div>			
 			<div class="form">
 			
-				<form:form name="rememberForm" commandName="rememberForm" class="form-horizontal" action="/auth/processRemember/${what}" method="POST">
+				<form:form name="rememberForm" commandName="rememberForm" class="form-horizontal" action="${pageContext.request.contextPath}/auth/processRemember/${what}" method="POST">
 					<c:set var="domainNameErrors"><form:errors path="*"/></c:set>
     				<c:if test="${not empty domainNameErrors}">
     					<div class="control-group">

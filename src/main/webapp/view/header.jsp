@@ -11,12 +11,12 @@
 
 <div id="header">
 	<div id="logo">
-		<a href="/"><img src="/images/menu_logo.png"></a> <!-- logo -->
+		<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/images/menu_logo.png"></a> <!-- logo -->
 	</div>
 	<div id="menu">
 		<div class="menuseparator">&nbsp</div>
 		<div id="menuitem">
-			<a href="/"><span>Facult&#x103;&#x21B;i</span></a>
+			<a href="${pageContext.request.contextPath}"><span>Facult&#x103;&#x21B;i</span></a>
 		</div>
 		<div class="menuseparator">&nbsp</div>	
 		<sec:authorize access="hasRole('TODO')">	
@@ -45,10 +45,10 @@
 		<div id="right-header">
 			<sec:authorize access="isAnonymous()">			
 				<div id="log-in">				
-					<a href="/auth/login">Login</a>
+					<a href="${pageContext.request.contextPath}/auth/login">Login</a>
 				</div>
 				<div id="register">
-					<a href="/auth/registration" class="btn btn-success">&#206;nregistrare</span></a>
+					<a href="${pageContext.request.contextPath}/auth/registration" class="btn btn-success">&#206;nregistrare</span></a>
 				</div>
 			</sec:authorize>
 			
@@ -57,7 +57,7 @@
 					<a href="#"><span><sec:authentication property="principal.username"/></span></a>
 				</div>												
 				<div id="register">				
-					<a href="<c:url value='/j_spring_security_logout' />" class="btn btn-danger">Ie&#351;ire</a>
+					<a href="<c:url value='${pageContext.request.contextPath}/j_spring_security_logout' />" class="btn btn-danger">Ie&#351;ire</a>
 				</div>				
 			</sec:authorize>
 		</div>

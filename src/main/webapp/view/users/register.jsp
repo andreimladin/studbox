@@ -5,9 +5,9 @@
 <head>
 	<%@ include file="/view/head.jsp" %>
 	<title>&#206;nregistrare - Studbox.ro</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#terms").click(function() {
@@ -44,7 +44,7 @@
 				</div>
 
 				<div class="form">
-					<form:form name="registrationForm" commandName="registrationForm" action="register" class="form-horizontal" method="POST">
+					<form:form name="registrationForm" commandName="registrationForm" action="${pageContext.request.contextPath}/auth/register" class="form-horizontal" method="POST">
 						<!-- Username -->
 						<div class="control-group">
 					 	   	<label class="control-label" for="username">
@@ -190,7 +190,7 @@
 						    			</label>
 						    			<label class="checkbox">
 							    			<form:checkbox id="terms" path="agreedTerms"/>
-											Sunt de acord cu <a href="/shortTerms" onclick="window.open('/shortTerms','Termeni &#x219;i condi&#x21B;ii','width=1000,height=700,left=50,top=0');return false;"><b><i>Termenii &#x219;i condi&#x21B;iile</b></i></a>
+											Sunt de acord cu <a href="${pageContext.request.contextPath}/shortTerms" onclick="window.open('/shortTerms','Termeni &#x219;i condi&#x21B;ii','width=1000,height=700,left=50,top=0');return false;"><b><i>Termenii &#x219;i condi&#x21B;iile</b></i></a>
 							    		</label>
 						    		</div>
 						    		<div id="registerbtn">

@@ -7,9 +7,9 @@
 	<meta property="og:image" content="http://www.studbox.ro/images/small_logo.png"/>
 	<title>Ghidul studentului - Facult&#x103;&#x21B;i, subiecte examene, prob&#x103; practic&#x103; &#x219;i oral&#x103;, teme licen&#x21B;&#x103; &#x219;i dizerta&#x21B;ie</title>
 	<meta name="description" content="Aici ve&#x21B;i putea g&#x103;si foarte multe resurse pentru examene scrise sau practice, cursuri, seminarii, laboratoare sau chiar &#x219;i lucr&#x103;ri de licen&#x21B;&#x103; sau dizerta&#x21B;ie.">
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>	
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>	
 	<script type="text/javascript">
 		$(document).ready(function() {$(".w2bslikebox").hover(function() {$(this).stop().animate({right: "0"}, "medium");}, function() {$(this).stop().animate({right: "-250"}, "medium");}, 500);});	
 	</script>
@@ -38,9 +38,9 @@
 			<div id="univs">
 				<c:forEach var="university" items="${universityList}">
 					<div id="univ">
-						<a href="/main/universities/${university.objectId}/home">
+						<a href="${pageContext.request.contextPath}/main/universities/${university.objectId}/home">
 							<div id="univ-logo">
-				 				<img src="${university.logo}">
+				 				<img src="${pageContext.request.contextPath}${university.logo}">
 							</div>
 							<div id="univ-name">${university.name}</div>
 						</a>			

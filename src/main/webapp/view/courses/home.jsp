@@ -4,8 +4,8 @@
 <head>
 	<%@ include file="/view/head.jsp" %>
 	<title>${course.name}</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 </head>
 <body>
 <div id="wrap">

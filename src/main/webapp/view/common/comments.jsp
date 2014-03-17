@@ -27,7 +27,7 @@
 		var text = $("#text").val();			
 		
 		$.post(
-			'/main/comments/add',
+			'${pageContext.request.contextPath}/main/comments/add',
 			{
 				'subjectId' : '${objectId}',
 				'text' : text

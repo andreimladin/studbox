@@ -4,7 +4,7 @@
 		var shortCourseName = $("#shortCourseName").val();
 		
 		$.post(
-			'/main/courses/add',
+			'${pageContext.request.contextPath}/main/courses/add',
 			{
 				'profileId' : '${objectId}',
 				'name' : courseName,
@@ -29,7 +29,7 @@
 			<div id="backbut">
 				<div id="navseparator">&nbsp</div>
 				<div id="navbutitem" class="firstnavitem" >
-					<a href="/main/faculties/${profile.faculty.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${profile.faculty.shortName}</span></a>
+					<a href="${pageContext.request.contextPath}/main/faculties/${profile.faculty.objectId}/home"><span><i class="icon-large icon-arrow-left icon-white " style="margin-right:5px;"></i>${profile.faculty.shortName}</span></a>
 				</div>				
 				<div id="navseparator">&nbsp</div>
 				<div id="navbutitem" >
@@ -72,7 +72,7 @@
 			<c:forEach var="course" items="${profile.courses}">		
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						<a class="accordion-toggle" href="/main/courses/${course.objectId}/home">
+						<a class="accordion-toggle" href="${pageContext.request.contextPath}/main/courses/${course.objectId}/home">
 							${course.name}
 						</a>
 					</div>

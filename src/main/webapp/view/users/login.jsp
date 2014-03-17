@@ -5,8 +5,8 @@
 <head>
 	<%@ include file="/view/head.jsp" %>
 	<title>Autentificare - Studbox.ro</title>
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">	
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">	
 </head>
 <body onload='document.loginForm.j_username.focus();'>
 <div id="wrap">
@@ -34,7 +34,7 @@
 							<input name="j_username" type="text" tabindex="1"/>
 						</div>			
 						<div class="controls" id="forgotq">
-							<a href="/auth/remember/username" style="font-size:10px;" tabindex="3">&#x21A;i-ai uitat userul?</a>
+							<a href="${pageContext.request.contextPath}/auth/remember/username" style="font-size:10px;" tabindex="3">&#x21A;i-ai uitat userul?</a>
 						</div>	    	
 				    </div>
 				    <div class="control-group">
@@ -43,7 +43,7 @@
 							<input name="j_password" type="password" tabindex="2"/>
 						</div>
 						<div class="controls" id="forgotq">
-							<a href="/auth/remember/password" style="font-size:10px;" tabindex="4">&#x21A;i-ai uitat parola?</a>
+							<a href="${pageContext.request.contextPath}/auth/remember/password" style="font-size:10px;" tabindex="4">&#x21A;i-ai uitat parola?</a>
 						</div>
 				    </div>
 				    <div class="control-group">
@@ -58,7 +58,7 @@
 					<div  class="alert alert-info" id="regnew">
 						<div id="newacc">
 				    		<b>&#206;nc&#x103; nu ai cont?</b>
-				    		<a href="/auth/registration" id="inregistrare" tabindex="7" class="btn btn-success">&#206;nregistreaz&#x103;-te!</a>							
+				    		<a href="${pageContext.request.contextPath}/auth/registration" id="inregistrare" tabindex="7" class="btn btn-success">&#206;nregistreaz&#x103;-te!</a>							
 						</div>
 					</div>						
 				</form>

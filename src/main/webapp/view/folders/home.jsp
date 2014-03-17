@@ -14,10 +14,10 @@
 		</c:otherwise>
 	</c:choose>	
 	<meta name="description" content="Aici g&#x103;si&#x21B;i foarte multe resurse specifice acestui curs. Subiect examene scrise &#x219;i practice, cursuri, seminarii s.a.m.d.">
-	<link type="text/css" rel="stylesheet" href="/css/main.css">
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.number.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.number.min.js"></script>
 </head>
 <body>
 <div id="wrap">
