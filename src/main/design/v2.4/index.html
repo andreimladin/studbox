@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Studbox -->
+    <link href="css/portal.css" rel="stylesheet">
+    
+    <!-- Studbox -->
+    <link href="css/studbox.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="masthead visible-desktop">
+        <div class="container">
+            <div class="toolbar pull-right">			
+                <div>
+				    <form class="toolbar-item form-search" method="GET" action="/search/">					
+                        <div class="input-append input-prepend">		
+							<div class="btn-group btn-select" data-target="#filter" data-focus="#q">
+								<a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+									<span class="selected">All</span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="active">
+										<a data-value="">All</a>
+									</li>
+									
+                                    <li>
+										<a data-value="adx_webpage">Documentation</a>
+									</li>
+									
+									<li>
+										<a data-value="adx_blog,adx_blogpost,adx_blogpostcomment">Blogs</a>
+									</li>
+									
+									<li>
+										<a data-value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Forums</a>
+									</li>
+									
+									<li>
+										<a data-value="adx_ideaforum,adx_idea,adx_ideacomment">Ideas</a>
+									</li>
+									
+									<li>
+										<a data-value="adx_issueforum,adx_issue,adx_issuecomment">Bugs</a>
+									</li>
+									
+									<li>
+										<a data-value="adx_event,adx_eventschedule">Events</a>
+									</li>
+									
+									<li>
+										<a data-value="incident">Help Desk</a>
+									</li>									
+								</ul>
+							</div>
+							<select id="filter" name="filter" class="input-medium btn-select">								
+                                <option value="" selected="selected">All</option>								
+                                <option value="adx_webpage">Documentation</option>
+                                <option value="adx_blog,adx_blogpost,adx_blogpostcomment">Blogs</option>
+                                <option value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Forums</option>
+                                <option value="adx_ideaforum,adx_idea,adx_ideacomment">Ideas</option>									
+                                <option value="adx_issueforum,adx_issue,adx_issuecomment">Bugs</option>
+                                <option value="adx_event,adx_eventschedule">Events</option>
+								<option value="incident">Help Desk</option>									
+							</select>
+						
+                            <input type="text" id="q" name="q" class="search-query" placeholder="Search" value="">
+                            <button type="submit" class="btn"><i class="icon-search"></i></button>
+                        </div>
+                    </form>
+				
+                    <a class="toolbar-item shopping-cart-status" href="" data-href="/_services/commerce/9f718f93-2b89-485e-9062-d561435686a7/shopping-cart/status">
+                        <i class="icon-shopping-cart"></i>
+                        Cart
+                        <span class="count">(<span class="value"></span>)</span>
+                    </a>
+				
+                    <div class="toolbar-item">
+						<a class="btn btn-primary" href="/login/?returnurl=%2fproducts%2fadxstudio-portals%2freleases%2fadxstudio-portals-6%2fdownload%2f">
+							<i class="icon-lock icon-white"></i>
+							Log in
+						</a>
+					</div>
+                    
+					<div class="toolbar-item dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-user"></i> Andrei Mladin <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li><a href="/profile/" title="Profile">Profile</a></li>
+									
+							<li class="divider"></li>
+							<li><a href="/account-signout?returnUrl=%2Fevents%2F">Sign Out</a></li>
+						</ul>
+					</div>
+                </div>
+            </div>
+            
+            <div class="xrm-editable-html xrm-attribute">
+                <div class="xrm-attribute-value">
+                    <div class="toolbar">                        
+                        <a class="toolbar-item"  href="/">
+                            <img src="rsz_21rsz_1rsz_2rsz_1rsz_small_logo_for_website.png" style="padding-bottom:10px;">
+                        </a>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			     </a>
+			     <div class="pull-left hidden-desktop">
+                     <div class="xrm-editable-html xrm-attribute">
+                         <div class="xrm-attribute-value">
+                             <div>
+                                 <a class="brand" href="/"><img src="/adxstudio-mark-notext.png" alt="" width="46" height="20">&nbsp; Adxstudio Community</a>
+                             </div>
+                         </div>
+                     </div>
+			     </div>
+			     <div class="nav-collapse collapse">
+                     <div class="pull-left"></div>
+                     <div class="weblinks pull-left">
+                         <ul class="weblinks-depth-1 nav" data-weblinks-depth="1">
+                             <li><a href="/" title="Home"><span class="icon-home"></span></a></li>
+                             <li class="dropdown">
+                                 <a class="dropdown-toggle" data-toggle="dropdown" href="/products/" title="Products">Products <b class="caret"></b></a>
+                                 <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                     <li><a href="/products/" title="Products">Products</a><div class="description"></div></li>
+                                     <li class="divider"></li><li><a href="/products/adxstudio-portals/" title="Adxstudio Portals">Adxstudio Portals</a></li>
+                                     <li><a href="/products/adxstudio-alm-toolkit/" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a></li>
+                                     <li><a href="/products/adxstudio-productivity-pack/" title="Adxstudio Productivity Pack">Adxstudio Productivity Pack</a></li>
+                                     <li><a href="/products/adxstudio-cms/" title="Adxstudio CMS">Adxstudio CMS</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a class="dropdown-toggle" data-toggle="dropdown" href="/gallery/" title="Gallery">Gallery <b class="caret"></b></a>
+                                 <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                     <li><a href="/gallery/" title="Gallery">Gallery</a><div class="description"></div></li>
+                                     <li class="divider"></li>
+                                     <li><a href="/gallery/311-service-requests/" title="311 Service Request Gallery">311 Service Request Gallery</a></li>
+                                     <li><a href="/gallery/permits/" title="Permit Gallery">Permit Gallery</a></li>
+                                     <li><a href="/gallery/websites/" title="Website Gallery">Website Gallery</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a class="dropdown-toggle" data-toggle="dropdown" href="/forums/" title="Forums">Forums <b class="caret"></b></a>
+                                 <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                     <li><a href="/forums/" title="Forums">Forums</a><div class="description"></div></li>
+                                     <li class="divider"></li>
+                                     <li><a href="/forums/adxstudio-portals" title="Adxstudio Portals">Adxstudio Portals</a></li>
+                                     <li><a href="/forums/adxstudio-alm-toolkit" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a></li>
+                                     <li><a href="/forums/adxstudio-productivity-pack" title="Adxstudio Productivity Pack">Adxstudio Productivity Pack</a></li>
+                                     <li><a href="/forums/adxstudio-cms" title="Adxstudio CMS">Adxstudio CMS</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Support">Support <b class="caret"></b></a>
+                                 <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                     <li><a href="/helpdesk/" rel="nofollow" title="Help Desk">Help Desk</a></li>
+                                     <li><a href="/ideas/" title="Ideas">Ideas</a></li>
+                                     <li><a href="/bugs/" title="Bugs">Bugs</a></li>
+                                 </ul>
+                             </li>
+                             <li><a href="/blogs/" title="Blogs">Blogs</a></li>
+                             <li><a href="/events/" title="Events">Events</a></li>
+                         </ul>
+                     </div>
+                     <div class="hidden-desktop">
+                         <ul class="nav pull-right">						
+                             <li>
+							     <a href="/login/?returnurl=%2fproducts%2fadxstudio-portals%2freleases%2fadxstudio-portals-6%2fdownload%2f">
+                                     <i class="icon-lock"></i>
+	                               Sign In
+                                 </a>
+							 </li>
+                             <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="icon-user"></i> Andrei Mladin <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/profile/" title="Profile">Profile</a></li>
+											
+									<li><a href="/account-signout?returnUrl=%2Fpages%2Ferror.aspx">Sign Out</a></li>
+								</ul>
+							</li>
+                         </ul>
+                         <form class="navbar-search form-search pull-right" method="GET" action="/search/">
+                             <div class="input-append">
+                                 <input type="text" id="q" name="q" class="search-query" placeholder="Search" value="">
+                                 <button type="submit" class="btn"><i class="icon-search"></i></button>
+                             </div>
+                         </form>
+                     </div>
+                     
+                     <div class="pull-right">
+                         <div class="xrm-editable-html xrm-attribute">
+                             <div class="xrm-attribute-value">
+                                 <div class="btn-group">
+                                     <a class="btn dropdown-toggle" title="Download an Adxstudio product" href="#" data-toggle="dropdown">
+                                         Download <span class="caret">&nbsp;</span>
+                                     </a>
+                                     <ul class="dropdown-menu pull-right">
+                                         <li>
+                                             <a href="/products/adxstudio-portals/releases/adxstudio-portals-6/download/">
+                                                 <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                     <span class="label label-success">Free Trial</span>
+                                                 </span>
+                                                 Adxstudio Portals 6.0
+                                             </a>
+                                         </li>
+                                         <li>
+                                             <a href="/products/adxstudio-portals/releases/adxstudio-portals-5/download/">
+                                                 <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                     <span class="label label-success">Free Trial</span>
+                                                 </span>
+                                                 Adxstudio Portals 5.0
+                                             </a>
+                                         </li>
+                                         <li>
+                                             <a href="/products/adxstudio-alm-toolkit/download/">
+                                                 <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                     <span class="label label-success">Free Trial</span>
+                                                 </span>
+                                                 Adxstudio ALM Toolkit
+                                             </a>
+                                         </li>
+                                         <li>
+                                             <a href="/products/adxstudio-productivity-pack/">
+                                                 <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                     <span class="label label-success">Free</span>
+                                                 </span>
+                                                 Adxstudio Productivity Pack
+                                             </a>
+                                         </li>
+                                     </ul>
+                                 </div>
+                                 <div class="btn-group">
+                                     <a class="btn btn-success" title="Create your own Adxstudio Portals online demo" href="https://demo.adxstudio.com/" target="_blank">Online Demo</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

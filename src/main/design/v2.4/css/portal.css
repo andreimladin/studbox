@@ -1,0 +1,59 @@
+.masthead .toolbar {
+    margin: 15px 0;
+}
+
+.masthead .toolbar .toolbar-item {
+    display: block;
+    float: left;
+    line-height: 30px;
+    margin: 0 15px 0 0;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.masthead .toolbar.pull-right .toolbar-item {
+    margin: 0 0 0 15px;
+}
+
+.btn-select .dropdown-menu li > a {
+    cursor: pointer;
+}
+
+select.btn-select {
+    display: none;
+}
+
+.form-search .input-prepend.input-append .search-query {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.masthead .toolbar .toolbar-item.shopping-cart-status, 
+.masthead .toolbar .toolbar-item.shopping-cart-status .count {
+    display: none;
+}
+
+.masthead .toolbar-item > a, 
+.masthead .toolbar-item > a:hover, 
+.masthead .toolbar-item > a:visited {
+    text-decoration: none;
+}
+
+.masthead .toolbar-item > a > .caret {
+	margin-top: 0;
+	vertical-align: middle;
+}
+
+
+/* Responsive */
+@media (max-width: 979px) {
+	.navbar-static-top .navbar-inner {
+		padding: 5px;
+	}
+
+	.navbar .nav-collapse .pull-left {
+		float: none;
+	}
+}
+

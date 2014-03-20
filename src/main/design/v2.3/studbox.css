@@ -1,0 +1,131 @@
+/************************* OVERRIDEN DESIGN ************************/
+
+.row {
+    max-width:NaNrem;
+}
+
+.top-bar {
+    background:#0f4461;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background:#0f4461;
+}     
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background-color: #0f4461;  
+    color:#bdc8cf;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+    background-color: #0f4461;
+    color: #00FF00; 
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+    background: #0f4461; 
+}
+
+/************************** END OVERRIDEN DESIGN *********************/
+
+
+/*************************** BANNER ADVERTISING **********************/
+#banner {
+    background-color: #0f4461;
+}
+
+#banner .ad {
+    text-align: center;
+    height: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+/************************* END BANNER ADVERTISING ********************/
+
+
+/***************************** TOP MENU BAR **************************/
+
+#banner .top-menu-bar {    
+    background-color: #0f4461;    
+}
+
+.top-menu-bar ul li > h1,
+.top-menu-bar ul li > a {    
+    font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;    
+    font-weight: 700;
+    font-size:1.2em;
+}
+
+.top-menu-bar h1 {
+    color:#2a6b8f;
+    font-size: 1em;
+    line-height:1.4;
+    background-color:#0f4461;
+    font: parent;   
+}
+
+/*************************& END TOP MENU BAR ***************************/
+
+
+
+
+/*************************** TOP MENU LOGO *****************************/
+
+#banner .top-menu-logo {
+    background-color: #0f4461; 
+    height:60px;
+}
+
+.top-menu-logo > .row {
+    height:100%;
+}
+
+.top-menu-logo > .row > .top-bar{
+    height:100%;
+}
+
+.top-menu-logo > .row > .top-bar .name {
+    height: 60px;
+}
+
+.top-menu-logo > .row > .top-bar .name a{
+    padding:0;
+}
+
+.top-menu-logo > .row > .top-bar > .top-bar-section{
+    height:100%;
+}
+
+.top-menu-logo > .row > .top-bar > .top-bar-section > .social{
+    padding-top:25px;
+}
+
+.top-menu-logo > .row > .top-bar > .top-bar-section > .social li:first-child{
+    border-left: none;
+}
+
+.top-menu-logo > .row > .top-bar > .top-bar-section > .social li:not(.has-form) a:not(.button) {
+    line-height: 16px;
+    border-left: 1px    solid         #2a6b8f;
+}
+
+
+/************************* END TOP MENU LOGO ***************************/
+
+
+
+
+
+/*
+.top-bar-section > ul > .divider, 
+.top-bar-section > ul > [role="separator"] {
+    #background-color: #2a6b8f;    
+    border-bottom: none;
+    border-top: none;
+    border-right: solid 1px #2a6b8f;
+    clear: none;
+    height: 45px;
+    width: 0;
+}
+*/
+
