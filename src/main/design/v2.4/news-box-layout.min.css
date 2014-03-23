@@ -1,0 +1,380 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             <script>
+			function lct_setup() {
+				if(jQuery('#lct_wrapper').size() > 0 || lct_is_redirecting) {
+					return true;	
+				}
+				else {
+					var lct_code = '	<div id="lct_inner">	  <div id="lct_main">		<div id="lct_selected" rel="nb-js"><span>News Box - jQuery Plugin</span></div>	  </div>	  <ul id="lct_items_list" style="display: none;">			  <li id="lct_mg" >				  <span class="title">Media Grid</span><br/>				  <span class="descr">Wordpress Responsive Portfolio</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/MG_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/media-grid"></div>				  <div class="ev_url" id="http://codecanyon.net/item/media-grid-wordpress-responsive-portfolio/2218545"></div>			  </li>			  <li id="lct_mgom" >				  <span class="title">Overlay Manager</span><br/>				  <span class="descr">Media Grid add-on</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2014/01/MGOM_big.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/media-grid/media-grid-overlay-manager-addon"></div>				  <div class="ev_url" id="http://codecanyon.net/item/media-grid-overlay-manager-addon/6643138"></div>			  </li>			  <li id="lct_nb-js" class="curr_item">				  <span class="title">News Box - jQuery Plugin</span><br/>				  <span class="descr">jQuery Contents Slider and Viewer</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/12/newsbox_showcase-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/news-box-jquery-plugin"></div>				  <div class="ev_url" id="http://codecanyon.net/item/news-box-jquery-contents-slider-and-viewer/6348100"></div>			  </li>			  <li id="lct_gg" >				  <span class="title">Global Gallery</span><br/>				  <span class="descr">Wordpress Responsive Gallery</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/GG_v2_big.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/global-gallery"></div>				  <div class="ev_url" id="http://codecanyon.net/item/global-gallery-wordpress-responsive-gallery/3310108"></div>			  </li>			  <li id="lct_fp" >				  <span class="title">FontPress</span><br/>				  <span class="descr">Font Manager Wordpress Plugin</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/FP_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/fontpress"></div>				  <div class="ev_url" id="http://codecanyon.net/item/fontpress-font-manager-plugin/1746759"></div>			  </li>			  <li id="lct_bc" >				  <span class="title">Business Calendar</span><br/>				  <span class="descr">Wordpress Internal Calendar</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/BC_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/business-calendar"></div>				  <div class="ev_url" id="http://codecanyon.net/item/business-calendar-wordpress-internal-calendar/2578840"></div>			  </li>			  <li id="lct_pc" >				  <span class="title">PrivateContent</span><br/>				  <span class="descr">Multilevel Content Wordpress Plugin</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/PC_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/privatecontent"></div>				  <div class="ev_url" id="http://codecanyon.net/item/privatecontent-multilevel-content-plugin/1467885"></div>			  </li>			  <li id="lct_pcma" >				  <span class="title">Mail Actions</span><br/>				  <span class="descr">PrivateContent add-on</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/PCMA_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/privatecontent/mail-actions-add-on"></div>				  <div class="ev_url" id="http://codecanyon.net/item/-privatecontent-mail-actions-addon-/3606728"></div>			  </li>			  <li id="lct_pcud" >				  <span class="title">User Data</span><br/>				  <span class="descr">PrivateContent add-on</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/PCUD_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/privatecontent/user-data-add-on"></div>				  <div class="ev_url" id="http://codecanyon.net/item/privatecontent-user-data-addon/2399731"></div>			  </li>			  <li id="lct_pcsl" >				  <span class="title">Secure Links</span><br/>				  <span class="descr">PrivateContent add-on</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2013/03/PCSL_big-01.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/privatecontent/secure-links-add-on"></div>				  <div class="ev_url" id="http://codecanyon.net/item/privatecontent-secure-links-addon/3907407"></div>			  </li>			  <li id="lct_sfv" >				  <span class="title">Simple Form Validator</span><br/>				  <span class="descr">PHP Class</span>				  <div class="item_img"><img src="http://www.projects.lcweb.it/wp-content/uploads/2012/04/sfv_big_banner.png" /></div>				  				  <div class="lc_url" id="http://www.projects.lcweb.it/simple-form-validator"></div>				  <div class="ev_url" id="http://codecanyon.net/item/simple-form-validator-php-class/1623830"></div>			  </li>	  </ul>	  <div id="lct_btn_wrap">		  <div id="lct_close_btn"></div>		  <div class="spacer"></div>		  <a href="http://codecanyon.net/item/news-box-jquery-contents-slider-and-viewer/6348100?ref=LCweb" target="_top" id="lct_purchase_btn">PURCHASE IT</a>	  </div>    	</div>'
+
+					jQuery('body').prepend('<div id="lct_wrapper">'+lct_code+'</div>');	
+					lct_head_margin();	
+					
+					setTimeout(function() {
+						lct_setup();
+					}, 10);
+				}	
+			}
+			lct_setup();
+			
+			function lct_head_margin() {
+				if( jQuery(window).width() > 440) {
+					jQuery('#header').css('padding-top', 61);	
+				} else {
+					jQuery('#header').css('padding-top', 107);		
+				}
+			}
+			
+			
+			// responsive tricks
+			jQuery(window).resize(function() {
+				lct_head_margin();
+			});
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           <script>
+    jQuery(document).ready(function() {
+
+       // check for the page height and adjust to avoid elements over the footer
+       setInterval(function() {
+          if( jQuery('#page > .inner').height() != jQuery('#main').height() ) {
+              jQuery('#page > .inner').css('height', jQuery('#main').height());
+          }
+       }, 150); 
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <script>
+	jQuery(document).ready(function() {
+		jQuery('body').delegate('.gg_gallery_wrap div.gg_img:not(.gg_coll_img)', 'click', function(e) {
+			e.preventDefault();	
+			
+			var the_hook = jQuery(this).attr('rel');
+		
+			var clicked_url = jQuery(this).attr('gg-url');
+			jQuery('.gg_gallery_wrap div.gg_img[rel='+the_hook+']').each(function(index, element) {
+				if(clicked_url == jQuery(this).attr('gg-url')) { gg_img_index = index; }
+			});
+			
+			gg_init_lclightbox('.gg_gallery_wrap div.gg_img', gg_img_index, the_hook);
+		});
+		
+		// fix for HTML inside attribute
+		var gg_ggl_html_fix = function(string) {
+			var fix_str = string.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+			return fix_str;	
+		}
+		
+		// slider lightbox init
+		gg_slider_lightbox = function(data, gg_img_index) {
+			var rel = new Date().getTime();
+			var obj = '';
+			
+			jQuery.each(data, function(i, v)  {
+				obj += '<div gg-url="'+ v.big +'" gg-title="'+ gg_ggl_html_fix(v.title) +'" gg-descr="'+ gg_ggl_html_fix(v.description) +'" rel="'+ rel +'"></div>';
+			});
+			
+			gg_init_lclightbox(obj, gg_img_index, rel);
+		}
+		
+		// throw lightbox
+		function gg_init_lclightbox(obj, gg_img_index, the_hook) {			
+			jQuery(obj).lcweb_lightbox({
+				open: true,
+				from_index: gg_img_index, 
+				manual_hook: the_hook,
+				
+				url_src: 'gg-url',
+				title_src: 'gg-title',
+				author_src: 'gg-author',
+				descr_src: 'gg-descr',
+				data_position: 'under',
+				
+				animation_time: 300,
+				slideshow_time: 5000,
+				autoplay: false,
+				ol_opacity: 0.8,
+				ol_color: '#ebebeb',
+				ol_pattern: 'pattern-triangle-10',
+				border_w: 3,
+				border_col: '#9d9d9d', 
+				padding: 8,
+				radius: 10,
+				style: 'dark',
+				data_position: 'over',
+				fullscreen: true,
+				fs_only: 'none',
+				fs_img_behaviour: 'smart',
+				max_width: '90%',
+				max_height: '85%',
+				thumb_nav: true,
+				socials: true			});
+		}
+	});
+	</script>
+
+
+
+
+                            <script>
+	jQuery('body').delegate('.gg_linked_img', 'click', function() {
+		var link = jQuery(this).attr('gg-link');
+		window.location = link;  
+	});
+	</script>
