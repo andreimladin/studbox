@@ -69,6 +69,9 @@ public class User implements UserDetails {
 	@Column(name="Birthdate", nullable = false)
 	private Date birthdate;	
 		
+	@Column(name="Location", nullable = false)
+	private String location;
+	
 	@Column(name="CreationDate", nullable = false)
 	private Date creationDate;
 	
@@ -108,14 +111,15 @@ public class User implements UserDetails {
 	}
 
 	public User(String username, String password, String firstName,
-			String lastName, String email, String sex, Date birthdate,
+			String lastName, String email, String sex, String location, Date birthdate,
 			Date creationDate, Date lockDate, int status, boolean useNotifications, Set<Role> roles, Set<UserLimit> limits, UserDownloads downloads) {
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.sex = sex;
+		this.sex = sex; 
+		this.location = location;
 		this.birthdate = birthdate;
 		this.creationDate = creationDate;
 		this.lockDate = lockDate;
@@ -182,6 +186,14 @@ public class User implements UserDetails {
 		this.sex = sex;
 	}
 
+	public String getLocation() {
+		return location;
+	}
+	
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
 	public Date getBirthdate() {
 		return birthdate;
 	}

@@ -76,7 +76,7 @@ public class UsersController {
 			return "users/register";
 		} else { 
 			userService.createUser(regForm.getUsername(), regForm.getPassword(), regForm.getFirstName(), 
-					regForm.getLastName(), regForm.getEmail(), regForm.getSex(), regForm.getBirthdate(), regForm.isUseNotifications());
+					regForm.getLastName(), regForm.getEmail(), regForm.getSex(), regForm.getLocation(), regForm.getBirthdate(), regForm.isUseNotifications());
 			
 			return "users/registered";
 		}

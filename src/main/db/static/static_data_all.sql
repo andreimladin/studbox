@@ -9,10 +9,10 @@ insert into Role values ('CONSUMER', 'Consumator resurse');
 
 -- Users --
 insert into Users(Username, Password, FirstName, LastName, Email, Sex, Birthdate, CreationDate, Status, UseNotifications)
-values('SYSADMIN', '24bcfe0ad7c8e4ef28e12f084bf97e07', 'ADMIN','Studbox','admin@studbox.ro', 'M', '1987-03-26', '2013-07-28', 1, 1);
+values('SYSADMIN', '24bcfe0ad7c8e4ef28e12f084bf97e07', 'ADMIN','Studbox','admin@studbox.ro', 'M', 'Cluj-Napoca', '1987-03-26', '2013-07-28', 1, 1);
 
 insert into Users(Username, Password, FirstName, LastName, Email, Sex, Birthdate, CreationDate, Status, UseNotifications)
-values('SUPPORT', '24bcfe0ad7c8e4ef28e12f084bf97e07', 'SUPPORT','Studbox','support@studbox.ro', 'M', '1987-03-26', '2013-07-28', 1, 1);
+values('SUPPORT', '24bcfe0ad7c8e4ef28e12f084bf97e07', 'SUPPORT','Studbox','support@studbox.ro', 'M', 'Cluj-Napoca', '1987-03-26', '2013-07-28', 1, 1);
 
 
 -- UserRoles --

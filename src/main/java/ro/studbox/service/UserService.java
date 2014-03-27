@@ -11,7 +11,7 @@ import ro.studbox.entities.UserLimit;
 public interface UserService extends UserDetailsService {
 	
 	User createUser(String username, String password, String firstName, 
-			String lastName, String email, String sex, 
+			String lastName, String email, String sex, String location,
 			Date birthdate, boolean useNotifications);
 
 	void confirmAccount(String confirmationKey);

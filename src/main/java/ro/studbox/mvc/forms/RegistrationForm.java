@@ -30,6 +30,9 @@ public class RegistrationForm {
 		
 	private String sex = "M";
 	
+	@Size(min=2, max=20)
+	private String location;
+	
 	private String bDay = "01";
 	
 	private String bMonth = "01";
@@ -98,6 +101,14 @@ public class RegistrationForm {
 		this.sex = sex;
 	}
 
+	public String getLocation() {
+		return location;
+	}
+	
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
 	public String getbDay() {
 		return bDay;
 	}

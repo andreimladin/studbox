@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
 
 	@Transactional
 	public User createUser(String username, String password, String firstName, 
-			String lastName, String email, String sex, Date birthdate, boolean useNotifications) {		
+			String lastName, String email, String sex, String location, Date birthdate, boolean useNotifications) {		
 		
 		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
 		
@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
 		
 		UserDownloads downloads = new UserDownloads();
 		
-		User newUser = new User(username, password, firstName, lastName, email, sex, birthdate, new Date(), null, 0, useNotifications, roles, userLimits, downloads);
+		User newUser = new User(username, password, firstName, lastName, email, sex, location, birthdate, new Date(), null, 0, useNotifications, roles, userLimits, downloads);
 		// AIM - set the user on the limits to be persisted too
 		dailyDownloadsLimit.setUser(newUser);
 		weeklyDownloadsLimit.setUser(newUser);

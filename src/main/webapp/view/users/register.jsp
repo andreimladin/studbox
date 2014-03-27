@@ -124,6 +124,22 @@
 						    	</div>
 						    </c:if>		
 					    </div>
+
+					    <!-- location -->
+					    <div class="control-group">
+					 	   	<label class="control-label" for="location">
+					 	   		Localitate :
+					 	   	</label>
+					 	   	<div class="controls">
+					 	   		<form:input path="location"/>					 	   		
+					    	</div>
+							<c:set var="locationErrors"><form:errors path="location" cssStyle="font-size:10px; color:red;"/></c:set>
+    						<c:if test="${not empty locationErrors}">			
+					    		<div class="controls">
+					    			${locationErrors}
+						    	</div>
+						    </c:if>		
+					    </div>
 					    
 					    <!-- Email -->
 					    <div class="control-group">
@@ -179,7 +195,7 @@
 	    						<form:options items="${bYears}" />
 							</form:select> 							
 						</div>
-						
+
 						<div class="alert alert-info">
 							<div class="control-group">
 						    	<div id="registerend">
