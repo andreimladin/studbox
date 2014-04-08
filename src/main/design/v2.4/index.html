@@ -12,9 +12,13 @@
     <!-- Studbox -->
     <link href="css/portal.css" rel="stylesheet">
     
+    <!-- Accordion -->
+    <link href="css/accordion.css" rel="stylesheet">
+    
     <!-- Studbox -->
     <link href="css/studbox.css" rel="stylesheet">
-
+    
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,6 +31,40 @@
       
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <!-- For accordion -->  
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.accordionza.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // Accordion Demo #2
+            $('#news_accordion').accordionza({
+                autoPlay: true,
+                autoRestartDelay: 3000,
+                onSlideClose: function() {
+                    this.children('p').stop(true).animate({left: 320, opacity: 0}, 500);
+                },
+                onSlideOpen: function() {
+                    var properties = {left: 160, opacity: 1};
+                    var duration = 500;
+                    var easing = 'easeOutBack';
+                    this.children('p').stop(true)
+                        .filter(':eq(0)').animate({opacity: 0}, 000).animate(properties, duration, easing).end()
+                        .filter(':eq(1)').animate({opacity: 0}, 250).animate(properties, duration, easing).end()
+                        .filter(':eq(2)').animate({opacity: 0}, 500).animate(properties, duration, easing);
+                },
+                slideDelay: 3000,
+                slideEasing: 'easeOutCirc',
+                slideSpeed: 250,
+                slideTrigger: 'mouseover',
+                slideWidthClosed: 160
+            });
+
+        });
+
+    </script>
 </head>
 <body>
     <header class="masthead visible-desktop">
@@ -273,5 +311,64 @@
             </div>
         </div>
     </div>
+    
+    <div class="container">
+        <div id="content">
+            <ul id="news_accordion" style="overflow: hidden; position: relative;">
+                <li class="slide_opened" style="position: absolute; top: 0px; width: 320px; height: 160px; left: 0px;">
+                    <img class="slide_thumb" alt="Thumbnail" src="http://s3.envato.com/files/163186.png" width="80" height="80">
+                        <p class="slide_title" style="left: 292.57664px; opacity: 0.171396;"><strong>Push Pins</strong></p>
+                        <p class="slide_content" style="left: 292.57664px; opacity: 0.171396;">A shiny 3D push pin pack made in Illustrator</p>
+                        <p class="slide_button" style="left: 292.57664px; opacity: 0.171396;"><a href="http://graphicriver.net/item/massive-pushpin-pack/55880?ref=GeertDD">More info</a></p>
+                </li>
+                <li class="" style="position: absolute; top: 0px; width: 320px; height: 160px; left: 320px;">
+                    <img class="slide_thumb" alt="Thumbnail" src="http://upload.wikimedia.org/wikipedia/en/2/29/HP_New_Logo_2D.svg" width="80" height="80">
+                    <p class="slide_title" style="opacity: 0; left: 320px;"><strong>Flipping Digits</strong></p>
+                    <p class="slide_content" style="opacity: 0; left: 320px;">Set of multifunctional flipping digits</p>
+                    <p class="slide_button" style="opacity: 0; left: 320px;"><a href="http://graphicriver.net/item/flipping-digits/59709?ref=GeertDD">More info</a></p>
+                </li>
+                <li style="position: absolute; top: 0px; width: 320px; height: 160px; left: 480px;" class="">
+                    <img class="slide_thumb" alt="Thumbnail" src="http://www.guninetwork.org/guni.network/institutional-members/babes-bolyai-university/logo " width="80" height="80">
+                    <p class="slide_title" style="opacity: 0; left: 320px;"><strong>Digital Noise</strong></p>
+                    <p class="slide_content" style="opacity: 0; left: 320px;">Used as background in fourth slide above</p>
+                    <p class="slide_button" style="opacity: 0; left: 320px;"><a href="http://graphicriver.net/item/digital-noise-pack/43522?ref=GeertDD">More info</a></p>
+                </li>
+                <li stle="position: absolute; top: 0px; width: 320px; height: 160px; left: 640px;" class="">
+                    <img class="slide_thumb" alt="Thumbnail" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/t5.0-1/372781_156029017818382_284107669_n.jpg" width="80" height="80">
+                    <p class="slide_title" style="opacity: 0; left: 320px;"><strong>Digital Noise</strong></p>
+                    <p class="slide_content" style="opacity: 0; left: 320px;">Used as background in fourth slide above</p>
+                    <p class="slide_button" style="opacity: 0; left: 320px;"><a href="http://graphicriver.net/item/digital-noise-pack/43522?ref=GeertDD">More info</a></p>
+                </li>
+                
+                <li stle="position: absolute; top: 0px; width: 320px; height: 160px; left: 800px;" class="">
+                    <img class="slide_thumb" alt="Thumbnail" src="http://softvision.com/images/SoftVisionLogo.png" width="80" height="80">
+                    <p class="slide_title" style="opacity: 0; left: 320px;"><strong>Digital Noise</strong></p>
+                    <p class="slide_content" style="opacity: 0; left: 320px;">Used as background in fourth slide above</p>
+                    <p class="slide_button" style="opacity: 0; left: 320px;"><a href="http://graphicriver.net/item/digital-noise-pack/43522?ref=GeertDD">More info</a></p>
+                </li>                
+                <li stle="position: absolute; top: 0px; width: 320px; height: 160px; left: 960px;" class="">
+                    <img class="slide_thumb" alt="Thumbnail" src="http://www.cs.ubbcluj.ro/wp-content/uploads/Siemens-square-logo.png" width="80" height="80">
+                    <p class="slide_title" style="opacity: 0; left: 320px;"><strong>Digital Noise</strong></p>
+                    <p class="slide_content" style="opacity: 0; left: 320px;">Used as background in fourth slide above</p>
+                    <p class="slide_button" style="opacity: 0; left: 320px;"><a href="http://graphicriver.net/item/digital-noise-pack/43522?ref=GeertDD">More info</a></p>
+                </li>                
+            </ul>                       
+            <div class="page-header">
+                <div class="pull-right package-installer">
+                    <a class="btn btn-success" href="web+adxstudioinstaller:http%253A%252F%252Fcommunity.adxstudio.com%252FEntityList%252FPackageRepository%252F9f718f93-2b89-485e-9062-d561435686a7%252Fb781614c-c28a-e311-bc47-6c3be5bdaa3c%252Fbbcd9d09-c18a-e311-bc47-6c3be5bdaa3c%252Frepository.json">
+                        <i class="icon-plus-sign icon-white"></i> Install Gallery
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h1>
+                        <div class="xrm-editable-text xrm-attribute">
+                            <div class="xrm-attribute-value-encoded xrm-attribute-value">Permit Gallery</div>
+                        </div>
+                    </h1>
+                </div>
+            </div>            
+        </div>
+    </div>
+         
 </body>
 </html>
