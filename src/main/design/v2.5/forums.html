@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+        Forums&nbsp;&middot; Adxstudio Community
+    </title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700" rel="stylesheet" type="text/css">
+    <link href="./bootstrap.min.css" rel="stylesheet" />
+
+    <link href="./css/default.bundle.css?v=ndbZwdlImFYjTq-v2rdRk1RX8s2NB60RiHziEBoCM501" rel="stylesheet" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+				<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+
+    <link rel="stylesheet" href="./Areas/Forums/css/forums.css">
+
+
+
+    <link href="./adxstudio-2014.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+    <div class="masthead hidden-xs">
+        <div class="container">
+            <div class="toolbar">
+
+                <div class="toolbar-row">
+                    <div class="toolbar-item toolbar-text text-muted">
+                        <div class="xrm-editable-text xrm-attribute no-value">
+                            <div class="xrm-attribute-value-encoded xrm-attribute-value"></div>
+                        </div>
+                    </div>
+                    <div class="toolbar-item">
+                        <ul class="weblinks-depth-1 nav nav-pills" data-weblinks-depth="1">
+                            <li>
+                                <a href="./index.html" title="Corporate">Corporate</a>
+                            </li>
+                            <li>
+                                <a href="./community.html" title="Community">Community</a>
+                            </li>
+                            <li>
+                                <a href="http://partner.adxstudio.com/" title="Partner">Partner</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.adxstudio.com/" title="Portals Demo">Portals Demo</a>
+                            </li>
+                            <li>
+                                <a href="tel:+18005087811" title="1.800.508.7811">
+                                    <span class="weblink-image fa fa-phone"></span>
+                                    <span class="name">1.800.508.7811</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="toolbar-row">
+                    <div class="toolbar-item toolbar-search">
+                        <form method="GET" action="/search/" role="search">
+                            <div class="input-group">
+
+                                <div class="btn-group btn-select input-group-btn" data-target="#filter" data-focus="#q">
+                                    <button id="search-filter" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <span class="selected">All</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="search-filter">
+                                        <li>
+                                            <a data-value="">All</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="adx_webpage">Documentation</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="adx_blog,adx_blogpost,adx_blogpostcomment">Blogs</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Forums</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="adx_ideaforum,adx_idea,adx_ideacomment">Ideas</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="adx_issueforum,adx_issue,adx_issuecomment">Bugs</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="adx_event,adx_eventschedule">Events</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-value="incident">Help Desk</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <select id="filter" name="filter" class="btn-select" aria-hidden="true">
+
+                                    <option value="" selected="selected">All</option>
+
+                                    <option value="adx_webpage">Documentation</option>
+
+                                    <option value="adx_blog,adx_blogpost,adx_blogpostcomment">Blogs</option>
+
+                                    <option value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Forums</option>
+
+                                    <option value="adx_ideaforum,adx_idea,adx_ideacomment">Ideas</option>
+
+                                    <option value="adx_issueforum,adx_issue,adx_issuecomment">Bugs</option>
+
+                                    <option value="adx_event,adx_eventschedule">Events</option>
+
+                                    <option value="incident">Help Desk</option>
+
+                                </select>
+
+                                <input type="text" class="form-control" id="q" name="q" placeholder="Search" value="">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="toolbar-item">
+                        <div class="btn-toolbar" role="toolbar">
+
+                            <div class="btn-group shopping-cart-status" data-href="/_services/commerce/9f718f93-2b89-485e-9062-d561435686a7/shopping-cart/status">
+                                <a class="btn btn-default" href="">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Cart
+                                    <span class="count">(
+                                        <span class="value"></span>)</span>
+                                </a>
+                            </div>
+
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="/login/?returnurl=%2fforums%2f">
+                                    <i class="fa fa-sign-in"></i>
+                                    Sign In
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xrm-editable-html xrm-attribute">
+                <div class="xrm-attribute-value">
+                    <div>
+                        <a class="site-name" href="/">
+                            <img src="./adx-weblogo-220-100.png" alt="Adxstudio Community Portal" />
+                            <span class="company">Adxstudio</span>
+                            <br />Community</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-navbar navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-left visible-xs">
+                    <div class="xrm-editable-html xrm-attribute">
+                        <div class="xrm-attribute-value">
+                            <div>
+                                <a class="navbar-brand" href="/">
+                                    <img alt="Adxstudio Community Portal" src="./adx-weblogo-220-100.png" style="height: 13px; width: auto; margin-right: 5px; vertical-align: baseline;" />Adxstudio Community</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="header-navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-left hidden-xs">
+
+                </div>
+                <div class="visible-xs navbar-left">
+                    <ul class="nav navbar-nav">
+
+                        <li>
+
+
+                            <a href="/login/?returnurl=%2fforums%2f">
+                                <i class="fa fa-sign-in"></i>
+                                Sign In
+                            </a>
+                        </li>
+
+                        <li class="shopping-cart-status" data-href="/_services/commerce/9f718f93-2b89-485e-9062-d561435686a7/shopping-cart/status">
+                            <a href="">
+                                <i class="fa fa-shopping-cart"></i>
+                                Cart
+                                <span class="count">(
+                                    <span class="value"></span>)</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-search" method="GET" action="/search/" role="search">
+                        <div class="input-group">
+
+                            <div class="btn-group btn-select input-group-btn" data-target="#filter-xs" data-focus="#q-xs">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="selected">All</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a data-value="">All</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="adx_webpage">Documentation</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="adx_blog,adx_blogpost,adx_blogpostcomment">Blogs</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Forums</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="adx_ideaforum,adx_idea,adx_ideacomment">Ideas</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="adx_issueforum,adx_issue,adx_issuecomment">Bugs</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="adx_event,adx_eventschedule">Events</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-value="incident">Help Desk</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <select id="filter-xs" name="filter" class="btn-select">
+
+                                <option value="" selected="selected">All</option>
+
+                                <option value="adx_webpage">Documentation</option>
+
+                                <option value="adx_blog,adx_blogpost,adx_blogpostcomment">Blogs</option>
+
+                                <option value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Forums</option>
+
+                                <option value="adx_ideaforum,adx_idea,adx_ideacomment">Ideas</option>
+
+                                <option value="adx_issueforum,adx_issue,adx_issuecomment">Bugs</option>
+
+                                <option value="adx_event,adx_eventschedule">Events</option>
+
+                                <option value="incident">Help Desk</option>
+
+                            </select>
+
+                            <input type="text" class="form-control" id="q-xs" name="q" placeholder="Search" value="">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="weblinks navbar-left">
+                    <ul class="weblinks-depth-1 nav navbar-nav" data-weblinks-depth="1">
+                        <li>
+                            <a href="/" title="Home">
+                                <span class="weblink-image icon-home fa fa-home"></span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/products/" title="Products">Products
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li>
+                                    <a href="/products/" title="Products">Products</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/products/adxstudio-portals/" title="Adxstudio Portals">Adxstudio Portals</a>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-alm-toolkit/" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-productivity-pack/" title="Adxstudio Productivity Pack">Adxstudio Productivity Pack</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/gallery/" title="Gallery">Gallery
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li>
+                                    <a href="/gallery/" title="Gallery">Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/gallery/websites/" title="Website Gallery">Website Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="/gallery/311-service-requests/" title="311 Service Request Gallery">311 Service Request Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="/gallery/permits/" title="Permit Gallery">Permit Gallery</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/forums/" title="Forums">Forums
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li>
+                                    <a href="/forums/" title="Forums">Forums</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/forums/adxstudio-portals" title="Adxstudio Portals">Adxstudio Portals</a>
+                                </li>
+                                <li>
+                                    <a href="/forums/adxstudio-alm-toolkit" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a>
+                                </li>
+                                <li>
+                                    <a href="/forums/adxstudio-productivity-pack" title="Adxstudio Productivity Pack">Adxstudio Productivity Pack</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Support">Support
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li>
+                                    <a href="/helpdesk/" rel="nofollow" title="Help Desk">Help Desk</a>
+                                </li>
+                                <li>
+                                    <a href="/ideas/" title="Ideas">Ideas</a>
+                                </li>
+                                <li>
+                                    <a href="/bugs/" title="Bugs">Bugs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/blogs/" title="Blogs">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="/events/" title="Events">Events</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-right hidden-xs">
+                    <div class="xrm-editable-html xrm-attribute">
+                        <div class="xrm-attribute-value">
+                            <div class="navbar-form hidden-sm" style="padding-right: 0;">
+                                <div class="btn-group">
+                                    <a class="btn btn-default dropdown-toggle" title="Download an Adxstudio product" href="#" data-toggle="dropdown"><i class="fa fa-download"></i> Download <span class="caret">&nbsp;</span></a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="/products/adxstudio-portals/releases/adxstudio-portals-7/download/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free Trial</span>
+                                                </span>Adxstudio Portals 7.0
+                                                <span class="label label-info">Beta</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/products/adxstudio-portals/releases/adxstudio-portals-6/download/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free Trial</span>
+                                                </span>Adxstudio Portals 6.0</a>
+                                        </li>
+                                        <li>
+                                            <a href="/products/adxstudio-alm-toolkit/download/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free Trial</span>
+                                                </span>Adxstudio ALM Toolkit</a>
+                                        </li>
+                                        <li>
+                                            <a href="/products/adxstudio-productivity-pack/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free</span>
+                                                </span>Adxstudio Productivity Pack</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--
+<div class="btn-group"><a class="btn btn-default" title="Create your own Adxstudio Portals online demo" href="https://demo.adxstudio.com/" target="_blank">Online Demo</a></div>
+</div>
+--></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-navbar navbar navbar-inverse navbar-static-top navbar-child hidden-xs" role="navigation">
+        <div class="container">
+            <ul class="nav navbar-nav">
+
+                <li>
+
+                    <a href="/forums/adxstudio-portals" title="Adxstudio Portals">Adxstudio Portals</a>
+                </li>
+
+                <li>
+
+                    <a href="/forums/adxstudio-alm-toolkit" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a>
+                </li>
+
+                <li>
+
+                    <a href="/forums/adxstudio-productivity-pack" title="Adxstudio Productivity Pack">Adxstudio Productivity Pack</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="./xrm-adx/js/jquery-1.8.3.min.js"></script>
+    <script src="./js/default.preform.bundle.js?v=ghCdGBUQ8RLMN2QpLXTwi8XcadBfeRp0lM1BvRweZyo1"></script>
+
+
+    <form method="post" action="" id="content_form">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="Brrlfh9QnCb+vNTu4IRPk2ZmLzNXASyRxcKQVarsWw/Q7W92zU+lpIqhhxUAEN5Fj/HSUVZoVCY8qE0+a3Fra2m5bguGLVrXl+Miy51bJdx2OhOs845LJnkKnedcF81mOJetfACWq5RQ9MJ62dsOKK8nkLALPzbPq5elJYCTQMME4IJMaoZZ/PNPnoCWBgctKkQjm5Q+hsxjm9JVXKpBqWgT4IP/ieO00t4nRrbX/Ht5H8Vv" />
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['content_form'];
+            if (!theForm) {
+                theForm = document.content_form;
+            }
+
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+             //]]>
+        </script>
+
+
+        <script src="/WebResource.axd?d=HCMZ-BCZQPkHhXPe7xZLcd0zDAhSRjfzFr24jstDEGDJu_o1_kgxIf3uKWKKqsKiDKD_6FDWsQKTe9RtNppo6KFXO3c1&amp;t=635201010537823876" type="text/javascript"></script>
+
+
+        <script src="/ScriptResource.axd?d=GuEhuSfAocPiJie0fl_LmZ87OhsoQ1iM-ezROhw29PmibHgzapKVta0xb7Hwa82aJjvWL4JX0KxwqwQxs0TczJ1OWYRCDzfWBWpy3ki71g4h0dmgefPvwOaQDprIy7ziXF_BefGCvepmStYbswj6yicLXPcdAsmUQbgT68GJJWsa9cq90&amp;t=348b0da" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=6AVBPOgkJEy_u6VcS-btyJpT2h3ndB9-MjOO4QcNLTecHIaBbBzsJySQbpLRJyhamBMndto50r9AiqNZ4WFt342PI-JMCGc9_lFrWjryIsrJvRHMhDsS6s8BnY1GsbNsrImtMXJxWRIzt4TjMUurWOvvbtiwzAkmHgCdHMwSiueCEGam0&amp;t=348b0da" type="text/javascript"></script>
+        <script src="./js/jquery.blockUI.js" type="text/javascript"></script>
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ctl00$ContentContainer$ctl00', 'content_form', [], [], [], 90, 'ctl00$ctl00$ctl00');
+             //]]>
+        </script>
+
+
+
+        <div class="page-heading">
+            <div class="container">
+
+
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="active">Forums</li>
+                </ul>
+
+
+
+
+
+                <div class="page-header">
+                    <h1>
+                        <span class="xrm-attribute xrm-editable-text">
+                            <span class="xrm-attribute-value">Forums</span>
+                        </span>
+                    </h1>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="container">
+
+
+            <div class="xrm-editable-html xrm-attribute no-value page-copy">
+                <div class="xrm-attribute-value"></div>
+            </div>
+
+
+
+            <table class="table forums">
+                <thead>
+                    <tr>
+                        <th class="name">
+                            <span>Forum</span>
+                        </th>
+                        <th class="last-post">
+                            <span>Last Post</span>
+                        </th>
+                        <th class="count">
+                            <span>Threads</span>
+                        </th>
+                        <th class="count">
+                            <span>Posts</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="name">
+                            <h3>
+                                <a href="/forums/adxstudio-portals">Adxstudio Portals</a>
+                            </h3>
+                            <p>for Microsoft Dynamics&reg; CRM</p>
+                        </td>
+                        <td class="last-post">
+                            <div class="postedon">
+                                <abbr class="timeago">
+                                    Thu, 17 Apr 2014 21:34:07 GMT
+                                </abbr>
+                            </div>
+                            <a class="author-link" href='/profile/public/67f1c44d-23e8-4090-8024-e9234450c087/forum-posts'>
+                                Craig Fleming (ADX)
+                            </a>
+                        </td>
+                        <td class="count">1647</td>
+                        <td class="count">6241</td>
+                    </tr>
+
+                    <tr>
+                        <td class="name">
+                            <h3>
+                                <a href="/forums/adxstudio-alm-toolkit">Adxstudio ALM Toolkit</a>
+                            </h3>
+                            <p>for Microsoft Dynamics&reg; CRM</p>
+                        </td>
+                        <td class="last-post">
+                            <div class="postedon">
+                                <abbr class="timeago">
+                                    Wed, 16 Apr 2014 00:11:19 GMT
+                                </abbr>
+                            </div>
+                            <a class="author-link" href='/profile/public/b4ea1290-99ae-4680-a07e-436fa8c033c7/forum-posts'>
+                                John Leung (ADX)
+                            </a>
+                        </td>
+                        <td class="count">45</td>
+                        <td class="count">131</td>
+                    </tr>
+
+                    <tr>
+                        <td class="name">
+                            <h3>
+                                <a href="/forums/adxstudio-productivity-pack">Adxstudio Productivity Pack</a>
+                            </h3>
+                            <p>for Microsoft Dynamics&reg; CRM 2011</p>
+                        </td>
+                        <td class="last-post">
+                            <div class="postedon">
+                                <abbr class="timeago">
+                                    Sun, 30 Mar 2014 11:34:38 GMT
+                                </abbr>
+                            </div>
+                            <a class="author-link" href='/profile/public/ec8ceaa5-ea8a-e211-bd7c-00155d42322e/forum-posts'>
+                                Meghshyam Gaur
+                            </a>
+                        </td>
+                        <td class="count">23</td>
+                        <td class="count">51</td>
+                    </tr>
+
+                    <tr>
+                        <td class="name">
+                            <h3>
+                                <a href="/forums/adxstudio-cms">Adxstudio CMS</a>
+                            </h3>
+                            <p>for Microsoft SQL Server&reg;</p>
+                        </td>
+                        <td class="last-post">
+                            <div class="postedon">
+                                <abbr class="timeago">
+                                    Tue, 14 Jan 2014 19:39:35 GMT
+                                </abbr>
+                            </div>
+                            <a class="author-link" href='/profile/public/91495305-177d-e311-aafa-00155d47372f/forum-posts'>
+                                Napoleon Napoleon Okunna
+                            </a>
+                        </td>
+                        <td class="count">485</td>
+                        <td class="count">1846</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </form>
+
+
+    <div class="footer well">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="xrm-editable-html xrm-attribute">
+                        <div class="xrm-attribute-value">
+                            <h4>About Adxstudio</h4>
+                            <p>Adxstudio is a leading provider of web portal and application lifecycle management solutions built for Microsoft Dynamics
+                                <sup>&reg;</sup>CRM, SharePoint and .NET platforms.</p>
+                            <p>Founded in 1998, we&rsquo;re a Microsoft Gold Application Development and Customer Relationship Management competency partner.&nbsp;
+                                <a href="http://www.adxstudio.com/adxstudio-about-us/">
+                                    <small>Learn More</small>
+                                </a>
+                            </p>
+                            <p>
+                                <img style="margin-top: 20px; width: 200px; height: auto; opacity: 0.8; filter: alpha(opacity=80);" src="./adx-microsoft-partner-logo.png" alt="Microsoft Gold Partner" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 " data-weblinks-maxdepth="2">
+
+                    <ul class="row list-unstyled">
+
+                        <li class="col-sm-3">
+                            <h4>Products</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/products/adxstudio-portals/" title="Adxstudio Portals">Adxstudio Portals</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-alm-toolkit/" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-productivity-pack/" title="Productivity Pack">Productivity Pack</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <h4>Community</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/products/adxstudio-portals/users-guide/blogs/" title="Blogs">Blogs</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/forums/" title="Forums">Forums</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/ideas/" title="Ideas">Ideas</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/events/" title="Events">Events</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <h4>Gallery</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/gallery/websites/" title="Website Gallery">Website Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/gallery/311-service-requests/" title="Service Request Gallery">Service Request Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/gallery/permits/" title="Permit Gallery">Permit Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <h4>Support</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/forums/" title="Forums">Forums</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/helpdesk/" title="Help Desk">Help Desk</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/bugs/" title="Bugs">Bugs</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="row list-unstyled">
+
+                        <li class="col-sm-3">
+                            <h4>Download</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/products/adxstudio-portals/releases/adxstudio-portals-7/download/" title="Portals 7.0">Portals 7.0</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-portals/releases/adxstudio-portals-6/download/" title="Portals 6.0">Portals 6.0</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-alm-toolkit/download/" title="ALM Toolkit">ALM Toolkit</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-productivity-pack/" title="Productivity Pack">Productivity Pack</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <h4>Our Sites</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="http://www.adxstudio.com/" title="Corporate">Corporate</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="http://community.adxstudio.com/" title="Community">Community</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="http://partner.adxstudio.com/" title="Partner">Partner</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="http://demo.adxstudio.com/" title="Portals Demo">Portals Demo</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <h4>Contact Us</h4>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="tel:+18005087811" title="1.800.508.7811">1.800.508.7811</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="tel+:13065696500" title="1.306.569.6500">1.306.569.6500</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="tel:+13065698518" title="Fax: 1.306.569.8518">Fax: 1.306.569.8518</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@adxstudio.com" title="info@adxstudio.com">info@adxstudio.com</a>
+                                    <div class="description"></div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <h4>Follow Adxstudio</h4>
+                            <div class="xrm-editable-html xrm-attribute weblink-description">
+                                <div class="xrm-attribute-value">
+                                    <div class="followus">
+                                        <a href="http://www.facebook.com/adxstudio" title="Follow us on Facebook">
+                                            <i class="fa fa-facebook-square">&nbsp;</i>
+                                        </a>
+                                        <a href="http://www.twitter.com/adxstudio" title="Follow us on Twitter">
+                                            <i class="fa fa-twitter-square">&nbsp;</i>
+                                        </a>
+                                        <a href="http://www.linkedin.com/company/72266" title="Follow us on LinkedIn">
+                                            <i class="fa fa-linkedin-square">&nbsp;</i>
+                                        </a>
+                                        <a href="http://www.youtube.com/adxstudio" title="Follow us on YouTube">
+                                            <i class="fa fa-youtube-square">&nbsp;</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="list-unstyled">
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="xrm-editable-html xrm-attribute">
+                <div class="xrm-attribute-value">
+                    <h4>TORONTO &nbsp;&middot; &nbsp;REGINA &nbsp;&middot; &nbsp;CALGARY &nbsp;&middot; &nbsp;REDMOND</h4>
+                    <p>
+                        <small>&copy; 2014 Adxstudio Inc. All Rights Reserved. Use of this website is subject to certain
+                            <a href="/legal-notice/">Legal Terms &amp; Conditions</a>.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./xrm-adx/js/tinymce/tinymce.min.js"></script>
+
+    <script src="./js/default.bundle.js?v=uqrffXbnPop6_snZWuYhQT9uf3ynBFlLUUjSmVUQPxc1"></script>
+
+
+
+
+
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-336437-3");
+            pageTracker._trackPageview();
+        } catch (err) {}
+    </script>
+</body>
+
+</html>
+<!-- Generated at 4/18/2014 12:16:51 AM -->
+<!-- Page OK -->

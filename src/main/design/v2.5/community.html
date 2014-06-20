@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home&nbsp;· Adxstudio Community</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700" rel="stylesheet" type="text/css">
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="./css/default.bundle.css?v=GKOMtdj3vXlymJTi2lBYu2d7XFxcYaxeyFjb4lqJSXk1" rel="stylesheet">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <link href="./adxstudio-2014.css" rel="stylesheet">
+</head>
+<body>
+    <div class="masthead hidden-xs">
+        <div class="container">
+            <div class="toolbar">
+                <div class="toolbar-row">
+                    <div class="toolbar-item toolbar-text text-muted">
+                        <div class="xrm-editable-text xrm-attribute">
+                            <div class="xrm-attribute-value-encoded xrm-attribute-value">Our Sites:</div>
+                        </div>
+					</div>
+					<div class="toolbar-item">
+                        <ul class="weblinks-depth-1 nav nav-pills" data-weblinks-depth="1">
+                            <li><a href="./index.html" title="Corporate">Corporate</a></li>
+                            <li><a href="http://community.adxstudio.com/" title="Community">Community</a></li>
+                            <li><a href="http://partner.adxstudio.com/" title="Partner">Partner</a></li>
+                            <li><a href="http://demo.adxstudio.com/" title="Portals Demo">Portals Demo</a></li>
+                        </ul>
+                    </div>
+				</div>
+                
+                <div class="toolbar-row">
+				    <div class="toolbar-item toolbar-search">
+                        <form method="GET" action="/search/" role="search">
+                            <div class="input-group">
+                                <div class="btn-group btn-select input-group-btn" data-target="#filter" data-focus="#q">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										<span class="selected">Toate</span>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+                                        <li class="active">
+								            <a data-value="">Toate</a>
+										</li>
+                                        <li>
+                                            <a data-value="adx_blog,adx_blogpost,adx_blogpostcomment">Cursuri</a>
+								        </li>
+										<li>
+                                            <a data-value="adx_webpage">Companii</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="adx_event,adx_eventschedule">Joburi</a>
+                                        </li>                                        
+                                        <li>
+                                            <a data-value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Profile</a>
+								        </li>
+                                        <li>
+                                            <a data-value="adx_ideaforum,adx_idea,adx_ideacomment">Facultati</a>
+								        </li>
+                                        <li>
+                                            <a data-value="adx_issueforum,adx_issue,adx_issuecomment">Universitati</a>
+                                        </li>                                        
+                                        <li>
+                                            <a data-value="incident">Evenimente</a>
+                                        </li>										
+									</ul>
+								</div>
+								<select id="filter" name="filter" class="btn-select">
+                                    <option value="" selected="selected">Toate</option>
+                                    <option value="adx_blog,adx_blogpost,adx_blogpostcomment">Cursuri</option>
+                                    <option value="adx_webpage">Companii</option>                                    
+                                    <option value="adx_event,adx_eventschedule">Joburi</option>
+									<option value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Profile</option>
+									<option value="adx_ideaforum,adx_idea,adx_ideacomment">Facultati</option>
+									<option value="adx_issueforum,adx_issue,adx_issuecomment">Universitati</option>									
+									<option value="incident">Evenimente</option>
+								</select>
+                                
+                                <input type="text" class="form-control" id="q" name="q" placeholder="Search" value="">
+                                <div class="input-group-btn">
+								    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="toolbar-item">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group shopping-cart-status" data-href="/_services/commerce/9f718f93-2b89-485e-9062-d561435686a7/shopping-cart/status">
+                                <a class="btn btn-default" href="">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Cart
+                                    <span class="count">(<span class="value"></span>)</span>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="/login/?returnurl=%2f">
+                                    <i class="fa fa-sign-in"></i>
+                                        Login
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolbar-item">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group shopping-cart-status" data-href="/_services/commerce/9f718f93-2b89-485e-9062-d561435686a7/shopping-cart/status">
+                                <a class="btn btn-default" href="">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Cart
+                                    <span class="count">(<span class="value"></span>)</span>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-user"></i> Andrei Mladin <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="/profile/" title="Profile">Profilul meu</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/account-signout?returnUrl=%2Fgallery%2F311-service-requests%2F">Iesire</a></li>
+                                </ul>
+                            </div>
+                        </div>
+				    </div>
+                </div>
+            </div>
+            
+            <div class="xrm-editable-html xrm-attribute">
+                <div class="xrm-attribute-value">
+                    <div>
+                        <a class="site-name" href="/">
+                            <img src="./adx-weblogo-220-100.png" alt="Adxstudio Community Portal"> 
+                            <span class="company">Adxstudio</span><br>Community
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="header-navbar navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-left visible-xs">
+                    <div class="xrm-editable-html xrm-attribute">
+                        <div class="xrm-attribute-value">
+                            <div><a class="navbar-brand" href="/">
+                                    <img alt="Adxstudio Community Portal" src="./adx-weblogo-220-100.png" style="height: 13px; width: auto; margin-right: 5px; vertical-align: baseline;">Adxstudio Community
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="header-navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-left hidden-xs">				
+                </div>
+                <div class="visible-xs navbar-left">
+				    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-user"></i> Andrei Mladin <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/profile/" title="Profile">Profilul meu</a></li>										
+								<li><a href="/account-signout?returnUrl=%2F">Iesire</a></li>
+							</ul>
+						</li>
+                        <li class="shopping-cart-status" data-href="/_services/commerce/9f718f93-2b89-485e-9062-d561435686a7/shopping-cart/status">
+                            <a href="">
+                                <i class="fa fa-shopping-cart"></i>
+                                Cart
+                                <span class="count">(<span class="value"></span>)</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <form class="navbar-form navbar-search" method="GET" action="/search/" role="search">
+                        <div class="input-group">
+                            <div class="btn-group btn-select input-group-btn" data-target="#filter-xs" data-focus="#q-xs">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="selected">Toate</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li class="active">
+										<a data-value="">Toate</a>
+									</li>
+                                    <li>
+                                        <a data-value="adx_blog,adx_blogpost,adx_blogpostcomment">Cursuri</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="adx_webpage">Companii</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="adx_event,adx_eventschedule">Joburi</a>
+                                    </li>                                    
+                                    <li>
+                                        <a data-value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="adx_ideaforum,adx_idea,adx_ideacomment">Facultati</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="adx_issueforum,adx_issue,adx_issuecomment">Universitati</a>
+                                    </li>                                    
+                                    <li>
+                                        <a data-value="incident">Evenimente</a>
+                                    </li>									
+								</ul>
+							</div>
+                            
+							<select id="filter-xs" name="filter" class="btn-select">
+                                <option value="" selected="selected">Toate</option>
+                                <option value="adx_blog,adx_blogpost,adx_blogpostcomment">Cursuri</option>
+                                <option value="adx_webpage">Companii</option>                                
+                                <option value="adx_event,adx_eventschedule">Joburi</option>
+                                <option value="adx_communityforum,adx_communityforumthread,adx_communityforumpost">Profile</option>
+                                <option value="adx_ideaforum,adx_idea,adx_ideacomment">Facultati</option>
+                                <option value="adx_issueforum,adx_issue,adx_issuecomment">Universitati</option>                                
+                                <option value="incident">Evenimente</option>
+							</select>
+                            
+                            <input type="text" class="form-control" id="q-xs" name="q" placeholder="Search" value="">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+				    </form>
+                </div>
+                <div class="weblinks navbar-left">
+                    <ul class="weblinks-depth-1 nav navbar-nav" data-weblinks-depth="1">
+                        <li class="active">
+                            <a href="/" title="Home"><span class="weblink-image icon-home fa fa-home"></span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/products/" title="Products">Universitati <b class="caret"></b></a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li><a href="/products/" title="Products">Universitati</a><div class="description"></div></li>
+                                <li class="divider"></li>
+                                <li><a href="/products/adxstudio-portals/" title="Adxstudio Portals">Univ. Babes-Bolyai - Cluj-Napoca</a></li>
+                                <li><a href="/products/adxstudio-alm-toolkit/" title="Adxstudio ALM Toolkit">Univ. Tehnica - Cluj-Napoca</a></li>
+                                <li><a href="/products/adxstudio-productivity-pack/" title="Adxstudio Productivity Pack">Univ. de Vest - Timisoara</a></li>
+                                <li><a href="/products/adxstudio-cms/" title="Adxstudio CMS">Univ. Alex.I. Cuza - Iasi</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/gallery/" title="Gallery">Gallery <b class="caret"></b></a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li><a href="/gallery/" title="Gallery">Gallery</a><div class="description"></div></li>
+                                <li class="divider"></li><li><a href="/gallery/311-service-requests/" title="311 Service Request Gallery">311 Service Request Gallery</a></li>
+                                <li><a href="/gallery/permits/" title="Permit Gallery">Permit Gallery</a></li>
+                                <li><a href="/gallery/websites/" title="Website Gallery">Website Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="./forums.html" title="Forums">Forums <b class="caret"></b></a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li><a href="./forums.html" title="Forums">Forums</a><div class="description"></div></li>
+                                <li class="divider"></li>
+                                <li><a href="/forums/adxstudio-portals" title="Adxstudio Portals">Adxstudio Portals</a></li>
+                                <li><a href="/forums/adxstudio-alm-toolkit" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a></li>
+                                <li><a href="/forums/adxstudio-productivity-pack" title="Adxstudio Productivity Pack">Adxstudio Productivity Pack</a></li>
+                                <li><a href="/forums/adxstudio-cms" title="Adxstudio CMS">Adxstudio CMS</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Support">Support <b class="caret"></b></a>
+                            <ul class="weblinks-depth-2 dropdown-menu" data-weblinks-depth="2">
+                                <li><a href="/helpdesk/" rel="nofollow" title="Help Desk">Help Desk</a></li>
+                                <li><a href="/ideas/" title="Ideas">Ideas</a></li><li><a href="/bugs/" title="Bugs">Bugs</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/blogs/" title="Blogs">Blogs</a></li>
+                        <li><a href="/events/" title="Events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-right hidden-xs">
+                    <div class="xrm-editable-html xrm-attribute">
+                        <div class="xrm-attribute-value">
+                            <div class="navbar-form hidden-sm" style="padding-right: 0;">
+                                <div class="btn-group">
+                                    <a class="btn btn-default dropdown-toggle" title="Download an Adxstudio product" href="#" data-toggle="dropdown"><i class="fa fa-download"></i> Download <span class="caret">&nbsp;</span></a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="/products/adxstudio-portals/releases/adxstudio-portals-7/download/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free Trial</span>
+                                                </span>Adxstudio Portals 7.0 
+                                                <span class="label label-info">Beta</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/products/adxstudio-portals/releases/adxstudio-portals-6/download/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free Trial</span>
+                                                </span>Adxstudio Portals 6.0
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/products/adxstudio-alm-toolkit/download/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free Trial</span>
+                                                </span>Adxstudio ALM Toolkit
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/products/adxstudio-productivity-pack/">
+                                                <span style="display: inline-block; text-align: right; width: 65px; margin-right: 10px;">
+                                                    <span class="label label-success">Free</span>
+                                                </span>Adxstudio Productivity Pack
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn btn-success" title="Create your own Adxstudio Portals online demo" href="https://demo.adxstudio.com/" target="_blank">Online Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="header-navbar navbar navbar-inverse navbar-static-top navbar-child navbar-empty hidden-xs">
+        <div class="container">
+        </div>
+    </div>
+    
+    <script src="./xrm-adx/js/jquery-1.8.3.min.js"></script>    
+    <script src="./js/default.preform.bundle.js?v=ghCdGBUQ8RLMN2QpLXTwi8XcadBfeRp0lM1BvRweZyo1"></script>
+    <form method="post" action="" id="content_form">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['content_form'];
+            if (!theForm) {
+                theForm = document.content_form;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.__EVENTTARGET.value = eventTarget;
+                theForm.__EVENTARGUMENT.value = eventArgument;
+                theForm.submit();
+            }
+        }
+            //]]>
+        </script>
+
+
+        <script src="/WebResource.axd?d=HCMZ-BCZQPkHhXPe7xZLcd0zDAhSRjfzFr24jstDEGDJu_o1_kgxIf3uKWKKqsKiDKD_6FDWsQKTe9RtNppo6KFXO3c1&amp;t=635201010537823876" type="text/javascript"></script>
+
+
+        <script src="/ScriptResource.axd?d=GuEhuSfAocPiJie0fl_LmZ87OhsoQ1iM-ezROhw29PmibHgzapKVta0xb7Hwa82aJjvWL4JX0KxwqwQxs0TczJ1OWYRCDzfWBWpy3ki71g4h0dmgefPvwOaQDprIy7ziXF_BefGCvepmStYbswj6yicLXPcdAsmUQbgT68GJJWsa9cq90&amp;t=348b0da" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=6AVBPOgkJEy_u6VcS-btyJpT2h3ndB9-MjOO4QcNLTecHIaBbBzsJySQbpLRJyhamBMndto50r9AiqNZ4WFt342PI-JMCGc9_lFrWjryIsrJvRHMhDsS6s8BnY1GsbNsrImtMXJxWRIzt4TjMUurWOvvbtiwzAkmHgCdHMwSiueCEGam0&amp;t=348b0da" type="text/javascript"></script>
+        <script src="js/jquery.blockUI.js" type="text/javascript"></script>
+        
+        <div class="aspNetHidden">
+	       <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+        </div>
+		
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ContentContainer$ctl00', 'content_form', [], [], [], 90, 'ctl00$ctl00');
+            //]]>
+        </script>		
+	
+        <div class="page-copy home-copy xrm-attribute xrm-editable-html">
+            <div class="xrm-attribute-value">
+                <div class="banner banner-product">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="panel panel-default panel-product panel-adxportals">
+                                    <a href="/products/adxstudio-portals/" class="panel-heading"> 
+                                        <span class="panel-title">Portals <small>for Microsoft Dynamics® CRM</small>
+                                        </span> 
+                                    </a>
+                                    <div class="panel-body">
+                                        <p>Transform Dynamics® CRM into an interactive, web-based sales, services, support and social engagement platform.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="btn-toolbar">
+                                            <a href="/products/adxstudio-portals/releases/adxstudio-portals-6/" class="btn btn-sm btn-default">6.0.16</a> 
+                                            <a href="/products/adxstudio-portals/releases/adxstudio-portals-7/" class="btn btn-sm btn-info">7.0.1 Beta</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="panel panel-default panel-product">
+                                    <a href="/products/adxstudio-productivity-pack/" class="panel-heading"> 
+                                        <span class="pull-right"> 
+                                            <span class="label label-success">Free</span> 
+                                        </span> 
+                                        <span class="panel-title">Productivity Pack <small>for Microsoft Dynamics® CRM</small></span> 
+                                    </a>
+                                    <div class="panel-body">
+                                        <p>Free extensions for Dynamics CRM®, useful for text editing, numbering, geolocation, maps, date/time and boolean parsing.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <a href="/products/adxstudio-productivity-pack/" class="btn btn-sm btn-default">1.0.26</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="panel panel-default panel-product panel-adxalm">
+                                    <a href="/products/adxstudio-alm-toolkit/" class="panel-heading"> 
+                                        <span class="panel-title">ALM Toolkit <small>for Microsoft Dynamics® CRM</small></span> 
+                                    </a>
+                                    <div class="panel-body">
+                                        <p>Automate change control for Dynamics® CRM solutions using TFS or other source control apps – complete solution, data &amp; deployment management.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="btn-toolbar">
+                                            <a href="/products/adxstudio-alm-toolkit/" class="btn btn-sm btn-default">1.0.12</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div class="container">			
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="content-panel panel panel-default">
+                        <div class="panel-heading">
+				            <a class="pull-right" href="/blogs/">All Blogs</a>
+				            <h4>					
+                                <a title="Subscribe to Blogs" class="feed-icon fa fa-rss-square" href="/_services/feeds/portal/9f718f93-2b89-485e-9062-d561435686a7/blogs"></a>						
+                                <span class="xrm-attribute xrm-editable-text"><span class="xrm-attribute-value">Blogs</span></span>
+                            </h4>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a title="Alan Mervitz (Adxstudio)" class="user-avatar" href="/profile/public/fd5f8442-b58f-e111-b596-00155d423252/blog-posts">
+                                    <img title="Alan Mervitz (Adxstudio)" src="http://www.gravatar.com/avatar/cec8fcdbbbc5d842176e70fb41845c2c?r=g&amp;s=40&amp;d=http%3a%2f%2fwww.gravatar.com%2favatar%2fad516503a11cd5ca435acc9bb6523536%3fr%3dg%26s%3d40" alt="">
+                                </a>
+                                <h4 class="list-group-item-heading">
+                                    <a href="blogs/developer/2014-04-14-build-2014-session-videos/">Build 2014 session videos</a>
+                                </h4>
+                                <div class="content-metadata">
+                                    <abbr class="timeago" title="April 14, 2014 11:51 PM">3 days ago</abbr>
+                                    –
+                                    <a href="/profile/public/fd5f8442-b58f-e111-b596-00155d423252/blog-posts">Alan Mervitz (Adxstudio)</a>
+                                    –
+                                    <a href="/blogs/developer/2014-04-14-build-2014-session-videos/#comments">
+                                        <i class="fa fa-comment"></i> 0
+                                    </a>
+                                </div>
+                            </li>
+	
+                            <li class="list-group-item">
+                                <a title="Alan Mervitz (Adxstudio)" class="user-avatar" href="/profile/public/fd5f8442-b58f-e111-b596-00155d423252/blog-posts">
+                                    <img title="Alan Mervitz (Adxstudio)" src="http://www.gravatar.com/avatar/cec8fcdbbbc5d842176e70fb41845c2c?r=g&amp;s=40&amp;d=http%3a%2f%2fwww.gravatar.com%2favatar%2fad516503a11cd5ca435acc9bb6523536%3fr%3dg%26s%3d40" alt="">
+                                </a>
+                                <h4 class="list-group-item-heading">
+                                    <a href="blogs/developer/2014-04-11-office-365-custom-domains/">Office 365 custom domains</a>
+                                </h4>
+                                <div class="content-metadata">
+                                    <abbr class="timeago" title="April 11, 2014 8:36 PM">6 days ago</abbr>
+                                    –
+                                    <a href="/profile/public/fd5f8442-b58f-e111-b596-00155d423252/blog-posts">Alan Mervitz (Adxstudio)</a>
+                                    –
+                                    <a href="/blogs/developer/2014-04-11-office-365-custom-domains/#comments">
+                                        <i class="fa fa-comment"></i> 0
+                                    </a>
+                                </div>
+                            </li>
+	
+                            <li class="list-group-item">
+                                <a title="Alan Mervitz (Adxstudio)" class="user-avatar" href="/profile/public/fd5f8442-b58f-e111-b596-00155d423252/blog-posts">
+                                    <img title="Alan Mervitz (Adxstudio)" src="http://www.gravatar.com/avatar/cec8fcdbbbc5d842176e70fb41845c2c?r=g&amp;s=40&amp;d=http%3a%2f%2fwww.gravatar.com%2favatar%2fad516503a11cd5ca435acc9bb6523536%3fr%3dg%26s%3d40" alt="">
+                                </a>
+                                <h4 class="list-group-item-heading">
+                                    <a href="blogs/developer/2014-04-08-handling-crm-online-micro-outages-in-your-web-port/">Handling CRM Online micro-outages in a web portal</a>
+                                </h4>
+                                <div class="content-metadata">
+                                    <abbr class="timeago" title="April 09, 2014 12:29 AM">9 days ago</abbr>
+                                    –
+                                    <a href="/profile/public/fd5f8442-b58f-e111-b596-00155d423252/blog-posts">Alan Mervitz (Adxstudio)</a>
+                                    –
+                                    <a href="/blogs/developer/2014-04-08-handling-crm-online-micro-outages-in-your-web-port/#comments">
+                                        <i class="fa fa-comment"></i> 0
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h4>
+                                <i class="fa fa-comments"></i>
+                                <span class="xrm-attribute xrm-editable-text">
+                                    <span class="xrm-attribute-value">Forums</span>
+                                </span>
+                            </h4>
+                        </div>
+                        <ul class="list-group">				
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h4 class="list-group-item-heading">
+                                            <a href="/forums/adxstudio-portals">Adxstudio Portals</a>
+                                        </h4>
+                                        <div class="list-group-item-text content-metadata">for Microsoft Dynamics® CRM</div>
+                                    </div>
+                                    <div class="col-sm-3 content-metadata">1643 threads</div>
+                                    <div class="col-sm-3 content-metadata">6227 posts</div>
+                                </div>
+                            </li>
+	
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h4 class="list-group-item-heading">
+                                            <a href="/forums/adxstudio-alm-toolkit">Adxstudio ALM Toolkit</a>
+                                        </h4>
+                                        <div class="list-group-item-text content-metadata">for Microsoft Dynamics® CRM</div>
+                                    </div>
+                                    <div class="col-sm-3 content-metadata">45 threads</div>
+                                    <div class="col-sm-3 content-metadata">131 posts</div>
+                                </div>
+                            </li>
+	
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h4 class="list-group-item-heading">
+                                            <a href="/forums/adxstudio-productivity-pack">Adxstudio Productivity Pack</a>
+                                        </h4>
+                                        <div class="list-group-item-text content-metadata">for Microsoft Dynamics® CRM 2011</div>
+                                    </div>
+                                    <div class="col-sm-3 content-metadata">23 threads</div>
+                                    <div class="col-sm-3 content-metadata">51 posts</div>
+                                </div>
+                            </li>
+	
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h4 class="list-group-item-heading">
+                                            <a href="/forums/adxstudio-cms">Adxstudio CMS</a>
+                                        </h4>
+                                        <div class="list-group-item-text content-metadata">for Microsoft SQL Server®</div>
+                                    </div>
+                                    <div class="col-sm-3 content-metadata">485 threads</div>
+                                    <div class="col-sm-3 content-metadata">1846 posts</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="ContentContainer_MainContent_ctl03_PollPlacement">
+                    </div>
+
+			
+                    <div class="content-panel panel panel-default">
+                        <div class="panel-heading">
+                            <a class="pull-right" href="/events/">All Events</a>
+                            <h4>
+                                <i class="fa fa-calendar"></i>
+                                <span class="xrm-attribute xrm-editable-text"><span class="xrm-attribute-value">Events</span></span>
+                            </h4>
+                        </div>
+                        <ul class="list-group">
+				
+                            <li class="vevent list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    <a class="url summary" href="/events/training-entity-forms?schedule=8356e82d-9ebe-e311-80bf-00155dc0a3d4&amp;start=2014-04-17T19%3a00%3a00.0000000Z">Training - Entity Forms</a>
+                                </h4>
+                                
+                                <div class="content-metadata">
+                                    <abbr class="dtstart" title="Thu, 17 Apr 2014 19:00:00 GMT">April 17, 2014 10:00 PM</abbr>–<abbr class="dtend" title="Thu, 17 Apr 2014 20:30:00 GMT">11:30 PM</abbr>
+                                </div>
+                                
+                                <div class="list-group-item-text">
+                                    <div class="xrm-attribute xrm-editable-html">
+                                        <div class="xrm-attribute-value">
+                                            <p>Level 200: Join us for a deep dive into&nbsp;the Entity Forms feature of Adxstudio Portals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+	
+                            <li class="vevent list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    <a class="url summary" href="/events/training-entity-lists?schedule=9a92c6c2-9fbe-e311-adfb-6c3be5a8a074&amp;start=2014-04-24T16%3a00%3a00.0000000Z">Training - Entity Lists</a>
+                                </h4>
+                                <div class="content-metadata">
+                                    <abbr class="dtstart" title="Thu, 24 Apr 2014 16:00:00 GMT">April 24, 2014 7:00 PM</abbr>–<abbr class="dtend" title="Thu, 24 Apr 2014 17:30:00 GMT">8:30 PM</abbr>
+                                </div>
+                                <div class="list-group-item-text">
+                                    <div class="xrm-attribute xrm-editable-html">
+                                        <div class="xrm-attribute-value">
+                                            <p>Level 200: Join us for a deep dive into&nbsp;the Entity List feature of Adxstudio Portals. Expose views from CRM directly on your website.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</form>
+    
+    <div class="footer well">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="xrm-editable-html xrm-attribute">
+                        <div class="xrm-attribute-value">
+                            <h4>About Adxstudio</h4>
+                            <p>Adxstudio is a leading provider of web portal and application lifecycle management solutions built for Microsoft Dynamics<sup>®</sup> CRM, SharePoint and .NET platforms.</p>
+                            <p>Founded in 1998, we’re a Microsoft Gold Application Development and Customer Relationship Management competency partner.&nbsp;<a href="http://www.adxstudio.com/adxstudio-about-us/"><small>Learn More</small></a></p>
+<p><img style="margin-top: 20px; width: 200px; height: auto; opacity: 0.8; filter: alpha(opacity=80);" src="./adx-microsoft-partner-logo.png" alt="Microsoft Gold Partner"></p>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-md-8 " data-weblinks-maxdepth="2">
+                    <ul class="row list-unstyled">
+                        <li class="col-sm-3">
+                            <h4>Products</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/products/adxstudio-portals/" title="Adxstudio Portals">Adxstudio Portals</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-alm-toolkit/" title="Adxstudio ALM Toolkit">Adxstudio ALM Toolkit</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/products/adxstudio-productivity-pack/" title="Productivity Pack">Productivity Pack</a>
+                                    <div class="description"></div>
+                                </li>
+								<li>
+                                    <a href="/products/adxstudio-cms/" title="Adxstudio CMS">Adxstudio CMS</a>
+                                    <div class="description"></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-3">
+                            <h4>Community</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="/products/adxstudio-portals/users-guide/blogs/" title="Blogs">Blogs</a><div class="description"></div></li>
+                                <li><a href="./forums.html" title="Forums">Forums</a><div class="description"></div></li>
+                                <li><a href="/ideas/" title="Ideas">Ideas</a><div class="description"></div></li>
+								<li><a href="/events/" title="Events">Events</a><div class="description"></div></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-3">
+                            <h4>Gallery</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/gallery/websites/" title="Website Gallery">Website Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/gallery/311-service-requests/" title="Service Request Gallery">Service Request Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li>
+                                    <a href="/gallery/permits/" title="Permit Gallery">Permit Gallery</a>
+                                    <div class="description"></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-3">
+                            <h4>Support</h4>
+							<ul class="list-unstyled">
+                                <li>
+                                    <a href="./forums.html" title="Forums">Forums</a>
+                                    <div class="description"></div>
+                                </li>
+                                <li><a href="/helpdesk/" title="Help Desk">Help Desk</a><div class="description"></div></li>
+                                <li><a href="/bugs/" title="Bugs">Bugs</a><div class="description"></div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="row list-unstyled">
+                        <li class="col-sm-3">
+                            <h4>Download</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="/products/adxstudio-portals/releases/adxstudio-portals-7/download/" title="Portals 7.0">Portals 7.0</a><div class="description"></div></li>
+                                <li><a href="/products/adxstudio-portals/releases/adxstudio-portals-6/download/" title="Portals 6.0">Portals 6.0</a><div class="description"></div></li>
+                                <li><a href="/products/adxstudio-alm-toolkit/download/" title="ALM Toolkit">ALM Toolkit</a><div class="description"></div></li>
+                                <li><a href="/products/adxstudio-productivity-pack/" title="Productivity Pack">Productivity Pack</a><div class="description"></div></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-3">
+                            <h4>Our Sites</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="http://www.adxstudio.com/" title="Corporate">Corporate</a><div class="description"></div></li>
+                                <li><a href="http://community.adxstudio.com/" title="Community">Community</a><div class="description"></div></li>
+                                <li><a href="http://partner.adxstudio.com/" title="Partner">Partner</a><div class="description"></div></li>
+                                <li><a href="http://demo.adxstudio.com/" title="Portals Demo">Portals Demo</a><div class="description"></div></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-3">
+                            <h4>Contact Us</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="tel:+18005087811" title="1.800.508.7811">1.800.508.7811</a><div class="description"></div></li>
+                                <li><a href="tel+:13065696500" title="1.306.569.6500">1.306.569.6500</a><div class="description"></div></li>
+                                <li><a href="tel:+13065698518" title="Fax: 1.306.569.8518">Fax: 1.306.569.8518</a><div class="description"></div></li>
+                                <li><a href="mailto:info@adxstudio.com" title="info@adxstudio.com">info@adxstudio.com</a><div class="description"></div></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-3">
+                            <h4>Follow Adxstudio</h4>
+                            <div class="xrm-editable-html xrm-attribute weblink-description">
+                                <div class="xrm-attribute-value">
+                                    <div class="followus">
+                                        <a href="http://www.facebook.com/adxstudio" title="Follow us on Facebook"> 
+                                            <i class="fa fa-facebook-square">&nbsp;</i> 
+                                        </a> 
+                                        <a href="http://www.twitter.com/adxstudio" title="Follow us on Twitter"> 
+                                            <i class="fa fa-twitter-square">&nbsp;</i> 
+                                        </a> 
+                                        <a href="http://www.linkedin.com/company/72266" title="Follow us on LinkedIn"> 
+                                            <i class="fa fa-linkedin-square">&nbsp;</i> 
+                                        </a> 
+                                        <a href="http://www.youtube.com/adxstudio" title="Follow us on YouTube"> 
+                                            <i class="fa fa-youtube-square">&nbsp;</i> 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled">
+                            </ul>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="xrm-editable-html xrm-attribute">
+                <div class="xrm-attribute-value">
+                    <h4>TORONTO &nbsp;· &nbsp;REGINA &nbsp;· &nbsp;CALGARY &nbsp;· &nbsp;REDMOND</h4>
+                    <p>
+                        <small>© 2014 Adxstudio Inc. All Rights Reserved. Use of this website is subject to certain <a href="/legal-notice/">Legal Terms &amp; Conditions</a>.
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./xrm-adx/js/tinymce/tinymce.min.js"></script>
+    <script src="./js/default.bundle.js?v=cZtLABSh9lNb-c8D4clZqFjhdo6nvkP4gviEOBP8iGw1"></script>
+    <script src="./Areas/EntityList/js/handlebars-v1.3.0.js"></script>
+    <script src="./Areas/EntityList/js/lightbox-2.6.min.js"></script>
+    <script src="./Areas/EntityList/js/underscore-min.js"></script>
+    <script src="./Areas/EntityList/js/gallery.js"></script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-336437-3");
+        pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+</body>    
+
+</html>
