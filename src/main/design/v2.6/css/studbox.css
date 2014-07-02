@@ -1,0 +1,19 @@
+/*********************************** Header *********************************************/
+
+.headerdetails {
+    background-image: -webkit-linear-gradient(top, #0A3044 0%,#0f4461 100%);
+    padding: 10px 0;    
+}
+
+.headermenu {
+    background: #e7e7e7;
+    /*border-width: 1px 0;*/
+    /*padding: 10px 0;    */
+}
+
+/* Space between icon and label */
+.label,.glyphicon { 
+    margin-right:5px; 
+}
+
+/********************************** End Header ******************************************/
