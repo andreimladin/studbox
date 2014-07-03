@@ -9,11 +9,15 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Social -->
+    <link href="./css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Studbox -->
     <link href="css/studbox.css" rel="stylesheet">
-    
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,23 +32,28 @@
         <div class="headerdetails">
             <div class="row">
                 <div class="container">
+                    <div class="col-xs-1">
+                        <img src="./logos/small%20logo%20for%20website.png" style="width:200px">
+                    </div>
                     <div class="col-xs-6 col-xs-offset-2">
                         <div class="input-group">
                             <div class="input-group-btn search-panel">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <span id="search_concept">Filter by</span>  <span class="caret"></span>
+                                    <span id="search_concept">Toate</span>  <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#contains">Contains</a>
+                                    <li><a href="#contains">Universitati</a>
                                     </li>
-                                    <li><a href="#its_equal">It's equal</a>
+                                    <li><a href="#its_equal">Joburi</a>
                                     </li>
-                                    <li><a href="#greather_than">Greather than ></a>
+                                    <li><a href="#greather_than">Tutoriale</a>
                                     </li>
-                                    <li><a href="#less_than">Less than < </a>
+                                    <li><a href="#less_than">Blog</a>
+                                    </li>
+                                    <li><a href="#less_than">Evenimente</a>
                                     </li>
                                     <li class="divider"></li>
-                                    <li><a href="#all">Anything</a>
+                                    <li><a href="#all">Toate</a>
                                     </li>
                                 </ul>
                             </div>
@@ -56,12 +65,20 @@
                             </span>
                         </div>
                     </div>
+                    
+                    <div class="pull-right">
+                        <a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-google-plus" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google-plus']);"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-linkedin']);"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-github" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-github']);"><i class="fa fa-github"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="headermenu">
             <nav class="navbar navbar-default" role="navigation">
-                <div class="container">                   
+                <div class="container">
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
