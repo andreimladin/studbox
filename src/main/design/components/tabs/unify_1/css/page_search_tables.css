@@ -1,0 +1,110 @@
+/* 80 */
+.table-search-v2 .btn-u.dropdown-toggle {
+    border-left: none;
+}
+
+/* 84 */
+.table-search-v2 .btn-group .btn-u {
+    top: 4px;
+    padding: 0 6px;
+    position: relative;
+}
+
+/* 90 */
+.table-search-v2 thead {
+    border-bottom: solid 1px #ddd;
+}
+
+/* 94 */
+.table-search-v2 td {
+    vertical-align: middle !important;
+}
+
+/* 98 */
+.table-search-v2 td img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* 105 */
+.table-search-v2 .user-names span, .table-search-v2 .user-names small {
+    display: block;
+    text-align: center;
+}
+
+/* 106 */
+.table-search-v2 .user-names span, .table-search-v2 .user-names small {
+    display: block;
+    text-align: center;
+}
+
+/* 111 */
+.table-search-v2 .user-names span {
+    color: #555;
+    font-size: 16px;
+    position: relative;
+}
+
+/* 117 */
+.table-search-v2 .user-names small {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 122 */
+.table-search-v2 td h3 {
+    font-size: 16px;
+    margin: 0 0 2px;
+}
+
+/* 127 */
+.table-search-v2 td a {
+    color: #555;
+}
+
+/* 131 */
+.table-search-v2 td p {
+    margin-bottom: 0;
+}
+
+/* 135 */
+.table-search-v2 td span {
+    display: block;
+}
+
+/* 139 */
+.table-search-v2 td small {
+    font-style: italic;
+}
+
+/* 143 */
+.table-search-v2 .s-icons {
+    margin-bottom: 0;
+}
+
+/* 147 */
+.table-search-v2 .s-icons li {
+    padding: 2px;
+}
+
+/* 151 */
+.table-search-v2 .table-buttons {
+    margin: 0;
+}
+
+/* 155 */
+.table-search-v2 .table-buttons li {
+    padding: 0;
+}
+
+/* 159 */
+.table-search-v2 .table-buttons .btn-u-sm {
+    padding: 3px 6px;
+}
+
+/* 163 */
+.table-search-v2 .td-width {
+    width: 55%;
+}

@@ -1,0 +1,9 @@
+/* 773 */
+.dropdown-menu li [class^="fa-"], .dropdown-menu li [class*=" fa-"] {
+    left: -3px;
+    width: 1.25em;
+    margin-right: 1px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
