@@ -8,8 +8,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Bootstrap Social -->
     <link href="./css/bootstrap-social.css" rel="stylesheet">
 
@@ -17,7 +17,13 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Studbox -->
-    <link href="css/studbox.css" rel="stylesheet">
+    <link href="./css/studbox.css" rel="stylesheet">
+
+    <!-- Main Slider Container 
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">-->
+
+    <!-- Main Slider -->
+    <link rel="stylesheet" type="text/css" href="./css/style3.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,51 +36,53 @@
 <body>
     <header>
         <div class="headerdetails">
-            <div class="row">
-                <div class="container">
-                    <div class="col-xs-1">
-                        <img src="./logos/small%20logo%20for%20website.png" style="width:200px">
-                    </div>
-                    <div class="col-xs-6 col-xs-offset-2">
-                        <div class="input-group">
-                            <div class="input-group-btn search-panel">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <span id="search_concept">Toate</span>  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#contains">Universitati</a>
-                                    </li>
-                                    <li><a href="#its_equal">Joburi</a>
-                                    </li>
-                                    <li><a href="#greather_than">Tutoriale</a>
-                                    </li>
-                                    <li><a href="#less_than">Blog</a>
-                                    </li>
-                                    <li><a href="#less_than">Evenimente</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#all">Toate</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <input type="hidden" name="search_param" value="all" id="search_param">
-                            <input type="text" class="form-control" name="x" placeholder="Search term...">
-                            <span class="input-group-btn">
-                             <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span>
+
+            <div class="container">
+                <div class="col-xs-1">
+                    <img src="./logos/small%20logo%20for%20website.png" style="width:200px">
+                </div>
+                <div class="col-xs-6 col-xs-offset-2">
+                    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="search_concept">Toate</span>  <span class="caret"></span>
                             </button>
-                            </span>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#contains">Universitati</a>
+                                </li>
+                                <li><a href="#its_equal">Joburi</a>
+                                </li>
+                                <li><a href="#greather_than">Cursuri</a>
+                                </li>
+                                <li><a href="#less_than">Evenimente</a>
+                                </li>
+                                <li><a href="#less_than">Reviste</a>
+                                </li>
+                                <li><a href="#less_than">Blog</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#all">Toate</a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    
-                    <div class="pull-right">
-                        <a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><i class="fa fa-facebook"></i></a>
-                        <a class="btn btn-social-icon btn-google-plus" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google-plus']);"><i class="fa fa-google-plus"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-linkedin']);"><i class="fa fa-linkedin"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><i class="fa fa-twitter"></i></a>
-                        <a class="btn btn-social-icon btn-github" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-github']);"><i class="fa fa-github"></i></a>
+                        <input type="hidden" name="search_param" value="all" id="search_param">
+                        <input type="text" class="form-control" name="x" placeholder="Search term...">
+                        <span class="input-group-btn">
+                             <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
                     </div>
                 </div>
+
+                <div class="pull-right">
+                    <a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-google-plus" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google-plus']);"><i class="fa fa-google-plus"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-linkedin']);"><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-github" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-github']);"><i class="fa fa-github"></i></a>
+                </div>
             </div>
+
         </div>
         <div class="headermenu">
             <nav class="navbar navbar-default" role="navigation">
@@ -96,12 +104,17 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fa fa-book"></i> Tutoriale
+                                    <i class="fa fa-book"></i> Cursuri
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="glyphicon glyphicon-calendar"></span>Evenimente
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-paperclip"></span>Reviste
                                 </a>
                             </li>
                             <li>
@@ -142,8 +155,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-user"></span>Admin <b class="caret"></b></a>
+                            <li class="dropdown userprofile">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!--<span class="glyphicon glyphicon-user"></span>Admin <b class="caret"></b>-->
+                                    <img src="images/eu.jpg">
+                                </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a>
                                     </li>
@@ -162,12 +178,304 @@
         </div>
     </header>
 
+    <div class="main-slider">
+        <div class="container">
+            <div id="jslidernews3" class="lof-slidecontent" style="width:980px; height:300px;">
+
+
+
+                <div class="button-previous">Previous</div>
+
+                <!-- MAIN CONTENT -->
+                <div class="main-slider-content" style="width:980px; height:300px;">
+                    <div class="sliders-wrapper" style="width: 980px;">
+                        <div class="sliders-wrapper" style="width: 980px;">
+                            <ul class="sliders-wrap-inner" style="left: 0px; width: 5880px;">
+                                <li style="width: 980px;">
+                                    <img src="images/lofthumbs/Birou-Endava1.jpg" style="width:980px; height:340px;" title="Newsflash 2">
+                                    <div class="slider-description">
+                                        <div class="slider-meta"><a target="_parent" title="Endava" href="#Category-1">/ Joburi /</a>  <i> — Monday, February 15, 2010 12:42</i>
+                                        </div>
+                                        <h4>Endava - Junior Java Developer</h4>
+                                        <p>The one thing about a Web site, it always changes! Joomla! makes it easy to add Articles, content,...
+                                            <a class="readmore" href="#">Read more </a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li style="width: 980px;">
+                                    <img src="images/lofthumbs/arobs-maraton.jpg" style="width:980px; height:340px;" title="Arobs">
+                                    <div class="slider-description">
+                                        <div class="slider-meta"><a target="_parent" title="Arobs" href="#Category-2">/ Evenimente /</a> 	<i> — Monday, February 15, 2010 12:42</i>
+                                        </div>
+                                        <h4>Arobs - Organizare maraton 2014</h4>
+                                        <p>Joomla! makes it easy to launch a Web site of any kind. Whether you want a brochure site or you are...
+                                            <a class="readmore" href="#">Read more </a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li style="width: 980px;">
+                                    <img src="images/lofthumbs/today_software_magazine_21.png" style="width:980px; height:340px;" title="Newsflash 3">
+                                    <div class="slider-description">
+                                        <div class="slider-meta"><a target="_parent" title="Newsflash 3" href="#Category-3">/ Reviste /</a> 	<i> — Monday, February 15, 2010 12:42</i>
+                                        </div>
+                                        <h4>Today Software Magazine - Nr 38</h4>
+                                        <p>With a library of thousands of free Extensions, you can add what you need as your site grows. Don't...
+                                            <a class="readmore" href="#">Read more </a>
+                                        </p>
+
+                                    </div>
+                                </li>
+                                <li style="width: 980px;">
+                                    <img src="images/lofthumbs/business_days_big.jpg" style="width:980px; height:340px;" title="Business Days">
+                                    <div class="slider-description">
+                                        <div class="slider-meta"><a target="_parent" title="Newsflash 4" href="#Category-4">/ Evenimente /</a>		<i> — Monday, February 15, 2010 12:42</i>
+                                        </div>
+                                        <h4>Business Days - Editia 4</h4>
+                                        <p>Joomla! 1.5 - 'Experience the Freedom'!. It has never been easier to create your own dynamic Web...
+                                            <a class="readmore" href="#">Read more </a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li style="width: 980px;">
+                                    <img src="images/lofthumbs/java_big.png" style="width:980px; height:300px;" title="Newsflash 5">
+                                    <div class="slider-description">
+                                        <div class="slider-meta"><a target="_parent" title="Newsflash 5" href="#">/ Cursuri /</a>		<i> — Monday, February 15, 2010 12:42</i>
+                                        </div>
+                                        <h4>Curs Java - Nou</h4>
+                                        <p>Joomla! 1.5 - 'Experience the Freedom'!. It has never been easier to create your own dynamic Web...
+                                            <a class="readmore" href="#">Read more </a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li style="width: 980px;">
+
+                                    <img src="images/lofthumbs/google_big.jpg" style="width:980px; height:300px;" title="Newsflash 5">
+                                    <div class="slider-description">
+                                        <div class="slider-meta"><a target="_parent" title="Newsflash 6" href="#">/ Evenimente /</a>		<i> — Monday, February 15, 2010 12:42</i>
+                                        </div>
+                                        <h4>Google - Office nou</h4>
+                                        <p>Joomla! 1.5 - 'Experience the Freedom'!. It has never been easier to create your own dynamic Web...
+                                            <a class="readmore" href="#">Read more </a>
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MAIN CONTENT -->
+                <!-- NAVIGATOR -->
+                <div class="navigator-content">
+                    <div class="navigator-wrapper" style="height: 300px; width: 310px;">
+                        <ul class="navigator-wrap-inner" style="height: 600px; top: 0px;">
+                            <li class="active" style="height: 100px; width: 310px;">
+                                <div>
+                                    <img src="images/lofthumbs/endava.jpg">
+                                    <h3> Endava </h3>
+                                    <span>20.01.2010</span> - In id, mauris viverra asperiores, bibendum in id. Eu molestie. Ac sit eu...
+                                </div>
+                            </li>
+                            <li style="height: 100px; width: 310px;" class="">
+                                <div>
+                                    <img src="images/lofthumbs/arobs.jpg">
+                                    <h3> Arobs </h3>
+                                    <span>20.01.2010</span> -In id, mauris viverra asperiores, bibendum in id. Eu molestie. Ac sit eu. ..
+                                </div>
+                            </li>
+
+                            <li style="height: 100px; width: 310px;" class="">
+                                <div>
+                                    <img src="images/lofthumbs/tsm.png">
+                                    <h3> Today Software Magazine </h3>
+                                    <span>20.01.2010</span> - In id, mauris viverra asperiores, bibendum in id. Eu molestie. Ac sit eu. ..
+                                </div>
+                            </li>
+
+                            <li style="height: 100px; width: 310px;">
+                                <div>
+                                    <img src="images/lofthumbs/business_days.jpg">
+                                    <h3> Business Days</h3>
+                                    <span>20.01.2010</span> - In id, mauris viverra asperiores, bibendum in id. Eu molestie. Ac sit eu. ..
+                                </div>
+                            </li>
+                            <li style="height: 100px; width: 310px;">
+                                <div>
+                                    <img src="images/lofthumbs/java.jpg">
+                                    <h3> Curs Java</h3>
+                                    <span>20.01.2010</span> -In id, mauris viverra asperiores, bibendum in id. Eu molestie. Ac sit eu. ..
+                                </div>
+                            </li>
+                            <li style="height: 100px; width: 310px;">
+                                <div>
+                                    <img src="images/lofthumbs/google.jpg">
+                                    <h3> Office Nou</h3>
+                                    <span>20.01.2010</span> - In id, mauris viverra asperiores, bibendum in id. Eu molestie. Ac sit eu. ..
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!----------------- END OF NAVIGATOR --------------------->
+                <div class="button-next">Next</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section style="background:#efefe9;">
+            <div class="container">
+                <div class="row">
+                    <div class="board col-md-8">
+                        <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+                        <div class="board-inner">
+                            <ul class="nav nav-tabs" id="myTab">
+                                <div class="liner"></div>
+                                <li class="active">
+                                    <a href="#home" data-toggle="tab" title="" data-original-title="welcome">
+                                        <span class="round-tabs one">
+                              <i class="glyphicon glyphicon-home"></i>
+                      </span> 
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#profile" data-toggle="tab" title="" data-original-title="profile">
+                                        <span class="round-tabs two">
+                         <i class="glyphicon glyphicon-user"></i>
+                     </span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#messages" data-toggle="tab" title="" data-original-title="bootsnipp goodies">
+                                        <span class="round-tabs three">
+                          <i class="glyphicon glyphicon-gift"></i>
+                     </span> 
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#settings" data-toggle="tab" title="" data-original-title="blah blah">
+                                        <span class="round-tabs four">
+                              <i class="glyphicon glyphicon-comment"></i>
+                         </span> 
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#doner" data-toggle="tab" title="" data-original-title="completed">
+                                        <span class="round-tabs five">
+                              <i class="glyphicon glyphicon-ok"></i>
+                         </span> 
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="home">
+
+                                <h3 class="head text-center">Welcome to Bootsnipp<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="profile">
+                                <h3 class="head text-center">Create a Bootsnipp<sup>™</sup> Profile</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> create your profile <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+
+                            </div>
+                            <div class="tab-pane fade" id="messages">
+                                <h3 class="head text-center">Bootsnipp goodies</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="settings">
+                                <h3 class="head text-center">Drop comments!</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="doner">
+                                <div class="text-center">
+                                    <i class="img-intro icon-checkmark-circle"></i>
+                                </div>
+                                <h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./js/bootstrap.min.js"></script>
+    <!-- Studbox Script -->
     <script src="./js/studbox.js"></script>
+    <!-- Required for Main Slider -->
+    <script src="./js/jquery.easing.js"></script>
+    <!-- Main Slider Script -->
+    <script src="./js/main.slider.js"></script>
+    <!-- Main Slider Script -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var buttons = {
+                previous: $('#jslidernews3 .button-previous'),
+                next: $('#jslidernews3 .button-next')
+            };
+            $('#jslidernews3').lofJSidernews({
+                interval: 5000,
+                easing: 'easeOutBounce',
+                duration: 1200,
+                auto: false,
+                mainWidth: 980,
+                mainHeight: 300,
+                navigatorHeight: 100,
+                navigatorWidth: 310,
+                maxItemDisplay: 3,
+                buttons: buttons
+            });
+        });
+    </script>
+
+    <!-- Tabs Bootsnipp -->
+    <script type="text/javascript">
+        $(function () {
+            $('a[title]').tooltip();
+        });
+    </script>
+
 </body>
 
 </html>
