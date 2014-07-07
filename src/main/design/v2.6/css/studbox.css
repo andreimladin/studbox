@@ -1,21 +1,33 @@
-/*********************************** Header *********************************************/
+.container {
+    width: 974px;
+}
 
+/*********************************** Header *********************************************/
 .headerdetails {
     background-image: -webkit-linear-gradient(top, #0A3044 0%, #0f4461 100%);
     padding: 10px 0;
 }
 .headermenu {
-    background: #e7e7e7;
-    /*border-width: 1px 0;*/
-    /*padding: 10px 0;    */
+/*    background: #e7e7e7;*/
+    background: #f8f8f8;
+/*    border-width: 1px 0;*/
+/*    padding: 10px 0;    */
+/*    margin-top: 50px;*/
 }
+
 .headermenu .navbar {
     margin: 0;
 }
+
+.headermenu .navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+}
+
 .headermenu .userprofile>a {
     padding: 0px;
     margin: 10px 0;
 }
+
 .headermenu .userprofile>a>img {
     width: 30px;
     height: 30px;
@@ -31,15 +43,15 @@
 /*********************************** Main Slider ****************************************/
 
 .main-slider {
-    margin: 0px;
+    margin-top: 105px;
     font-family: Arial, Helvetica, sans-serif;
     background: #39414A;
+    padding: 10px 0px;
 }
+
 .main-slider .container {
     align-content: center;
-    width: 980px;
-    margin: 0px auto 0px;
-    padding: 10px;
+/*    margin: 0px auto 0px;    */
     font-size: 12px;
 }
 .main-slider .container h3 {
@@ -52,6 +64,12 @@
     -webkit-margin-end: 0px;
     font-weight: bold;
 }
+
+.main-slider li>img {
+    width:942px;
+    height:305px;
+}
+
 .main-slider a {
     text-transform: none;
     color: #333
@@ -66,7 +84,7 @@
 /************************************ Main Content ************************************/
 
 .main-content {
-    padding: 10px 0;
+/*    padding: 0;*/
 }
 /************************************ Main Tabs ***************************************/
 
