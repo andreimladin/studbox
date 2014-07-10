@@ -84,16 +84,73 @@
 /************************************ Main Content ************************************/
 
 .main-content {
-/*    padding: 0;*/
+    padding: 0;
 }
-/************************************ Main Tabs ***************************************/
+
+/************************************ Main Widget v1 **********************************/
+/*
+.widget {
+    margin-bottom: 30px;
+    color: #676767;    
+}
+
+.widget .title-block h3 {
+    padding-left: 16px;
+    background: url(../images/title-indicator.png) left 3px no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #72b7fc;
+    margin-bottom: 5px;
+}
+
+.widget .title-block .divider {
+    height: 5px;
+    display: block;
+    width: 100%;
+    background-color: #575b5e;
+    margin-bottom: 15px;
+}
+*/
+
+/************************************ End Main Widget v1 ******************************/
+
+
+/************************************ Main Widget v2 **********************************/
+.widget {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.white-container {
+    margin-bottom: 30px;
+    padding: 20px 30px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.1);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,.1);
+}
+
+.widget .widget-title {
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+/************************************ End Main Widget v2 ******************************/
+
+
+/************************************ Latest Box **************************************/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 
 /* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
 
 .board {
-    margin: 60px auto;
+/*    margin: 60px auto;*/
     height: 500px;
     background: #fff;
     /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
@@ -102,7 +159,7 @@
     position: relative;
     /* border-bottom: 0; */
     /* width: 80%; */
-    margin: 40px auto;
+/*    margin: 40px auto;*/
     margin-bottom: 0;
     box-sizing: border-box;
 }
@@ -291,6 +348,119 @@ li.active:after {
         padding: 12px 20px;
     }
 }
-/************************************ End Main Tabs ***********************************/
+/************************************ End Latest Box **********************************/
+
+/************************************ Social Box v1 ***********************************/
+.facebook-social, .twitter-social, .googleplus-social, .linkedin-social {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #DCE2E7;
+    padding: 5px;
+}
+
+
+
+.facebook-social {
+    background: #FFF url(../images/social/facebook.png) 5px center no-repeat;
+}
+
+.twitter-social {
+    background: #FFF url(../images/social/twitter.png) 5px center no-repeat;
+}
+
+.googleplus-social {
+    background: #FFF url(../images/social/google-plus.png) 5px center no-repeat;
+}
+
+.linkedin-social {
+    background: #FFF url(../images/social/linkedin.png) 5px center no-repeat;
+}
+
+.facebook-social a, .twitter-social a, .googleplus-social a, .linkedin-social a {
+    color: #777;
+}
+
+
+
+i.social {
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 60px;
+    font-size: 20px;
+}
+/************************************ End Social Box v1 ********************************/
+
+/************************************ Social Box v2 ************************************/
+
+.share-box {
+    position: relative;
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.share-box > div:before {
+    border-top: 7px solid #575b5e;
+}
+
+.share-box > div:before, .share-box > div:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 50%;
+    margin-left: -7px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.share-box > div {
+    border: 2px solid #575b5e;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.share-box > a {
+display: block;
+margin: 0;
+height: 30px;
+line-height: 30px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+color: #ffffff;
+text-decoration: none;
+font-size: 10px;
+text-align: center;
+}
+
+.share-box.facebook > a {
+background: #4C66A4;
+}
+
+.share-box.twitter > a {
+background: #55ACEE;
+}
+
+.share-box.google > a {
+background: #d34836;
+}
+
+.share-box.linkedin > a {
+background: #4875B4;
+}
+
+
+
+/************************************ End Social Box v2 ********************************/
 
 /************************************ End Main Content ********************************/
